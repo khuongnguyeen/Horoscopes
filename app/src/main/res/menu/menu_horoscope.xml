@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/action_aries"
+        android:textSize="@dimen/_2sdp"
+        android:enabled="true"
+        android:title="@string/aries" />
+    <item
+        android:id="@+id/action_taurus"
+        android:textSize="@dimen/_2sdp"
+        android:enabled="true"
+        android:title="@string/taurus" />
+    <item
+        android:id="@+id/action_gemini"
+        android:textSize="@dimen/_2sdp"
+        android:enabled="true"
+        android:title="@string/gemini" />
+    <item
+        android:id="@+id/action_cancer"
+        android:textSize="@dimen/_2sdp"
+        android:enabled="true"
+        android:title="@string/cancer" />
+    <item
+        android:id="@+id/action_leo"
+        android:textSize="@dimen/_2sdp"
+        android:enabled="true"
+        android:title="@string/leo" />
+    <item
+        android:id="@+id/action_virgo"
+        android:textSize="@dimen/_2sdp"
+        android:enabled="true"
+        android:title="@string/virgo" />
+    <item
+        android:id="@+id/action_libra"
+        android:textSize="@dimen/_2sdp"
+        android:enabled="true"
+        android:title="@string/libra" />
+    <item
+        android:id="@+id/action_scorpio"
+        android:textSize="@dimen/_2sdp"
+        android:enabled="true"
+        android:title="@string/scorpio" />
+    <item
+        android:id="@+id/action_sagittarius"
+        android:textSize="@dimen/_2sdp"
+        android:enabled="true"
+        android:title="@string/sagittarius" />
+    <item
+        android:id="@+id/action_capricorn"
+        android:textSize="@dimen/_2sdp"
+        android:enabled="true"
+        android:title="@string/capricorn" />
+    <item
+        android:id="@+id/action_aquarius"
+        android:textSize="@dimen/_2sdp"
+        android:enabled="true"
+        android:title="@string/aquarius" />
+    <item
+        android:id="@+id/action_pisces"
+        android:textSize="@dimen/_2sdp"
+        android:enabled="true"
+        android:title="@string/pisces" />
+</menu>
