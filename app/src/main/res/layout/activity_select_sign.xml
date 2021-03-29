@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <ImageView
+        android:id="@id/default_img"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_signe" />
+
+    <ImageView
+        android:id="@id/choice_sign_back"
+        android:layout_width="48.0dip"
+        android:layout_height="48.0dip"
+        android:layout_marginTop="28.0dip"
+        android:paddingTop="13.0dip"
+        android:paddingRight="13.0dip"
+        android:paddingBottom="15.0dip"
+        android:src="@drawable/back_white"
+        android:visibility="visible" />
+
+    <ImageView
+        android:id="@id/sign"
+        android:layout_width="200.0dip"
+        android:layout_height="200.0dip"
+        android:layout_centerInParent="true"
+        android:visibility="invisible" />
+
+    <RelativeLayout
+        android:id="@id/container"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/choice_sign_back"
+        android:layout_marginBottom="50.0dip"
+        android:gravity="center">
+
+        <TextView
+            android:id="@id/title_select_sign"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@id/grid_sign"
+            android:gravity="bottom|center"
+            android:text="@string/chsign_p1_txt"
+            android:textColor="@android:color/white"
+            android:textSize="23.0sp" />
+
+        <GridView
+            android:id="@id/grid_sign"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15.0dip"
+            android:layout_marginTop="40.0dip"
+            android:layout_marginRight="15.0dip"
+            android:layout_marginBottom="30.0dip"
+            android:horizontalSpacing="10.0dip"
+            android:listSelector="@android:color/transparent"
+            android:numColumns="4"
+            android:verticalSpacing="15.0dip" />
+
+        <RelativeLayout
+            android:id="@id/choice_sign_go_wims_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/grid_sign"
+            android:gravity="center"
+            android:padding="8.0dip">
+
+            <TextView
+                android:id="@id/choice_sign_go_wims"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/chsign_p1_btn"
+                android:textColor="@android:color/white"
+                android:textSize="15.5sp" />
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/choice_sign_go_wims"
+                android:layout_alignBottom="@id/choice_sign_go_wims"
+                android:layout_marginLeft="2.0dip"
+                android:layout_toRightOf="@id/choice_sign_go_wims">
+
+                <ImageView
+                    android:layout_width="9.0dip"
+                    android:layout_height="9.0dip"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="1.0dip"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/chevron" />
+            </FrameLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>
