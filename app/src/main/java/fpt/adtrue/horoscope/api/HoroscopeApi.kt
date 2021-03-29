@@ -7,7 +7,7 @@ import retrofit2.http.Body
 import retrofit2.http.POST
 import retrofit2.http.Query
 
-open interface HoroscopeApi {
+interface HoroscopeApi {
     @POST("/")
     fun getHoroscope(
         @Query("sign") sign:String,

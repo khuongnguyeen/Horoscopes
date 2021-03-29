@@ -1,0 +1,527 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <RelativeLayout
+        android:id="@id/astro_profile_top_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/titlebar_main"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@id/astro_profile_back"
+            android:layout_width="48.0dip"
+            android:layout_height="48.0dip"
+            android:layout_centerVertical="true"
+            android:adjustViewBounds="true"
+            android:paddingTop="13.0dip"
+            android:paddingRight="13.0dip"
+            android:paddingBottom="15.0dip"
+            android:src="@drawable/back_white" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:text="@string/menu_item_24_txt"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="19.0sp" />
+
+        <ImageView
+            android:id="@id/astro_profile_font_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:adjustViewBounds="true"
+            android:paddingLeft="5.0dip"
+            android:paddingTop="10.0dip"
+            android:paddingRight="4.0dip"
+            android:paddingBottom="10.0dip"
+            android:src="@drawable/font_size" />
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@id/astro_profile_parent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="?actionBarSize"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:id="@id/astro_profile_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white">
+
+            <RelativeLayout
+                android:id="@id/header"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="1000.0dip"
+                    android:layout_height="275.0dip"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/profil_header" />
+
+                <ImageView
+                    android:id="@id/hp_barometre"
+                    android:layout_width="160.0dip"
+                    android:layout_height="160.0dip"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="30.0dip"
+                    android:alpha="0.9"
+                    android:src="@drawable/homepage_baro" />
+
+                <ImageView
+                    android:id="@id/hp_sign"
+                    android:layout_width="60.0dip"
+                    android:layout_height="60.0dip"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="72.0dip" />
+
+                <Space
+                    android:id="@id/hp_space1"
+                    android:layout_width="50.0dip"
+                    android:layout_height="0.0dip"
+                    android:layout_centerHorizontal="true" />
+
+                <Space
+                    android:id="@id/hp_space2"
+                    android:layout_width="140.0dip"
+                    android:layout_height="0.0dip"
+                    android:layout_centerHorizontal="true" />
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="53.0dip"
+                    android:gravity="center_horizontal"
+                    android:scrollX="65.0dip">
+
+                    <LinearLayout
+                        android:id="@id/meteo_layout1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@id/meteo_chinois_img"
+                            android:layout_width="40.0dip"
+                            android:layout_height="40.0dip" />
+
+                        <TextView
+                            android:id="@id/meteo_chinois_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAllCaps="true"
+                            android:textColor="@android:color/white"
+                            android:textSize="17.0sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@id/relativeLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="165.0dip"
+                    android:scrollX="-160.0dip">
+
+                    <LinearLayout
+                        android:id="@id/meteo_layout3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@id/meteo_ascendant_img"
+                            android:layout_width="40.0dip"
+                            android:layout_height="40.0dip" />
+
+                        <TextView
+                            android:id="@id/meteo_ascendant_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAllCaps="true"
+                            android:textColor="@android:color/white"
+                            android:textSize="17.0sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@id/hp_barometre"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="center_horizontal"
+                    android:scrollX="-63.0dip">
+
+                    <LinearLayout
+                        android:id="@id/meteo_layout4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@id/meteo_sign_img"
+                            android:layout_width="40.0dip"
+                            android:layout_height="40.0dip" />
+
+                        <TextView
+                            android:id="@id/meteo_sign_txt"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAllCaps="true"
+                            android:textColor="@android:color/white"
+                            android:textSize="17.0sp" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@id/astro_profile_title_sign"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/header"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="-15.0dip"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="5.0dip"
+                android:paddingBottom="5.0dip">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/portraitastro_rub1"
+                    android:textAllCaps="true"
+                    android:textColor="@color/gris"
+                    android:textSize="26.0sp" />
+
+                <ImageView
+                    android:id="@id/astro_profile_titlimg_sign"
+                    android:layout_width="50.0dip"
+                    android:layout_height="50.0dip"
+                    android:layout_marginTop="10.0dip"
+                    android:layout_marginBottom="6.0dip"
+                    android:src="@drawable/s4_orange" />
+
+                <TextView
+                    android:id="@id/astro_profile_titltext_sign"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LION"
+                    android:textAllCaps="true"
+                    android:textColor="@color/gris"
+                    android:textSize="22.0sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@id/astro_profile_text_sign"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/astro_profile_title_sign"
+                android:paddingLeft="20.0dip"
+                android:paddingTop="5.0dip"
+                android:paddingRight="18.0dip"
+                android:paddingBottom="15.0dip"
+                android:text="@string/text"
+                android:textColor="@color/gris"
+                android:textSize="18.0sp" />
+
+            <LinearLayout
+                android:id="@id/astro_profile_title_element"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/astro_profile_text_sign"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15.0dip"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="5.0dip"
+                android:paddingBottom="5.0dip">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/portraitastro_rub2"
+                    android:textAllCaps="true"
+                    android:textColor="@color/gris"
+                    android:textSize="26.0sp" />
+
+                <ImageView
+                    android:id="@id/astro_profile_titlimg_element"
+                    android:layout_width="50.0dip"
+                    android:layout_height="50.0dip"
+                    android:layout_marginTop="10.0dip"
+                    android:layout_marginBottom="6.0dip"
+                    android:src="@drawable/feu" />
+
+                <TextView
+                    android:id="@id/astro_profile_titltext_element"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FEU"
+                    android:textAllCaps="true"
+                    android:textColor="@color/gris"
+                    android:textSize="22.0sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@id/astro_profile_text_element"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/astro_profile_title_element"
+                android:paddingLeft="20.0dip"
+                android:paddingTop="5.0dip"
+                android:paddingRight="18.0dip"
+                android:paddingBottom="15.0dip"
+                android:textColor="@color/gris"
+                android:textSize="18.0sp" />
+
+            <LinearLayout
+                android:id="@id/astro_profile_title_decan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/astro_profile_text_element"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15.0dip"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="5.0dip"
+                android:paddingBottom="5.0dip">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/portraitastro_rub3"
+                    android:textAllCaps="true"
+                    android:textColor="@color/gris"
+                    android:textSize="26.0sp" />
+
+                <ImageView
+                    android:id="@id/astro_profile_titlimg_decan"
+                    android:layout_width="50.0dip"
+                    android:layout_height="50.0dip"
+                    android:layout_marginTop="10.0dip"
+                    android:layout_marginBottom="6.0dip"
+                    android:src="@drawable/feu" />
+
+                <TextView
+                    android:id="@id/astro_profile_titltext_decan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FEU"
+                    android:textAllCaps="true"
+                    android:textColor="@color/gris"
+                    android:textSize="22.0sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@id/astro_profile_text_decan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/astro_profile_title_decan"
+                android:paddingLeft="20.0dip"
+                android:paddingTop="5.0dip"
+                android:paddingRight="18.0dip"
+                android:paddingBottom="15.0dip"
+                android:textColor="@color/gris"
+                android:textSize="18.0sp" />
+
+            <LinearLayout
+                android:id="@id/astro_profile_title_ascendant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/astro_profile_text_decan"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10.0dip"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="5.0dip"
+                android:paddingBottom="5.0dip">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/portraitastro_rub4"
+                    android:textAllCaps="true"
+                    android:textColor="@color/gris"
+                    android:textSize="26.0sp" />
+
+                <ImageView
+                    android:id="@id/astro_profile_titlimg_ascendant"
+                    android:layout_width="50.0dip"
+                    android:layout_height="50.0dip"
+                    android:layout_marginTop="10.0dip"
+                    android:layout_marginBottom="6.0dip"
+                    android:src="@drawable/feu" />
+
+                <TextView
+                    android:id="@id/astro_profile_titltext_ascendant"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FEU"
+                    android:textAllCaps="true"
+                    android:textColor="@color/gris"
+                    android:textSize="22.0sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@id/astro_profile_text_ascendant"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/astro_profile_title_ascendant"
+                android:paddingLeft="20.0dip"
+                android:paddingTop="5.0dip"
+                android:paddingRight="18.0dip"
+                android:paddingBottom="15.0dip"
+                android:textColor="@color/gris"
+                android:textSize="18.0sp" />
+
+            <LinearLayout
+                android:id="@id/astro_profile_title_chinois"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/astro_profile_text_ascendant"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="15.0dip"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingTop="5.0dip"
+                android:paddingBottom="5.0dip">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:text="@string/portraitastro_rub5"
+                    android:textAllCaps="true"
+                    android:textColor="@color/gris"
+                    android:textSize="26.0sp" />
+
+                <ImageView
+                    android:id="@id/astro_profile_titlimg_chinois"
+                    android:layout_width="50.0dip"
+                    android:layout_height="50.0dip"
+                    android:layout_marginTop="10.0dip"
+                    android:layout_marginBottom="6.0dip"
+                    android:src="@drawable/feu" />
+
+                <TextView
+                    android:id="@id/astro_profile_titltext_chinois"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FEU"
+                    android:textAllCaps="true"
+                    android:textColor="@color/gris"
+                    android:textSize="22.0sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@id/astro_profile_text_chinois"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/astro_profile_title_chinois"
+                android:paddingLeft="20.0dip"
+                android:paddingTop="5.0dip"
+                android:paddingRight="18.0dip"
+                android:paddingBottom="15.0dip"
+                android:textColor="@color/gris"
+                android:textSize="18.0sp" />
+
+            <LinearLayout
+                android:id="@id/astro_profile_redir_chat_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/astro_profile_text_chinois"
+                android:orientation="vertical"
+                android:paddingTop="20.0dip"
+                android:paddingBottom="20.0dip">
+
+                <ImageView
+                    android:id="@id/imageView"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/hp_redir_chat" />
+
+                <TextView
+                    android:id="@id/astro_profile_redir_chat_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15.0dip"
+                    android:layout_marginRight="15.0dip"
+                    android:paddingTop="11.0dip"
+                    android:text="@string/menu_item1_txt"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/black"
+                    android:textSize="22.0sp" />
+
+                <TextView
+                    android:id="@id/astro_profile_redir_chat_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15.0dip"
+                    android:layout_marginTop="5.0dip"
+                    android:layout_marginRight="15.0dip"
+                    android:layout_marginBottom="15.0dip"
+                    android:text="Post hanc adclinis Libano monti Phoenice, regio plena gratiarum et venustatis, urbibus decorata magnis et pulchris; in quibus amoenitate celebritateque nominum Tyros excellit."
+                    android:textColor="@android:color/black"
+                    android:textSize="17.5sp" />
+
+                <RelativeLayout
+                    android:id="@id/astro_profile_redir_chat_button"
+                    android:layout_width="230.0dip"
+                    android:layout_height="39.0dip"
+                    android:layout_gravity="center"
+                    android:background="@drawable/rounded_button_blue"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@id/astro_profile_redir_chat_button_text"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:maxLines="1"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/white"
+                        android:textSize="20.0sp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@id/astro_profile_fb_native_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/astro_profile_redir_chat_layout"
+                android:layout_marginTop="5.0dip"
+                android:layout_marginBottom="5.0dip" />
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+<!--    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"-->
+<!--        android:id="@id/adView"-->
+<!--        android:layout_width="fill_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="bottom|center"-->
+<!--        android:gravity="center"-->
+<!--        android:visibility="gone"-->
+<!--        ads:adSize="BANNER"-->
+<!--        ads:adUnitId="@string/adUnitIdBanner" />-->
+</FrameLayout>

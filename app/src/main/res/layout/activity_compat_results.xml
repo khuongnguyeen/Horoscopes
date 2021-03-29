@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@id/compat_results_main_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <RelativeLayout
+        android:id="@id/compat_results_top_bar"
+        android:layout_width="fill_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/titlebar_compat"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@id/compat_results_close"
+            android:layout_width="44.0dip"
+            android:layout_height="44.0dip"
+            android:layout_centerVertical="true"
+            android:adjustViewBounds="true"
+            android:paddingTop="13.0dip"
+            android:paddingRight="5.0dip"
+            android:paddingBottom="15.0dip"
+            android:src="@drawable/menu_close" />
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:text="@string/menu_item_22_txt"
+            android:textAllCaps="true"
+            android:textColor="@android:color/white"
+            android:textSize="19.0sp" />
+
+        <ImageView
+            android:id="@id/compat_results_font_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:adjustViewBounds="true"
+            android:paddingLeft="5.0dip"
+            android:paddingTop="10.0dip"
+            android:paddingRight="4.0dip"
+            android:paddingBottom="10.0dip"
+            android:src="@drawable/font_size" />
+    </RelativeLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@id/compat_results_parent"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="?actionBarSize"
+        android:descendantFocusability="beforeDescendants">
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@android:color/white">
+
+            <ImageView
+                android:id="@id/compat_results_top_img"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/compat_results_top" />
+
+            <ImageView
+                android:id="@id/compat_baro"
+                android:layout_width="155.0dip"
+                android:layout_height="155.0dip"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30.0dip"
+                android:src="@drawable/compat_results_baro" />
+
+            <ProgressBar
+                android:id="@id/ring_progress"
+                android:layout_width="143.0dip"
+                android:layout_height="143.0dip"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="36.0dip" />
+
+            <TextView
+                android:id="@id/compat_results_percent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="88.0dip"
+                android:alpha="0.85"
+                android:text="50%"
+                android:textColor="@android:color/white"
+                android:textSize="34.0sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="40.0dip"
+                android:layout_toLeftOf="@id/ring_progress"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@id/compat_results_sign_left_img"
+                    android:layout_width="38.0dip"
+                    android:layout_height="38.0dip"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/s1_wh" />
+
+                <TextView
+                    android:id="@id/compat_results_sign_left_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CAPRICORNE"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="16.0sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="110.0dip"
+                android:layout_toRightOf="@id/ring_progress"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@id/compat_results_sign_right_img"
+                    android:layout_width="38.0dip"
+                    android:layout_height="38.0dip"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/s1_wh" />
+
+                <TextView
+                    android:id="@id/compat_results_sign_right_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="CAPRICORNE"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/white"
+                    android:textSize="16.0sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@id/compat_results_top_content"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/compat_results_top_img"
+                android:layout_centerHorizontal="true"
+                android:paddingLeft="20.0dip"
+                android:paddingTop="5.0dip"
+                android:text="Your lively nature works wonders, he/she likes puns and a good sense of humor!"
+                android:paddingRight="18.0dip"
+                android:paddingBottom="15.0dip"
+                android:textColor="@color/gris"
+                android:textSize="18.0sp" />
+
+            <LinearLayout
+                android:id="@id/compat_results_title_conseil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/compat_results_top_content"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingTop="5.0dip"
+                android:paddingBottom="5.0dip">
+
+                <ImageView
+                    android:layout_width="20.0dip"
+                    android:layout_height="20.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:src="@drawable/compat_results_conseil" />
+
+                <TextView
+                    android:id="@id/compat_results_titltext_conseil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/compatam_p4_rub1_titre"
+                    android:textColor="@color/gris"
+                    android:textSize="22.0sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@id/compat_results_text_conseil"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/compat_results_title_conseil"
+                android:paddingLeft="20.0dip"
+                android:paddingTop="5.0dip"
+                android:paddingRight="18.0dip"
+                android:text="Your lively nature works wonders, he/she likes puns and a good sense of humor!"
+                android:paddingBottom="15.0dip"
+                android:textColor="@color/gris"
+                android:textSize="18.0sp" />
+
+            <LinearLayout
+                android:id="@id/compat_results_title_enbref"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/compat_results_text_conseil"
+                android:layout_centerHorizontal="true"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingTop="5.0dip"
+                android:paddingBottom="5.0dip">
+
+                <ImageView
+                    android:layout_width="20.0dip"
+                    android:layout_height="20.0dip"
+                    android:layout_marginRight="10.0dip"
+                    android:src="@drawable/compat_results_enbref" />
+
+                <TextView
+                    android:id="@id/compat_results_titltext_enbref"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/compatam_p4_rub2_titre"
+                    android:textColor="@color/gris"
+                    android:textSize="22.0sp" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@id/compat_results_text_enbref"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/compat_results_title_enbref"
+                android:paddingLeft="20.0dip"
+                android:paddingTop="5.0dip"
+                android:text="Both independent people, you are happy to be able to live your life!"
+                android:paddingRight="18.0dip"
+                android:paddingBottom="15.0dip"
+                android:textColor="@color/gris"
+                android:textSize="18.0sp" />
+
+            <LinearLayout
+                android:id="@id/compat_results_points"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/compat_results_text_enbref"
+                android:baselineAligned="false"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:paddingTop="5.0dip"
+                android:paddingBottom="25.0dip">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="5.0dip"
+                    android:paddingRight="5.0dip">
+
+                    <LinearLayout
+                        android:id="@id/compat_results_title_pt_fort"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15.0dip"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="20.0dip"
+                            android:layout_height="20.0dip"
+                            android:layout_marginRight="10.0dip"
+                            android:src="@drawable/compat_results_fort" />
+
+                        <TextView
+                            android:id="@id/compat_results_titltext_pt_fort"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:text="@string/compatam_p4_rub3_titre"
+                            android:textColor="@color/gris"
+                            android:textSize="22.0sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@id/compat_results_text_pt_fort"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/compat_results_title_pt_fort"
+                        android:paddingLeft="35.0dip"
+                        android:text="@string/aries"
+                        android:paddingTop="5.0dip"
+                        android:textColor="@color/gris"
+                        android:textSize="18.0sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingLeft="5.0dip"
+                    android:paddingRight="5.0dip">
+
+                    <LinearLayout
+                        android:id="@id/compat_results_title_pt_faible"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="1.0dip"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="20.0dip"
+                            android:layout_height="20.0dip"
+                            android:layout_marginRight="10.0dip"
+                            android:src="@drawable/compat_results_faible" />
+
+                        <TextView
+                            android:id="@id/compat_results_titltext_pt_faible"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:maxLines="1"
+                            android:text="@string/compatam_p4_rub4_titre"
+                            android:textColor="@color/gris"
+                            android:textSize="22.0sp" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@id/compat_results_text_pt_faible"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/compat_results_title_pt_faible"
+                        android:paddingLeft="35.0dip"
+                        android:text="@string/scorpio"
+                        android:paddingTop="5.0dip"
+                        android:textColor="@color/gris"
+                        android:textSize="18.0sp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@id/compat_results_again"
+                android:layout_width="220.0dip"
+                android:layout_height="38.0dip"
+                android:layout_below="@id/compat_results_points"
+                android:layout_centerHorizontal="true"
+                android:background="@drawable/rounded_button_white"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/compatam_p4_btn"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/black"
+                    android:textSize="21.0sp" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@id/compat_results_redir_chat_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/compat_results_again"
+                android:orientation="vertical"
+                android:paddingTop="20.0dip"
+                android:paddingBottom="20.0dip">
+
+                <ImageView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/hp_redir_chat" />
+
+                <TextView
+                    android:id="@id/compat_results_redir_chat_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15.0dip"
+                    android:layout_marginRight="15.0dip"
+                    android:paddingTop="11.0dip"
+                    android:text="let's chat"
+                    android:textAllCaps="true"
+                    android:textColor="@android:color/black"
+                    android:textSize="22.0sp" />
+
+                <TextView
+                    android:id="@id/compat_results_redir_chat_text"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15.0dip"
+                    android:layout_marginTop="5.0dip"
+                    android:layout_marginRight="15.0dip"
+                    android:layout_marginBottom="15.0dip"
+                    android:text="Do not keep those confusing thoughts to youself. \nOur best psychics are waiting to answer all your questions."
+                    android:textColor="@android:color/black"
+                    android:textSize="17.5sp" />
+
+                <RelativeLayout
+                    android:id="@id/compat_results_redir_chat_button"
+                    android:layout_width="230.0dip"
+                    android:layout_height="39.0dip"
+                    android:layout_gravity="center"
+                    android:background="@drawable/rounded_button_blue"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@id/compat_results_redir_chat_button_text"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="A doubt, a question?"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/white"
+                        android:textSize="21.0sp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <RelativeLayout
+                android:id="@id/compat_results_fb_native_layout"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/compat_results_redir_chat_layout"
+                android:layout_marginTop="5.0dip"
+                android:layout_marginBottom="5.0dip" />
+        </RelativeLayout>
+    </androidx.core.widget.NestedScrollView>
+
+<!--    <com.google.android.gms.ads.AdView-->
+<!--        xmlns:ads="http://schemas.android.com/apk/res-auto"-->
+<!--        android:id="@id/adView"-->
+<!--        android:layout_width="fill_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="bottom|center"-->
+<!--        android:gravity="center"-->
+<!--        android:visibility="gone"-->
+<!--        ads:adSize="BANNER"-->
+<!--        ads:adUnitId="@string/adUnitIdBanner" />-->
+
+</FrameLayout>

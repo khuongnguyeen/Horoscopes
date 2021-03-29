@@ -1,71 +1,140 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+<layout>
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:fitsSystemWindows="true">
 
-    <data>
-        <variable
-            name="data"
-            type="fpt.adtrue.horoscope.viewmodel.HoroscopeViewModel" />
-        <import type="android.view.View"/>
-    </data>
+        <androidx.drawerlayout.widget.DrawerLayout
+            android:id="@id/drawer_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+            <androidx.coordinatorlayout.widget.CoordinatorLayout
+                android:id="@id/coordinator"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
 
-        android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+                <com.google.android.material.appbar.AppBarLayout
+                    android:id="@id/appBarLayout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    app:elevation="0.0dip">
 
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+                    <androidx.appcompat.widget.Toolbar
+                        android:id="@id/toolbar"
+                        android:layout_width="fill_parent"
+                        android:layout_height="?actionBarSize"
+                        android:background="@color/colorPrimary"
+                        app:contentInsetStartWithNavigation="0.0dip"
+                        app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="@{data.isLoading ? View.VISIBLE : View.GONE}"
-            app:layout_constraintBottom_toTopOf="@+id/button_yes"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+                    <com.google.android.material.tabs.TabLayout
+                        android:id="@id/sliding_tabs"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/transparent"
+                        app:layout_scrollFlags="noScroll" />
+                </com.google.android.material.appbar.AppBarLayout>
 
-    <Button
-        android:id="@+id/button_ok"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="5dp"
-        android:text="Today"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+                <androidx.viewpager.widget.ViewPager
+                    android:id="@id/viewpager"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:background="@android:color/transparent"
+                    android:visibility="visible"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-        <Button
-            android:id="@+id/button_yes"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_marginBottom="10dp"
-            android:text="Yesterday"
-            app:layout_constraintBottom_toTopOf="@+id/button_tomo"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+                <!--            <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"-->
+                <!--                android:id="@id/adView"-->
+                <!--                android:layout_width="fill_parent"-->
+                <!--                android:layout_height="wrap_content"-->
+                <!--                android:layout_gravity="bottom|center"-->
+                <!--                android:gravity="center"-->
+                <!--                android:visibility=""-->
+                <!--                ads:adSize="BANNER"-->
+                <!--                ads:adUnitId="@string/adUnitIdBanner" />-->
+            </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-        <Button
-            android:id="@+id/button_tomo"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
-            android:layout_marginBottom="10dp"
-            android:text="Tomorrow"
-            app:layout_constraintBottom_toTopOf="@+id/button_ok"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            <com.google.android.material.navigation.NavigationView
+                android:id="@id/nav_view"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="start"
+                android:background="@drawable/bg_menu"
+                android:fitsSystemWindows="false">
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <ScrollView
+                    android:id="@id/scrollViewDrawer"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:fillViewport="true">
 
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@id/navList"
+                            android:layout_width="fill_parent"
+                            android:layout_height="fill_parent"
+                            android:layout_alignParentTop="true"
+                            android:layout_gravity="start"
+                            android:childDivider="@android:color/transparent"
+                            android:divider="#99ffffff"
+                            android:dividerHeight="1.0dip"
+                            android:groupIndicator="@null"
+                            android:scrollingCache="false" />
+
+                        <LinearLayout
+                            android:id="@id/menu_footer"
+                            android:layout_width="fill_parent"
+                            android:layout_height="140.0dip"
+                            android:layout_below="@id/navList"
+                            android:layout_alignParentBottom="true"
+                            android:orientation="vertical">
+
+                            <androidx.viewpager.widget.ViewPager
+                                android:id="@id/apps_viewpager"
+                                android:layout_width="fill_parent"
+                                android:layout_height="120.0dip" />
+
+                            <LinearLayout
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:background="#ff49565e"
+                                android:gravity="center"
+                                android:orientation="horizontal"
+                                android:paddingBottom="5.0dip">
+
+                                <ImageView
+                                    android:id="@id/menu_pageview1"
+                                    android:layout_width="9.0dip"
+                                    android:layout_height="9.0dip"
+                                    android:layout_marginRight="3.0dip"
+                                    android:src="@drawable/menu_dotnav_on" />
+
+                                <ImageView
+                                    android:id="@id/menu_pageview2"
+                                    android:layout_width="9.0dip"
+                                    android:layout_height="9.0dip"
+                                    android:layout_marginLeft="5.0dip"
+                                    android:layout_marginRight="3.0dip"
+                                    android:src="@drawable/menu_dotnav_off" />
+
+                                <ImageView
+                                    android:id="@id/menu_pageview3"
+                                    android:layout_width="9.0dip"
+                                    android:layout_height="9.0dip"
+                                    android:layout_marginLeft="5.0dip"
+                                    android:layout_marginRight="3.0dip"
+                                    android:src="@drawable/menu_dotnav_off" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </RelativeLayout>
+                </ScrollView>
+            </com.google.android.material.navigation.NavigationView>
+        </androidx.drawerlayout.widget.DrawerLayout>
+    </FrameLayout>
 </layout>

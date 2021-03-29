@@ -12,6 +12,7 @@ android {
         minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
+        multiDexEnabled true
         versionName "1.0"
         dataBinding{
             enabled=true
@@ -71,4 +72,5 @@ dependencies {
 
     implementation 'com.intuit.ssp:ssp-android:1.0.5'
     implementation 'com.intuit.sdp:sdp-android:1.0.5'
+
 }
