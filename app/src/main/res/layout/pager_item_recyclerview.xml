@@ -1,431 +1,435 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent">
-
-    <androidx.core.widget.NestedScrollView
-        android:id="@id/parent"
+<layout xmlns:tools="http://schemas.android.com/tools">
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:fillViewport="true">
+        android:layout_height="fill_parent">
 
-        <RelativeLayout
+        <androidx.core.widget.NestedScrollView
+            android:id="@id/parent"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:background="@android:color/white">
+            android:fillViewport="true">
 
-            <TextView
-                android:id="@id/homepage_recap"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/headerMain"
-                android:layout_centerHorizontal="true"
-                android:gravity="center"
-                android:text="Taurus - Monday, March 29, 2021"
-                android:textColor="@color/gris"
-                android:textSize="20.0sp" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@id/recyclerView"
+            <RelativeLayout
                 android:layout_width="fill_parent"
                 android:layout_height="fill_parent"
-                android:layout_below="@id/homepage_recap"
-                android:layout_marginTop="5.0dip"
-                android:dropDownHeight="fill_parent"
-                android:focusable="false"
-                android:paddingBottom="20.0dip"
-                android:scrollbars="vertical" />
-
-            <LinearLayout
-                android:id="@id/homepage_redir_chat_layout"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/recyclerView"
-                android:orientation="vertical"
-                android:paddingBottom="20.0dip">
-
-                <ImageView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/hp_redir_chat" />
+                android:background="@android:color/white">
 
                 <TextView
-                    android:id="@id/homepage_redir_chat_title"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15.0dip"
-                    android:layout_marginRight="15.0dip"
-                    android:paddingTop="11.0dip"
-                    android:text="@string/menu_item1_txt"
-                    android:textAllCaps="true"
-                    android:textColor="@color/orange"
-                    android:textSize="22.0sp" />
-
-                <TextView
-                    android:id="@id/homepage_redir_chat_text"
+                    android:id="@id/homepage_recap"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
+                    android:layout_below="@id/headerMain"
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:text="Taurus - Monday, March 29, 2021"
+                    android:textColor="@color/gris"
+                    android:textSize="20.0sp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@id/recyclerView"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_below="@id/homepage_recap"
+                    android:layout_marginTop="5.0dip"
+                    android:dropDownHeight="fill_parent"
+                    android:focusable="false"
+                    android:paddingBottom="20.0dip"
+                    android:scrollbars="vertical" />
+
+                <LinearLayout
+                    android:id="@id/homepage_redir_chat_layout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/recyclerView"
+                    android:orientation="vertical"
+                    android:paddingBottom="20.0dip">
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/hp_redir_chat" />
+
+                    <TextView
+                        android:id="@id/homepage_redir_chat_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15.0dip"
+                        android:layout_marginRight="15.0dip"
+                        android:paddingTop="11.0dip"
+                        android:text="@string/menu_item1_txt"
+                        android:textAllCaps="true"
+                        android:textColor="@color/orange"
+                        android:textSize="22.0sp" />
+
+                    <TextView
+                        android:id="@id/homepage_redir_chat_text"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15.0dip"
+                        android:layout_marginTop="5.0dip"
+                        android:layout_marginRight="15.0dip"
+                        android:layout_marginBottom="15.0dip"
+                        android:textColor="@color/gris"
+                        android:textSize="18.0sp" />
+
+                    <RelativeLayout
+                        android:id="@id/homepage_redir_chat_button"
+                        android:layout_width="230.0dip"
+                        android:layout_height="39.0dip"
+                        android:layout_gravity="center"
+                        android:background="@drawable/rounded_button_blue"
+                        android:gravity="center">
+
+                        <TextView
+                            android:id="@id/homepage_redir_chat_button_text"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:maxLines="1"
+                            android:text="A Doubt, A Question?"
+                            android:textAllCaps="true"
+                            android:textColor="@android:color/white"
+                            android:textSize="20.0sp"
+                            tools:ignore="HardcodedText" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@id/homepage_fb_native_layout"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homepage_redir_chat_layout"
                     android:layout_marginLeft="15.0dip"
                     android:layout_marginTop="5.0dip"
                     android:layout_marginRight="15.0dip"
-                    android:layout_marginBottom="15.0dip"
-                    android:textColor="@color/gris"
-                    android:textSize="18.0sp" />
+                    android:layout_marginBottom="5.0dip" />
 
-                <RelativeLayout
-                    android:id="@id/homepage_redir_chat_button"
-                    android:layout_width="230.0dip"
-                    android:layout_height="39.0dip"
-                    android:layout_gravity="center"
-                    android:background="@drawable/rounded_button_blue"
-                    android:gravity="center">
+                <LinearLayout
+                    android:id="@id/homepage_redir_horoperso"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homepage_fb_native_layout"
+                    android:layout_marginLeft="15.0dip"
+                    android:layout_marginTop="15.0dip"
+                    android:layout_marginRight="15.0dip"
+                    android:background="@android:color/white"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/hp_redir_horoperso" />
 
                     <TextView
-                        android:id="@id/homepage_redir_chat_button_text"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:maxLines="1"
+                        android:padding="8.0dip"
+                        android:text="@string/menu_item_21_txt"
                         android:textAllCaps="true"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:textSize="20.0sp" />
-                </RelativeLayout>
-            </LinearLayout>
-
-            <RelativeLayout
-                android:id="@id/homepage_fb_native_layout"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/homepage_redir_chat_layout"
-                android:layout_marginLeft="15.0dip"
-                android:layout_marginTop="5.0dip"
-                android:layout_marginRight="15.0dip"
-                android:layout_marginBottom="5.0dip" />
-
-            <LinearLayout
-                android:id="@id/homepage_redir_horoperso"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/homepage_fb_native_layout"
-                android:layout_marginLeft="15.0dip"
-                android:layout_marginTop="15.0dip"
-                android:layout_marginRight="15.0dip"
-                android:background="@android:color/white"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/hp_redir_horoperso" />
-
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:padding="8.0dip"
-                    android:text="@string/menu_item_21_txt"
-                    android:textAllCaps="true"
-                    android:textColor="@android:color/black"
-                    android:textSize="20.0sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@id/homepage_redir_compat"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/homepage_redir_horoperso"
-                android:layout_marginLeft="15.0dip"
-                android:layout_marginTop="15.0dip"
-                android:layout_marginRight="15.0dip"
-                android:background="@android:color/white"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/hp_redir_compat" />
-
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:padding="8.0dip"
-                    android:text="@string/menu_item_22_txt"
-                    android:textAllCaps="true"
-                    android:textColor="@android:color/black"
-                    android:textSize="20.0sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@id/homepage_redir_horosaiso"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/homepage_redir_compat"
-                android:layout_marginLeft="15.0dip"
-                android:layout_marginTop="15.0dip"
-                android:layout_marginRight="15.0dip"
-                android:layout_marginBottom="15.0dip"
-                android:background="@android:color/white"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/hp_redir_horosaiso" />
-
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:padding="8.0dip"
-                    android:text="@string/menu_item_23_txt"
-                    android:textAllCaps="true"
-                    android:textColor="@android:color/black"
-                    android:textSize="20.0sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@id/homepage_redir_profilastro"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/homepage_redir_horosaiso"
-                android:layout_marginLeft="15.0dip"
-                android:layout_marginRight="15.0dip"
-                android:layout_marginBottom="15.0dip"
-                android:background="@android:color/white"
-                android:orientation="vertical">
-
-                <ImageView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:src="@drawable/hp_redir_profilastro" />
-
-                <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:padding="8.0dip"
-                    android:text="@string/menu_item_24_txt"
-                    android:textAllCaps="true"
-                    android:textColor="@android:color/black"
-                    android:textSize="20.0sp" />
-            </LinearLayout>
-
-            <RelativeLayout
-                android:id="@id/headerMain"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:layout_width="1000.0dip"
-                    android:layout_height="275.0dip"
-                    android:adjustViewBounds="true"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/main_header" />
-
-                <ImageView
-                    android:id="@id/hp_barometre"
-                    android:layout_width="160.0dip"
-                    android:layout_height="160.0dip"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="30.0dip"
-                    android:src="@drawable/homepage_baro" />
-
-                <ImageView
-                    android:id="@id/hp_sign"
-                    android:layout_width="60.0dip"
-                    android:layout_height="60.0dip"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="72.0dip"
-                    android:src="@drawable/s3_hp" />
-
-                <TextView
-                    android:id="@id/hp_year"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="70.0dip"
-                    android:textColor="@android:color/white"
-                    android:textSize="66.0sp"
-                    android:visibility="gone" />
-
-                <LinearLayout
-                    android:id="@id/meteo_month"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="80.0dip"
-                    android:gravity="center_horizontal"
-                    android:orientation="vertical"
-                    android:visibility="gone">
-
-                    <ImageView
-                        android:id="@id/meteo_month_img"
-                        android:layout_width="44.0dip"
-                        android:layout_height="44.0dip"
-                        android:src="@drawable/m6" />
-
-                    <TextView
-                        android:id="@id/meteo_month_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="AMOUR"
-                        android:textAllCaps="true"
-                        android:textColor="@android:color/white"
-                        android:textSize="18.0sp" />
                 </LinearLayout>
 
-                <Space
-                    android:id="@id/hp_space1"
-                    android:layout_width="50.0dip"
-                    android:layout_height="0.0dip"
-                    android:layout_centerHorizontal="true" />
-
-                <Space
-                    android:id="@id/hp_space2"
-                    android:layout_width="140.0dip"
-                    android:layout_height="0.0dip"
-                    android:layout_centerHorizontal="true" />
-
-                <RelativeLayout
+                <LinearLayout
+                    android:id="@id/homepage_redir_compat"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="19.0dip"
-                    android:gravity="center_horizontal"
-                    android:scrollX="25.0dip">
+                    android:layout_below="@id/homepage_redir_horoperso"
+                    android:layout_marginLeft="15.0dip"
+                    android:layout_marginTop="15.0dip"
+                    android:layout_marginRight="15.0dip"
+                    android:background="@android:color/white"
+                    android:orientation="vertical">
 
-                    <LinearLayout
-                        android:id="@id/meteo_layout1"
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/hp_redir_compat" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="8.0dip"
+                        android:text="@string/menu_item_22_txt"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/black"
+                        android:textSize="20.0sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/homepage_redir_horosaiso"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homepage_redir_compat"
+                    android:layout_marginLeft="15.0dip"
+                    android:layout_marginTop="15.0dip"
+                    android:layout_marginRight="15.0dip"
+                    android:layout_marginBottom="15.0dip"
+                    android:background="@android:color/white"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/hp_redir_horosaiso" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="8.0dip"
+                        android:text="@string/menu_item_23_txt"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/black"
+                        android:textSize="20.0sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@id/homepage_redir_profilastro"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/homepage_redir_horosaiso"
+                    android:layout_marginLeft="15.0dip"
+                    android:layout_marginRight="15.0dip"
+                    android:layout_marginBottom="15.0dip"
+                    android:background="@android:color/white"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/hp_redir_profilastro" />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="8.0dip"
+                        android:text="@string/menu_item_24_txt"
+                        android:textAllCaps="true"
+                        android:textColor="@android:color/black"
+                        android:textSize="20.0sp" />
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@id/headerMain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="1000.0dip"
+                        android:layout_height="275.0dip"
+                        android:adjustViewBounds="true"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/main_header" />
+
+                    <ImageView
+                        android:id="@id/hp_barometre"
+                        android:layout_width="160.0dip"
+                        android:layout_height="160.0dip"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="30.0dip"
+                        android:src="@drawable/homepage_baro" />
+
+                    <ImageView
+                        android:id="@id/hp_sign"
+                        android:layout_width="60.0dip"
+                        android:layout_height="60.0dip"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="72.0dip"
+                        android:src="@drawable/s3_hp" />
+
+                    <TextView
+                        android:id="@id/hp_year"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="70.0dip"
+                        android:textColor="@android:color/white"
+                        android:textSize="66.0sp"
+                        android:visibility="visible" />
+
+                    <LinearLayout
+                        android:id="@id/meteo_month"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="80.0dip"
                         android:gravity="center_horizontal"
                         android:orientation="vertical"
                         android:visibility="gone">
 
                         <ImageView
-                            android:id="@id/meteo_img1"
-                            android:layout_width="30.0dip"
-                            android:layout_height="30.0dip"
+                            android:id="@id/meteo_month_img"
+                            android:layout_width="44.0dip"
+                            android:layout_height="44.0dip"
                             android:src="@drawable/m6" />
 
                         <TextView
-                            android:id="@id/meteo_text1"
+                            android:id="@id/meteo_month_text"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/hp_quot_rub1_titre"
+                            android:text="AMOUR"
                             android:textAllCaps="true"
                             android:textColor="@android:color/white"
-                            android:textSize="16.0sp" />
+                            android:textSize="18.0sp" />
                     </LinearLayout>
-                </RelativeLayout>
 
-                <RelativeLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="103.0dip"
-                    android:gravity="center_horizontal"
-                    android:scrollX="80.0dip">
+                    <Space
+                        android:id="@id/hp_space1"
+                        android:layout_width="50.0dip"
+                        android:layout_height="0.0dip"
+                        android:layout_centerHorizontal="true" />
 
-                    <LinearLayout
-                        android:id="@id/meteo_layout2"
-                        android:layout_width="wrap_content"
+                    <Space
+                        android:id="@id/hp_space2"
+                        android:layout_width="140.0dip"
+                        android:layout_height="0.0dip"
+                        android:layout_centerHorizontal="true" />
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="19.0dip"
                         android:gravity="center_horizontal"
-                        android:orientation="vertical"
-                        android:visibility="gone">
+                        android:scrollX="25.0dip">
 
-                        <ImageView
-                            android:id="@id/meteo_img2"
-                            android:layout_width="30.0dip"
-                            android:layout_height="30.0dip"
-                            android:src="@drawable/m5" />
-
-                        <TextView
-                            android:id="@id/meteo_text2"
+                        <LinearLayout
+                            android:id="@id/meteo_layout1"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/hp_quot_rub2_titre"
-                            android:textAllCaps="true"
-                            android:textColor="@android:color/white"
-                            android:textSize="16.0sp" />
-                    </LinearLayout>
-                </RelativeLayout>
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            android:visibility="visible">
 
-                <RelativeLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginTop="170.0dip"
-                    android:gravity="center_horizontal"
-                    android:scrollX="-25.0dip">
+                            <ImageView
+                                android:id="@id/meteo_img1"
+                                android:layout_width="30.0dip"
+                                android:layout_height="30.0dip"
+                                android:src="@drawable/m6" />
 
-                    <LinearLayout
-                        android:id="@id/meteo_layout3"
-                        android:layout_width="wrap_content"
+                            <TextView
+                                android:id="@id/meteo_text1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/hp_quot_rub1_titre"
+                                android:textAllCaps="true"
+                                android:textColor="@android:color/white"
+                                android:textSize="16.0sp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="103.0dip"
                         android:gravity="center_horizontal"
-                        android:orientation="vertical"
-                        android:visibility="gone">
+                        android:scrollX="80.0dip">
 
-                        <ImageView
-                            android:id="@id/meteo_img3"
-                            android:layout_width="30.0dip"
-                            android:layout_height="30.0dip"
-                            android:src="@drawable/m2" />
-
-                        <TextView
-                            android:id="@id/meteo_text3"
+                        <LinearLayout
+                            android:id="@id/meteo_layout2"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/hp_quot_rub3_titre"
-                            android:textAllCaps="true"
-                            android:textColor="@android:color/white"
-                            android:textSize="16.0sp" />
-                    </LinearLayout>
-                </RelativeLayout>
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            android:visibility="visible">
 
-                <RelativeLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_alignTop="@id/hp_barometre"
-                    android:layout_alignParentStart="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_marginTop="22.0dip"
-                    android:gravity="center_horizontal"
-                    android:scrollX="-70.0dip">
+                            <ImageView
+                                android:id="@id/meteo_img2"
+                                android:layout_width="30.0dip"
+                                android:layout_height="30.0dip"
+                                android:src="@drawable/m5" />
 
-                    <LinearLayout
-                        android:id="@id/meteo_layout4"
-                        android:layout_width="wrap_content"
+                            <TextView
+                                android:id="@id/meteo_text2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/hp_quot_rub2_titre"
+                                android:textAllCaps="true"
+                                android:textColor="@android:color/white"
+                                android:textSize="16.0sp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="170.0dip"
                         android:gravity="center_horizontal"
-                        android:orientation="vertical"
-                        android:visibility="gone">
+                        android:scrollX="-25.0dip">
 
-                        <ImageView
-                            android:id="@id/meteo_img4"
-                            android:layout_width="30.0dip"
-                            android:layout_height="30.0dip"
-                            android:src="@drawable/m3" />
-
-                        <TextView
-                            android:id="@id/meteo_text4"
+                        <LinearLayout
+                            android:id="@id/meteo_layout3"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/hp_quot_rub4_titre"
-                            android:textAllCaps="true"
-                            android:textColor="@android:color/white"
-                            android:textSize="16.0sp" />
-                    </LinearLayout>
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <ImageView
+                                android:id="@id/meteo_img3"
+                                android:layout_width="30.0dip"
+                                android:layout_height="30.0dip"
+                                android:src="@drawable/m2" />
+
+                            <TextView
+                                android:id="@id/meteo_text3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/hp_quot_rub3_titre"
+                                android:textAllCaps="true"
+                                android:textColor="@android:color/white"
+                                android:textSize="16.0sp" />
+                        </LinearLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@id/hp_barometre"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_marginTop="22.0dip"
+                        android:gravity="center_horizontal"
+                        android:scrollX="-70.0dip">
+
+                        <LinearLayout
+                            android:id="@id/meteo_layout4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_horizontal"
+                            android:orientation="vertical"
+                            android:visibility="visible">
+
+                            <ImageView
+                                android:id="@id/meteo_img4"
+                                android:layout_width="30.0dip"
+                                android:layout_height="30.0dip"
+                                android:src="@drawable/m3" />
+
+                            <TextView
+                                android:id="@id/meteo_text4"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/hp_quot_rub4_titre"
+                                android:textAllCaps="true"
+                                android:textColor="@android:color/white"
+                                android:textSize="16.0sp" />
+                        </LinearLayout>
+                    </RelativeLayout>
                 </RelativeLayout>
             </RelativeLayout>
-        </RelativeLayout>
-    </androidx.core.widget.NestedScrollView>
-</FrameLayout>
+        </androidx.core.widget.NestedScrollView>
+    </FrameLayout>
+</layout>

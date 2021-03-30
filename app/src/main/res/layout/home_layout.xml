@@ -1,74 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android" >
-    <ScrollView
-        android:id="@id/scrollViewDrawer"
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:fillViewport="true">
+        android:fitsSystemWindows="true">
 
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@color/colorPrimary"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@id/navList"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:layout_gravity="start"
-                android:childDivider="@android:color/transparent"
-                android:divider="#99ffffff"
-                android:dividerHeight="1.0dip"
-                android:groupIndicator="@null"
-                android:scrollingCache="false" />
-
-            <LinearLayout
-                android:id="@id/menu_footer"
-                android:layout_width="fill_parent"
-                android:layout_height="140.0dip"
-                android:layout_below="@id/navList"
-                android:layout_alignParentBottom="true"
-                android:orientation="vertical">
-
-                <androidx.viewpager.widget.ViewPager
-                    android:id="@id/apps_viewpager"
-                    android:layout_width="fill_parent"
-                    android:layout_height="120.0dip" />
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#ff49565e"
-                    android:gravity="center"
-                    android:orientation="horizontal"
-                    android:paddingBottom="5.0dip">
-
-                    <ImageView
-                        android:id="@id/menu_pageview1"
-                        android:layout_width="9.0dip"
-                        android:layout_height="9.0dip"
-                        android:layout_marginRight="3.0dip"
-                        android:src="@drawable/menu_dotnav_on" />
-
-                    <ImageView
-                        android:id="@id/menu_pageview2"
-                        android:layout_width="9.0dip"
-                        android:layout_height="9.0dip"
-                        android:layout_marginLeft="5.0dip"
-                        android:layout_marginRight="3.0dip"
-                        android:src="@drawable/menu_dotnav_off" />
-
-                    <ImageView
-                        android:id="@id/menu_pageview3"
-                        android:layout_width="9.0dip"
-                        android:layout_height="9.0dip"
-                        android:layout_marginLeft="5.0dip"
-                        android:layout_marginRight="3.0dip"
-                        android:src="@drawable/menu_dotnav_off" />
-                </LinearLayout>
-            </LinearLayout>
-        </RelativeLayout>
-    </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

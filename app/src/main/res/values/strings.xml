@@ -48,5 +48,9 @@
     <string name="compatam_p4_rub3_titre" tools:ignore="MissingTranslation">STRENGTHS</string>
     <string name="compatam_p4_rub4_titre" tools:ignore="MissingTranslation">WEAKNESSES</string>
     <string name="compatam_p4_btn" tools:ignore="MissingTranslation">START AGAIN</string>
+    <string name="a_doubt_a_question" tools:ignore="MissingTranslation">A doubt, a question?</string>
+    <string name="horoperso_rub1" tools:ignore="MissingTranslation">Influence positiva</string>
+    <string name="horoperso_rub2" tools:ignore="MissingTranslation">Influence negativa</string>
+    <string name="your_profile">Astro Profile</string>
 
 </resources>

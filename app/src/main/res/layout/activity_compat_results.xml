@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@id/compat_results_main_layout"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
@@ -14,14 +14,17 @@
 
         <ImageView
             android:id="@id/compat_results_close"
-            android:layout_width="44.0dip"
-            android:layout_height="44.0dip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:adjustViewBounds="true"
-            android:paddingTop="13.0dip"
-            android:paddingRight="5.0dip"
-            android:paddingBottom="15.0dip"
-            android:src="@drawable/menu_close" />
+            android:layout_marginStart="@dimen/_5sdp"
+            android:src="@drawable/menu_close"
+            android:paddingStart="@dimen/_2sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_2sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:layout_width="fill_parent"
@@ -30,20 +33,22 @@
             android:text="@string/menu_item_22_txt"
             android:textAllCaps="true"
             android:textColor="@android:color/white"
-            android:textSize="19.0sp" />
+            android:textSize="19sp" />
 
         <ImageView
             android:id="@id/compat_results_font_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:adjustViewBounds="true"
-            android:paddingLeft="5.0dip"
-            android:paddingTop="10.0dip"
-            android:paddingRight="4.0dip"
-            android:paddingBottom="10.0dip"
-            android:src="@drawable/font_size" />
+            android:paddingStart="@dimen/_2sdp"
+            android:paddingTop="@dimen/_5sdp"
+            android:paddingEnd="@dimen/_2sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:src="@drawable/font_size"
+            tools:ignore="ContentDescription" />
     </RelativeLayout>
 
     <androidx.core.widget.NestedScrollView
@@ -63,7 +68,8 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="true"
-                android:src="@drawable/compat_results_top" />
+                android:src="@drawable/compat_results_top"
+                tools:ignore="ContentDescription" />
 
             <ImageView
                 android:id="@id/compat_baro"
@@ -71,7 +77,8 @@
                 android:layout_height="155.0dip"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="30.0dip"
-                android:src="@drawable/compat_results_baro" />
+                android:src="@drawable/compat_results_baro"
+                tools:ignore="ContentDescription" />
 
             <ProgressBar
                 android:id="@id/ring_progress"
@@ -90,21 +97,23 @@
                 android:alpha="0.85"
                 android:text="50%"
                 android:textColor="@android:color/white"
-                android:textSize="34.0sp" />
+                android:textSize="34.0sp"
+                tools:ignore="HardcodedText" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
                 android:layout_marginTop="40.0dip"
-                android:layout_toLeftOf="@id/ring_progress"
+                android:layout_toStartOf="@id/ring_progress"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                tools:ignore="UseCompoundDrawables">
 
                 <ImageView
                     android:id="@id/compat_results_sign_left_img"
-                    android:layout_width="38.0dip"
-                    android:layout_height="38.0dip"
+                    android:layout_width="@dimen/_30sdp"
+                    android:layout_height="@dimen/_30sdp"
                     android:adjustViewBounds="true"
                     android:src="@drawable/s1_wh" />
 
@@ -112,20 +121,21 @@
                     android:id="@id/compat_results_sign_left_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="CAPRICORNE"
+                    android:text="@string/capricorn"
                     android:textAllCaps="true"
                     android:textColor="@android:color/white"
-                    android:textSize="16.0sp" />
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
                 android:layout_marginTop="110.0dip"
-                android:layout_toRightOf="@id/ring_progress"
+                android:layout_toEndOf="@id/ring_progress"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                tools:ignore="UseCompoundDrawables">
 
                 <ImageView
                     android:id="@id/compat_results_sign_right_img"
@@ -138,10 +148,10 @@
                     android:id="@id/compat_results_sign_right_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="CAPRICORNE"
+                    android:text="@string/aries"
                     android:textAllCaps="true"
                     android:textColor="@android:color/white"
-                    android:textSize="16.0sp" />
+                    android:textSize="12sp" />
             </LinearLayout>
 
             <TextView
@@ -150,13 +160,14 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/compat_results_top_img"
                 android:layout_centerHorizontal="true"
-                android:paddingLeft="20.0dip"
-                android:paddingTop="5.0dip"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingTop="@dimen/_2sdp"
                 android:text="Your lively nature works wonders, he/she likes puns and a good sense of humor!"
-                android:paddingRight="18.0dip"
-                android:paddingBottom="15.0dip"
+                android:paddingEnd="@dimen/_15sdp"
+                android:paddingBottom="@dimen/_10sdp"
                 android:textColor="@color/gris"
-                android:textSize="18.0sp" />
+                android:textSize="18sp"
+                tools:ignore="HardcodedText" />
 
             <LinearLayout
                 android:id="@id/compat_results_title_conseil"
@@ -167,13 +178,15 @@
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:paddingTop="5.0dip"
-                android:paddingBottom="5.0dip">
+                android:paddingBottom="5.0dip"
+                tools:ignore="UseCompoundDrawables">
 
                 <ImageView
-                    android:layout_width="20.0dip"
-                    android:layout_height="20.0dip"
-                    android:layout_marginRight="10.0dip"
-                    android:src="@drawable/compat_results_conseil" />
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:layout_marginEnd="@dimen/_8sdp"
+                    android:src="@drawable/compat_results_conseil"
+                    tools:ignore="ContentDescription" />
 
                 <TextView
                     android:id="@id/compat_results_titltext_conseil"
@@ -181,21 +194,23 @@
                     android:layout_height="wrap_content"
                     android:text="@string/compatam_p4_rub1_titre"
                     android:textColor="@color/gris"
-                    android:textSize="22.0sp" />
+                    android:textSize="22sp" />
             </LinearLayout>
 
             <TextView
                 android:id="@id/compat_results_text_conseil"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/compat_results_title_conseil"
-                android:paddingLeft="20.0dip"
-                android:paddingTop="5.0dip"
-                android:paddingRight="18.0dip"
+                android:layout_centerHorizontal="true"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingTop="@dimen/_2sdp"
+                android:paddingEnd="@dimen/_15sdp"
+                android:paddingBottom="@dimen/_10sdp"
                 android:text="Your lively nature works wonders, he/she likes puns and a good sense of humor!"
-                android:paddingBottom="15.0dip"
                 android:textColor="@color/gris"
-                android:textSize="18.0sp" />
+                android:textSize="18sp"
+                tools:ignore="HardcodedText"  />
 
             <LinearLayout
                 android:id="@id/compat_results_title_enbref"
@@ -205,14 +220,16 @@
                 android:layout_centerHorizontal="true"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:paddingTop="5.0dip"
-                android:paddingBottom="5.0dip">
+                android:paddingTop="@dimen/_3sdp"
+                android:paddingBottom="@dimen/_3sdp"
+                tools:ignore="UseCompoundDrawables">
 
                 <ImageView
                     android:layout_width="20.0dip"
                     android:layout_height="20.0dip"
-                    android:layout_marginRight="10.0dip"
-                    android:src="@drawable/compat_results_enbref" />
+                    android:layout_marginEnd="10.0dip"
+                    android:src="@drawable/compat_results_enbref"
+                    tools:ignore="ContentDescription" />
 
                 <TextView
                     android:id="@id/compat_results_titltext_enbref"
@@ -225,16 +242,18 @@
 
             <TextView
                 android:id="@id/compat_results_text_enbref"
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/compat_results_title_enbref"
-                android:paddingLeft="20.0dip"
-                android:paddingTop="5.0dip"
-                android:text="Both independent people, you are happy to be able to live your life!"
-                android:paddingRight="18.0dip"
-                android:paddingBottom="15.0dip"
+                android:layout_centerHorizontal="true"
+                android:paddingStart="@dimen/_15sdp"
+                android:paddingTop="@dimen/_2sdp"
+                android:text="Your lively nature works wonders, he/she likes puns and a good sense of humor!"
+                android:paddingEnd="@dimen/_15sdp"
+                android:paddingBottom="@dimen/_10sdp"
                 android:textColor="@color/gris"
-                android:textSize="18.0sp" />
+                android:textSize="18sp"
+                tools:ignore="HardcodedText"  />
 
             <LinearLayout
                 android:id="@id/compat_results_points"
@@ -244,28 +263,29 @@
                 android:baselineAligned="false"
                 android:orientation="horizontal"
                 android:weightSum="2"
-                android:paddingTop="5.0dip"
-                android:paddingBottom="25.0dip">
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_20sdp">
 
                 <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:paddingLeft="5.0dip"
-                    android:paddingRight="5.0dip">
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_5sdp">
 
                     <LinearLayout
                         android:id="@id/compat_results_title_pt_fort"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="15.0dip"
+                        android:layout_marginStart="@dimen/_10sdp"
                         android:gravity="center_vertical"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        tools:ignore="UseCompoundDrawables">
 
                         <ImageView
-                            android:layout_width="20.0dip"
-                            android:layout_height="20.0dip"
-                            android:layout_marginRight="10.0dip"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:layout_marginEnd="@dimen/_5sdp"
                             android:src="@drawable/compat_results_fort" />
 
                         <TextView
@@ -275,7 +295,7 @@
                             android:maxLines="1"
                             android:text="@string/compatam_p4_rub3_titre"
                             android:textColor="@color/gris"
-                            android:textSize="22.0sp" />
+                            android:textSize="22sp" />
                     </LinearLayout>
 
                     <TextView
@@ -283,9 +303,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/compat_results_title_pt_fort"
-                        android:paddingLeft="35.0dip"
+                        android:layout_marginStart="@dimen/_10sdp"
+                        android:gravity="center"
                         android:text="@string/aries"
-                        android:paddingTop="5.0dip"
+                        android:paddingTop="@dimen/_3sdp"
                         android:textColor="@color/gris"
                         android:textSize="18.0sp" />
                 </RelativeLayout>
@@ -294,21 +315,22 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:paddingLeft="5.0dip"
-                    android:paddingRight="5.0dip">
+                    android:paddingLeft="@dimen/_5sdp"
+                    android:paddingRight="@dimen/_5sdp">
 
                     <LinearLayout
                         android:id="@id/compat_results_title_pt_faible"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="1.0dip"
+                        android:layout_marginEnd="@dimen/_10sdp"
                         android:gravity="center_vertical"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        tools:ignore="UseCompoundDrawables">
 
                         <ImageView
-                            android:layout_width="20.0dip"
-                            android:layout_height="20.0dip"
-                            android:layout_marginRight="10.0dip"
+                            android:layout_width="@dimen/_15sdp"
+                            android:layout_height="@dimen/_15sdp"
+                            android:layout_marginEnd="@dimen/_5sdp"
                             android:src="@drawable/compat_results_faible" />
 
                         <TextView
@@ -318,7 +340,7 @@
                             android:maxLines="1"
                             android:text="@string/compatam_p4_rub4_titre"
                             android:textColor="@color/gris"
-                            android:textSize="22.0sp" />
+                            android:textSize="22sp" />
                     </LinearLayout>
 
                     <TextView
@@ -326,18 +348,19 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_below="@id/compat_results_title_pt_faible"
-                        android:paddingLeft="35.0dip"
                         android:text="@string/scorpio"
                         android:paddingTop="5.0dip"
+                        android:gravity="center"
+                        android:layout_marginEnd="@dimen/_10sdp"
                         android:textColor="@color/gris"
-                        android:textSize="18.0sp" />
+                        android:textSize="18sp" />
                 </RelativeLayout>
             </LinearLayout>
 
             <RelativeLayout
                 android:id="@id/compat_results_again"
-                android:layout_width="220.0dip"
-                android:layout_height="38.0dip"
+                android:layout_width="@dimen/_200sdp"
+                android:layout_height="@dimen/_30sdp"
                 android:layout_below="@id/compat_results_points"
                 android:layout_centerHorizontal="true"
                 android:background="@drawable/rounded_button_white"
@@ -350,7 +373,7 @@
                     android:text="@string/compatam_p4_btn"
                     android:textAllCaps="true"
                     android:textColor="@android:color/black"
-                    android:textSize="21.0sp" />
+                    android:textSize="21sp" />
             </RelativeLayout>
 
             <LinearLayout
@@ -359,8 +382,8 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/compat_results_again"
                 android:orientation="vertical"
-                android:paddingTop="20.0dip"
-                android:paddingBottom="20.0dip">
+                android:paddingTop="@dimen/_15sdp"
+                android:paddingBottom="@dimen/_15sdp">
 
                 <ImageView
                     android:layout_width="fill_parent"
@@ -372,30 +395,31 @@
                     android:id="@id/compat_results_redir_chat_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15.0dip"
-                    android:layout_marginRight="15.0dip"
-                    android:paddingTop="11.0dip"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingTop="@dimen/_2sdp"
                     android:text="let's chat"
                     android:textAllCaps="true"
                     android:textColor="@android:color/black"
-                    android:textSize="@dimen/_12sdp" />
+                    android:textSize="@dimen/_12sdp"
+                    tools:ignore="HardcodedText,RtlSymmetry" />
 
                 <TextView
                     android:id="@id/compat_results_redir_chat_text"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15.0dip"
-                    android:layout_marginTop="5.0dip"
-                    android:layout_marginRight="15.0dip"
-                    android:layout_marginBottom="15.0dip"
+                    android:paddingStart="@dimen/_15sdp"
+                    android:paddingTop="@dimen/_2sdp"
+                    android:paddingEnd="@dimen/_15sdp"
+                    android:paddingBottom="@dimen/_10sdp"
                     android:text="Do not keep those confusing thoughts to youself. \nOur best psychics are waiting to answer all your questions."
                     android:textColor="@android:color/black"
-                    android:textSize="@dimen/_10sdp" />
+                    android:textSize="@dimen/_10sdp"
+                    tools:ignore="HardcodedText" />
 
                 <RelativeLayout
                     android:id="@id/compat_results_redir_chat_button"
-                    android:layout_width="230.0dip"
-                    android:layout_height="39.0dip"
+                    android:layout_width="@dimen/_200sdp"
+                    android:layout_height="@dimen/_30sdp"
                     android:layout_gravity="center"
                     android:background="@drawable/rounded_button_blue"
                     android:gravity="center">
@@ -405,7 +429,7 @@
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:text="A doubt, a question?"
+                        android:text="@string/a_doubt_a_question"
                         android:textAllCaps="true"
                         android:textColor="@android:color/white"
                         android:textSize="@dimen/_10sdp" />
