@@ -51,6 +51,7 @@
     <string name="a_doubt_a_question" tools:ignore="MissingTranslation">A doubt, a question?</string>
     <string name="horoperso_rub1" tools:ignore="MissingTranslation">Influence positiva</string>
     <string name="horoperso_rub2" tools:ignore="MissingTranslation">Influence negativa</string>
-    <string name="your_profile">Astro Profile</string>
+    <string name="your_profile" tools:ignore="MissingTranslation">Astro Profile</string>
+    <string name="do_you_really_want_to_exit" tools:ignore="MissingTranslation">Do you really want to exit ???</string>
 
 </resources>

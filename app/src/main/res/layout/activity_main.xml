@@ -31,6 +31,7 @@
                         app:navigationIcon="@drawable/menu"
                         >
                         <ImageView
+                            android:id="@+id/logo_sign"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
                             android:src="@drawable/s11_wh"

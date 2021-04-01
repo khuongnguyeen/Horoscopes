@@ -320,8 +320,8 @@
     <item type="id" name="compat_results_sign_left_text" />
     <item type="id" name="compat_results_sign_right_img" />
     <item type="id" name="compat_results_sign_right_text" />
-    <item type="id" name="compat_results_text_conseil" />
-    <item type="id" name="compat_results_text_enbref" />
+    <item type="id" name="tv_values" />
+    <item type="id" name="tv_love_detail" />
     <item type="id" name="compat_results_text_pt_faible" />
     <item type="id" name="compat_results_text_pt_fort" />
     <item type="id" name="compat_results_title_conseil" />
@@ -333,7 +333,7 @@
     <item type="id" name="compat_results_titltext_pt_faible" />
     <item type="id" name="compat_results_titltext_pt_fort" />
     <item type="id" name="compat_results_top_bar" />
-    <item type="id" name="compat_results_top_content" />
+    <item type="id" name="overall" />
     <item type="id" name="compat_results_top_img" />
     <item type="id" name="compat_wihs_back" />
     <item type="id" name="compat_wihs_cob" />
@@ -950,7 +950,7 @@
     <item type="id" name="ratingBarRatings" />
     <item type="id" name="rating_bar" />
     <item type="id" name="rating_barRand" />
-    <item type="id" name="recyclerView" />
+    <item type="id" name="tv_description" />
     <item type="id" name="recyclerview" />
     <item type="id" name="recyclerview_swipe" />
     <item type="id" name="redir_store" />

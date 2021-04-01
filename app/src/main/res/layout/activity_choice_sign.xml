@@ -30,249 +30,144 @@
             app:layout_constraintTop_toTopOf="parent"
             tools:ignore="RtlSymmetry" />
 
-        <LinearLayout
+
+        <TextView
+            android:id="@+id/textView2"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:gravity="center_horizontal"
-            android:orientation="vertical"
-            android:weightSum="100.0"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="0.0dip"
+            android:layout_weight="27.0"
+            android:gravity="bottom|center"
+            android:text="@string/chsign_p1_txt"
+            android:textColor="@android:color/white"
+            android:textSize="23.0sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/choice_sign_back" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_weight="30.0"
+            app:layout_constraintBottom_toTopOf="@+id/choice_sign_validate"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/textView2">
+
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/view_pager"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="@dimen/_100sdp"
+                android:layout_gravity="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@id/choice_sign_prev"
+                android:layout_width="@dimen/_36sdp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end|center"
+                android:layout_weight="11.0"
+                android:adjustViewBounds="true"
+                android:src="@drawable/choice_prev"
+                app:layout_constraintBottom_toBottomOf="@+id/view_pager"
+                app:layout_constraintEnd_toStartOf="@+id/view_pager"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/view_pager" />
+
+
+            <ImageView
+                android:id="@id/choice_sign_next"
+                android:layout_width="@dimen/_36sdp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center"
+                android:layout_weight="11.0"
+                android:adjustViewBounds="true"
+                android:minHeight="30.0dip"
+                android:src="@drawable/choice_next"
+                app:layout_constraintBottom_toBottomOf="@+id/view_pager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/view_pager"
+                app:layout_constraintTop_toTopOf="@+id/view_pager" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <RelativeLayout
+            android:id="@id/choice_sign_validate"
+            android:layout_width="220.0dip"
+            android:layout_height="0.0dip"
+            android:layout_marginBottom="56dp"
+            android:layout_weight="8.0"
+            android:background="@drawable/rounded_button_blue"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/choice_sign_go_wims_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
             <TextView
+                android:id="@id/choice_sign_validate_text"
                 android:layout_width="fill_parent"
-                android:layout_height="0.0dip"
-                android:layout_weight="27.0"
-                android:gravity="bottom|center"
-                android:text="@string/chsign_p1_txt"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:text="@string/chsign_p1_cta"
                 android:textColor="@android:color/white"
-                android:textSize="23.0sp" />
+                android:textSize="21.0sp" />
 
-            <RelativeLayout
-                android:layout_width="fill_parent"
-                android:layout_height="0.0dip"
-                android:layout_weight="30.0">
+            <ProgressBar
+                android:id="@id/choice_sign_validate_progressBar"
+                style="?android:progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:visibility="invisible"
+                android:layout_margin="7.0dip"
+                android:indeterminate="true" />
+        </RelativeLayout>
 
-                <RelativeLayout
-                    android:id="@id/pager_container"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:background="@android:color/transparent">
+        <RelativeLayout
+            android:id="@id/choice_sign_go_wims_layout"
+            android:layout_width="fill_parent"
+            android:layout_height="0.0dip"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="56dp"
+            android:layout_weight="12.0"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
 
-                    <androidx.viewpager.widget.ViewPager
-                        android:layout_width="80.0dip"
-                        android:layout_height="80.0dip"
-                        android:layout_gravity="center" />
-                </RelativeLayout>
+            <TextView
+                android:id="@id/choice_sign_go_wims"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/chsign_p1_btn"
+                android:textColor="@android:color/white"
+                android:textSize="15.5sp" />
 
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:orientation="vertical"
-                    android:weightSum="100.0">
-
-                    <View
-                        android:layout_width="fill_parent"
-                        android:layout_height="0.0dip"
-                        android:layout_weight="40.0" />
-
-                    <LinearLayout
-                        android:layout_width="fill_parent"
-                        android:layout_height="0.0dip"
-                        android:layout_weight="16.0"
-                        android:orientation="horizontal"
-                        android:weightSum="100.0">
-
-                        <View
-                            android:layout_width="0.0dip"
-                            android:layout_height="fill_parent"
-                            android:layout_weight="28.0"
-                            tools:ignore="NestedWeights" />
-
-                        <ImageView
-                            android:id="@id/choice_sign_prev"
-                            android:layout_width="0.0dip"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="end|center"
-                            android:layout_weight="11.0"
-                            android:adjustViewBounds="true"
-                            android:src="@drawable/choice_prev" />
-
-                        <View
-                            android:layout_width="0.0dip"
-                            android:layout_height="fill_parent"
-                            android:layout_weight="22.0" />
-
-                        <ImageView
-                            android:id="@id/choice_sign_next"
-                            android:layout_width="0.0dip"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="start|center"
-                            android:layout_weight="11.0"
-                            android:adjustViewBounds="true"
-                            android:minHeight="30.0dip"
-                            android:src="@drawable/choice_next" />
-
-                        <View
-                            android:layout_width="0.0dip"
-                            android:layout_height="fill_parent"
-                            android:layout_weight="28.0" />
-                    </LinearLayout>
-
-                    <View
-                        android:layout_width="fill_parent"
-                        android:layout_height="0.0dip"
-                        android:layout_weight="22.0" />
-
-                    <TextView
-                        android:id="@id/choice_sign_text"
-                        android:layout_width="fill_parent"
-                        android:layout_height="0.0dip"
-                        android:layout_weight="20.0"
-                        android:gravity="center"
-                        android:text="BELIER"
-                        android:textAllCaps="true"
-                        android:textColor="@android:color/white"
-                        android:textSize="24.0sp" />
-                </LinearLayout>
-            </RelativeLayout>
-
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="0.0dip"
-                android:layout_weight="6.0" />
-
-            <RelativeLayout
-                android:id="@id/choice_sign_validate"
-                android:layout_width="220.0dip"
-                android:layout_height="0.0dip"
-                android:layout_weight="8.0"
-                android:background="@drawable/rounded_button_blue"
-                android:gravity="center">
-
-                <TextView
-                    android:id="@id/choice_sign_validate_text"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:gravity="center"
-                    android:text="@string/chsign_p1_cta"
-                    android:textColor="@android:color/white"
-                    android:textSize="21.0sp" />
-
-                <ProgressBar
-                    android:id="@id/choice_sign_validate_progressBar"
-                    style="?android:progressBarStyle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:layout_gravity="center"
-                    android:layout_margin="7.0dip"
-                    android:indeterminate="true" />
-            </RelativeLayout>
-
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="0.0dip"
-                android:layout_weight="4.0" />
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@id/choice_sign_my_sign_layout"
-                android:layout_width="fill_parent"
-                android:layout_height="0.0dip"
-                android:layout_gravity="center_vertical"
-                android:layout_weight="8.0">
-
-                <TextView
-                    android:id="@id/choice_sign_my_sign_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="fill_parent"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:gravity="center"
-                    android:text="@string/case_cmonsign_txt"
-                    android:textColor="@android:color/white"
-                    android:textSize="18.0sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    tools:layout_editor_absoluteY="0dp" />
-
-                <CheckBox
-                    android:id="@id/choice_checkbox"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toLeftOf="@id/choice_sign_my_sign_text"
-                    android:button="@drawable/custom_checkbox_choice_sign"
-                    android:checked="true"
-                    android:scaleX="0.4"
-                    android:scaleY="0.44"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/choice_sign_my_sign_text"
-                    app:layout_constraintTop_toTopOf="@+id/choice_sign_my_sign_text" />
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/choice_sign_go_wims"
+                android:layout_alignBottom="@id/choice_sign_go_wims"
+                android:layout_marginLeft="2.0dip"
+                android:layout_toRightOf="@id/choice_sign_go_wims">
 
                 <ImageView
-                    android:id="@id/choice_sign_interr"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_toRightOf="@id/choice_sign_my_sign_text"
-                    android:scaleX="0.45"
-                    android:scaleY="0.45"
-                    android:src="@drawable/interrog"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/choice_sign_my_sign_text"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    android:layout_width="9.0dip"
+                    android:layout_height="9.0dip"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="1.0dip"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/chevron" />
+            </FrameLayout>
+        </RelativeLayout>
 
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="0.0dip"
-                android:layout_weight="3.0" />
-
-            <RelativeLayout
-                android:id="@id/choice_sign_go_wims_layout"
-                android:layout_width="fill_parent"
-                android:layout_height="0.0dip"
-                android:layout_gravity="center_horizontal"
-                android:layout_weight="12.0"
-                android:gravity="center">
-
-                <TextView
-                    android:id="@id/choice_sign_go_wims"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:text="@string/chsign_p1_btn"
-                    android:textColor="@android:color/white"
-                    android:textSize="15.5sp" />
-
-                <FrameLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignTop="@id/choice_sign_go_wims"
-                    android:layout_alignBottom="@id/choice_sign_go_wims"
-                    android:layout_marginLeft="2.0dip"
-                    android:layout_toRightOf="@id/choice_sign_go_wims">
-
-                    <ImageView
-                        android:layout_width="9.0dip"
-                        android:layout_height="9.0dip"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="1.0dip"
-                        android:adjustViewBounds="true"
-                        android:src="@drawable/chevron" />
-                </FrameLayout>
-            </RelativeLayout>
-
-            <View
-                android:layout_width="fill_parent"
-                android:layout_height="0.0dip"
-                android:layout_weight="2.0" />
-        </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

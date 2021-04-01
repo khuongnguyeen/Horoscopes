@@ -27,6 +27,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activity.ChooseSignActivity"/>
+        <activity android:name=".activity.ChoiceCompatActivity"/>
+        <activity android:name=".activity.ResultCompatActivity"/>
+        <activity android:name=".activity.ProfileAstroActivity"/>
+        <activity android:name=".activity.WhatIsMySignActivity"/>
     </application>
 
 </manifest>
