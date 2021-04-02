@@ -14,8 +14,10 @@ android {
         versionCode 1
         multiDexEnabled true
         versionName "1.0"
-        dataBinding{
-            enabled=true
+        buildFeatures {
+
+            dataBinding = true
+
         }
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -78,5 +80,7 @@ dependencies {
 
 
     implementation "com.airbnb.android:lottie:3.5.0"
+
+    implementation 'com.github.jakebonk:NotifyMe:1.0.1'
 
 }

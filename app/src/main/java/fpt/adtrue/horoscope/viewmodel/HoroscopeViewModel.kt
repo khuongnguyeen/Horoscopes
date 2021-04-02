@@ -14,6 +14,8 @@ import io.reactivex.schedulers.Schedulers
 class HoroscopeViewModel {
     private val horoscopeApi: HoroscopeApi = Utils.createRetrofit()
     val data = MutableLiveData<DataHoroscope>()
+    val data1 = MutableLiveData<DataHoroscope>()
+    val data2 = MutableLiveData<DataHoroscope>()
     val isLoading= ObservableBoolean(false)
     @SuppressLint("CheckResult")
     fun getHoroscope(sign:String,day:String) {
@@ -24,7 +26,15 @@ class HoroscopeViewModel {
             .subscribe(
                 {
                     Log.e("HoroscopeViewModel", Gson().toJson(it))
-                    data.value = it
+                    if (day == "today"){
+                        data.value = it
+                    }
+                    if (day == "tomorrow"){
+                        data1.value = it
+                    }
+                    if (day == "yesterday"){
+                        data2.value = it
+                    }
                     isLoading.set(false)
                 },
                 {

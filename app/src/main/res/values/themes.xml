@@ -14,4 +14,8 @@
         <!-- Customize your theme here. -->
     </style>
     <style name="AppTheme.PopupOverlay" parent="@style/ThemeOverlay.AppCompat.Light" />
+
+    <style name="MyOverflowButtonStyle" parent="@style/ThemeOverlay.AppCompat.Light">
+        <item name="android:tint">#ffffff</item>
+    </style>
 </resources>

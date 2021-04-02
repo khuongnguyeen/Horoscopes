@@ -7,6 +7,7 @@ import androidx.databinding.DataBindingUtil
 import fpt.adtrue.horoscope.R
 import fpt.adtrue.horoscope.adapter.SignPagerAdapter
 import fpt.adtrue.horoscope.api.Utils
+import fpt.adtrue.horoscope.api.Utils.setDataLocal
 import fpt.adtrue.horoscope.application.App
 import fpt.adtrue.horoscope.databinding.ActivityCompatChoiceBinding
 
@@ -20,7 +21,7 @@ class ChoiceCompatActivity: AppCompatActivity(){
         binding.compatChoiceLeftViewpager.adapter = SignPagerAdapter(supportFragmentManager)
 
         binding.compatChoiceLeftViewpager.currentItem = App.SIGN
-        if (App.HER != 100) binding.compatChoiceRightViewpager.currentItem = App.HER
+
 
             binding.compatChoiceLeftNext.setOnClickListener {
             if (binding.compatChoiceLeftViewpager.currentItem == 11)  binding.compatChoiceLeftViewpager.currentItem = 0
@@ -33,6 +34,7 @@ class ChoiceCompatActivity: AppCompatActivity(){
         }
 
         binding.compatChoiceRightViewpager.adapter = SignPagerAdapter(supportFragmentManager)
+        if (App.HER != 100) binding.compatChoiceRightViewpager.currentItem = App.HER
         binding.compatChoiceRightNext.setOnClickListener {
             if (binding.compatChoiceRightViewpager.currentItem == 11) binding.compatChoiceRightViewpager.currentItem = 0
             else   binding.compatChoiceRightViewpager.currentItem = binding.compatChoiceRightViewpager.currentItem + 1
@@ -44,17 +46,33 @@ class ChoiceCompatActivity: AppCompatActivity(){
             print("a")
         }
 
-
+        binding.compatChoiceBack.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+            startActivity(intent)
+        }
 
         binding.compatChoiceBtn.setOnClickListener {
             App.SIGN = binding.compatChoiceLeftViewpager.currentItem
             App.HER = binding.compatChoiceRightViewpager.currentItem
-            Utils.setDataLocal( App.SIGN,applicationContext)
+            setDataLocal( App.SIGN,applicationContext)
             val intent = Intent(applicationContext, ResultCompatActivity::class.java)
             startActivities(arrayOf(intent))
         }
 
+//        compat_choice_go_wims
+        binding.compatChoiceGoWims.setOnClickListener {
+            setDataLocal( App.SIGN,applicationContext)
+            val intent = Intent(applicationContext, ChoiceSignHerActivity::class.java)
+            startActivities(arrayOf(intent))
+        }
 
+    }
+
+    override fun onBackPressed() {
+        val intent = Intent(this, MainActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+        startActivity(intent)
     }
 
 }

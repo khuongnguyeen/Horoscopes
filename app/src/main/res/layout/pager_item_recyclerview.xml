@@ -244,9 +244,9 @@
                     android:id="@+id/cardView2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_margin="@dimen/_10sdp"
+                    android:layout_margin="@dimen/_5sdp"
                     app:cardCornerRadius="@dimen/_10sdp"
-                    app:cardElevation="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_5sdp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/headerMain">
@@ -270,8 +270,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     app:cardCornerRadius="@dimen/_10sdp"
-                    android:layout_margin="@dimen/_10sdp"
-                    app:cardElevation="@dimen/_10sdp"
+                    android:layout_margin="@dimen/_5sdp"
+                    app:cardElevation="@dimen/_5sdp"
                     app:layout_constraintTop_toBottomOf="@+id/cardView2">
 
                     <TextView
@@ -294,9 +294,9 @@
                     android:id="@+id/cardView3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="@dimen/_10sdp"
+                    android:layout_margin="@dimen/_5sdp"
                     app:cardCornerRadius="@dimen/_10sdp"
-                    app:cardElevation="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_5sdp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/cardView4">
@@ -306,6 +306,7 @@
                         android:layout_height="match_parent">
 
                         <RelativeLayout
+                            android:id="@+id/relativeLayout2"
                             android:layout_width="0dp"
                             android:layout_height="0dp"
                             android:background="@color/white"
@@ -322,142 +323,197 @@
                                 android:backgroundTint="@color/red"
                                 tools:ignore="UnusedAttribute" />
                         </RelativeLayout>
-                        <TextView
-                            android:id="@+id/tv_compatibility"
-                            android:layout_width="wrap_content"
 
+                        <LinearLayout
+                            android:id="@+id/linearLayout11"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/_10sdp"
-                            android:dropDownHeight="fill_parent"
-                            android:focusable="false"
-                            android:text="Compatibility:"
-                            android:textSize="@dimen/_12sdp"
-                            android:textStyle="bold"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            android:orientation="horizontal"
+                            android:weightSum="3"
 
-                        <TextView
-                            android:id="@+id/tv_description_compatibility"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_margin="@dimen/_10sdp"
-                            android:dropDownHeight="fill_parent"
-                            android:focusable="false"
-                            android:text="Pisces"
-                            android:textSize="@dimen/_11sdp"
-                            app:layout_constraintBottom_toBottomOf="@+id/tv_compatibility"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/tv_compatibility"
-                            app:layout_constraintTop_toTopOf="@+id/tv_compatibility" />
-
-                        <TextView
-                            android:id="@+id/tv_mood"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/_10sdp"
-                            android:layout_marginTop="20dp"
-                            android:dropDownHeight="fill_parent"
-                            android:focusable="false"
-                            android:text="Mood:"
-                            android:textSize="@dimen/_12sdp"
-                            android:textStyle="bold"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tv_compatibility" />
+                            app:layout_constraintTop_toTopOf="parent">
 
-                        <TextView
-                            android:id="@+id/tv_description_mood"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/_10sdp"
-                            android:dropDownHeight="fill_parent"
-                            android:focusable="false"
-                            android:text="Diligent"
-                            android:textSize="@dimen/_11sdp"
-                            app:layout_constraintBottom_toBottomOf="@+id/tv_mood"
-                            app:layout_constraintEnd_toEndOf="@+id/tv_description_compatibility"
-                            app:layout_constraintStart_toStartOf="@+id/tv_description_compatibility"
-                            app:layout_constraintTop_toTopOf="@+id/tv_mood" />
+                            <TextView
+                                android:id="@+id/tv_compatibility"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:dropDownHeight="fill_parent"
+                                android:focusable="false"
+                                android:text="Compatibility"
+                                android:textSize="@dimen/_12sdp"
+                                android:textStyle="bold" />
 
-                        <TextView
-                            android:id="@+id/tv_color"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/_10sdp"
-                            android:dropDownHeight="fill_parent"
-                            android:focusable="false"
-                            android:text="Color:"
-                            android:textSize="@dimen/_12sdp"
-                            android:textStyle="bold"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tv_mood" />
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textStyle="bold"
+                                android:text=":" />
 
-                        <TextView
-                            android:id="@+id/tv_description_color"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/_10sdp"
-                            android:dropDownHeight="fill_parent"
-                            android:focusable="false"
-                            android:text="Silver"
-                            android:textSize="@dimen/_11sdp"
-                            app:layout_constraintBottom_toBottomOf="@+id/tv_color"
-                            app:layout_constraintEnd_toEndOf="@+id/tv_description_mood"
-                            app:layout_constraintStart_toStartOf="@+id/tv_description_mood"
-                            app:layout_constraintTop_toTopOf="@+id/tv_color" />
+                            <TextView
+                                android:id="@+id/tv_description_compatibility"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:dropDownHeight="fill_parent"
+                                android:focusable="false"
+                                android:text="Pisces"
+                                android:textSize="@dimen/_11sdp" />
+                        </LinearLayout>
 
-                        <TextView
-                            android:id="@+id/tv_lucky_number"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/_10sdp"
-                            android:dropDownHeight="fill_parent"
-                            android:focusable="false"
-                            android:text="Lucky Number:"
-                            android:textSize="@dimen/_12sdp"
-                            android:textStyle="bold"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tv_color" />
 
-                        <TextView
-                            android:id="@+id/tv_description_lucky_number"
-                            android:layout_width="wrap_content"
+                        <LinearLayout
+                            android:id="@+id/linearLayout12"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="3"
                             android:layout_margin="@dimen/_10sdp"
-                            android:dropDownHeight="fill_parent"
-                            android:focusable="false"
-                            android:text="3"
-                            android:textSize="@dimen/_11sdp"
-                            app:layout_constraintBottom_toBottomOf="@+id/tv_lucky_number"
-                            app:layout_constraintEnd_toEndOf="@+id/tv_description_color"
-                            app:layout_constraintStart_toStartOf="@+id/tv_description_color"
-                            app:layout_constraintTop_toTopOf="@+id/tv_lucky_number" />
+                            app:layout_constraintTop_toBottomOf="@+id/linearLayout11">
 
-                        <TextView
-                            android:id="@+id/tv_lucky_time"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="@dimen/_10sdp"
-                            android:dropDownHeight="fill_parent"
-                            android:focusable="false"
-                            android:text="Lucky Time:"
-                            android:textSize="@dimen/_12sdp"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tv_lucky_number" />
+                            <TextView
+                                android:id="@+id/tv_mood"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:dropDownHeight="fill_parent"
+                                android:focusable="false"
+                                android:text="Mood"
+                                android:textSize="@dimen/_12sdp"
+                                android:textStyle="bold" />
 
-                        <TextView
-                            android:id="@+id/tv_description_lucky_time"
-                            android:layout_width="wrap_content"
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textStyle="bold"
+                                android:text=":" />
+
+                            <TextView
+                                android:id="@+id/tv_description_mood"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:dropDownHeight="fill_parent"
+                                android:focusable="false"
+                                android:text="Diligent"
+                                android:textSize="@dimen/_11sdp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_123"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:weightSum="3"
                             android:layout_margin="@dimen/_10sdp"
-                            android:text="8am"
-                            android:textSize="@dimen/_11sdp"
-                            app:layout_constraintBottom_toBottomOf="@+id/tv_lucky_time"
-                            app:layout_constraintEnd_toEndOf="@+id/tv_description_color"
-                            app:layout_constraintStart_toStartOf="@+id/tv_description_color"
-                            app:layout_constraintTop_toTopOf="@+id/tv_lucky_time" />
+                            app:layout_constraintTop_toBottomOf="@+id/linearLayout12">
+
+                            <TextView
+                                android:id="@+id/tv_color"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:dropDownHeight="fill_parent"
+                                android:focusable="false"
+                                android:layout_weight="1"
+                                android:text="Color"
+                                android:textSize="@dimen/_12sdp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textStyle="bold"
+                                android:text=":" />
+
+                            <TextView
+                                android:id="@+id/tv_description_color"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:dropDownHeight="fill_parent"
+                                android:focusable="false"
+                                android:layout_weight="1"
+                                android:text="Silver"
+                                android:textSize="@dimen/_11sdp" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/ll_12"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_margin="@dimen/_10sdp"
+                            app:layout_constraintTop_toBottomOf="@+id/ll_123"
+                            android:weightSum="3">
+
+                            <TextView
+                                android:id="@+id/tv_lucky_number"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:focusable="false"
+                                android:text="Lucky Number"
+                                android:textSize="@dimen/_12sdp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:textStyle="bold"
+                                android:text=":" />
+
+                            <TextView
+                                android:id="@+id/tv_description_lucky_number"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:focusable="false"
+                                android:text="3"
+                                android:textSize="@dimen/_11sdp" />
+                        </LinearLayout>
+
+                       <LinearLayout
+                           android:id="@+id/ll_13"
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:orientation="horizontal"
+                           android:paddingBottom="@dimen/_10sdp"
+                           android:layout_margin="@dimen/_10sdp"
+                           app:layout_constraintTop_toBottomOf="@+id/ll_12"
+                           android:weightSum="3">
+                           <TextView
+                               android:id="@+id/tv_lucky_time"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:dropDownHeight="fill_parent"
+                               android:focusable="false"
+                               android:layout_weight="1"
+                               android:text="Lucky Time"
+                               android:textSize="@dimen/_12sdp"
+                               android:textStyle="bold" />
+
+                           <TextView
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:layout_weight="1"
+                               android:textStyle="bold"
+                               android:text=":" />
+
+                           <TextView
+                               android:id="@+id/tv_description_lucky_time"
+                               android:layout_width="match_parent"
+                               android:layout_height="wrap_content"
+                               android:text="8am"
+                               android:layout_weight="1"
+                               android:textSize="@dimen/_11sdp"/>
+                       </LinearLayout>
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -466,140 +522,171 @@
 
 
 
-                <LinearLayout
-                    android:id="@+id/homepage_redir_chat_layout"
-                    android:layout_width="fill_parent"
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_bot_1"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="15dp"
-                    android:orientation="vertical"
-                    android:paddingBottom="20.0dip"
+                    app:cardElevation="@dimen/_5sdp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/cardView3">
-
-                    <ImageView
+                    app:layout_constraintTop_toBottomOf="@+id/cardView3"
+                    android:layout_margin="@dimen/_5sdp"
+                    app:cardCornerRadius="@dimen/_10sdp">
+                    <LinearLayout
+                        android:id="@+id/homepage_redir_chat_layout"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:adjustViewBounds="true"
-                        android:src="@drawable/hp_redir_chat" />
+                        android:orientation="vertical"
+                        android:paddingBottom="20.0dip">
 
-                    <TextView
-                        android:id="@+id/homepage_redir_chat_title"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="15.0dip"
-                        android:layout_marginRight="15.0dip"
-                        android:paddingTop="11.0dip"
-                        android:text="@string/menu_item1_txt"
-                        android:textAllCaps="true"
-                        android:textColor="@color/orange"
-                        android:textSize="22.0sp" />
-
-                    <TextView
-                        android:id="@+id/homepage_redir_chat_text"
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="15.0dip"
-                        android:layout_marginTop="5.0dip"
-                        android:layout_marginRight="15.0dip"
-                        android:layout_marginBottom="15.0dip"
-                        android:text="Do not keep those confusing thoughts to youself. \nOur best psychics are waiting to answer all your questions."
-                        android:textColor="@color/gris"
-                        android:textSize="@dimen/_10sdp" />
-
-                    <RelativeLayout
-                        android:id="@+id/homepage_redir_chat_button"
-                        android:layout_width="230.0dip"
-                        android:layout_height="39.0dip"
-                        android:layout_gravity="center"
-                        android:background="@drawable/rounded_button_blue"
-                        android:gravity="center">
-
-                        <TextView
-                            android:id="@+id/homepage_redir_chat_button_text"
+                        <ImageView
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:maxLines="1"
-                            android:text="A Doubt, A Question?"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/hp_redir_chat" />
+
+                        <TextView
+                            android:id="@+id/homepage_redir_chat_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15.0dip"
+                            android:layout_marginRight="15.0dip"
+                            android:paddingTop="11.0dip"
+                            android:text="@string/menu_item1_txt"
                             android:textAllCaps="true"
-                            android:textColor="@android:color/white"
+                            android:textColor="@color/orange"
+                            android:textSize="22.0sp" />
+
+                        <TextView
+                            android:id="@+id/homepage_redir_chat_text"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="15.0dip"
+                            android:layout_marginTop="5.0dip"
+                            android:layout_marginRight="15.0dip"
+                            android:layout_marginBottom="15.0dip"
+                            android:text="Do not keep those confusing thoughts to youself. \nOur best psychics are waiting to answer all your questions."
+                            android:textColor="@color/gris"
+                            android:textSize="@dimen/_10sdp" />
+
+                        <RelativeLayout
+                            android:id="@+id/homepage_redir_chat_button"
+                            android:layout_width="230.0dip"
+                            android:layout_height="39.0dip"
+                            android:layout_gravity="center"
+                            android:background="@drawable/rounded_button_blue"
+                            android:gravity="center">
+
+                            <TextView
+                                android:id="@+id/homepage_redir_chat_button_text"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:maxLines="1"
+                                android:text="A Doubt, A Question?"
+                                android:textAllCaps="true"
+                                android:textColor="@android:color/white"
+                                android:textSize="20.0sp"
+                                tools:ignore="HardcodedText" />
+                        </RelativeLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cv_bot_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_5sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cv_bot_1"
+                    >
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/homepage_redir_horoperso"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imageView4"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/hp_redir_horoperso"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="56dp"
+                            android:layout_marginEnd="56dp"
+                            android:background="@drawable/rounded_button_blue_white"
+                            android:gravity="center"
+                            android:padding="8.0dip"
+                            android:text="@string/menu_item_24_txt"
+                            android:textColor="@android:color/black"
                             android:textSize="20.0sp"
-                            tools:ignore="HardcodedText" />
-                    </RelativeLayout>
-                </LinearLayout>
+                            app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.cardview.widget.CardView>
 
-                <RelativeLayout
-                    android:id="@+id/homepage_fb_native_layout"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/homepage_redir_chat_layout"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="5.0dip"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/homepage_redir_chat_layout" />
+              <androidx.cardview.widget.CardView
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content"
+                  android:layout_margin="@dimen/_5sdp"
+                  app:cardElevation="@dimen/_5sdp"
+                  app:cardCornerRadius="@dimen/_10sdp"
+                  app:layout_constraintBottom_toBottomOf="parent"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toBottomOf="@+id/cv_bot_2"
+                  >
+                  <androidx.constraintlayout.widget.ConstraintLayout
+                      android:id="@+id/homepage_redir_compat"
+                      android:layout_width="fill_parent"
+                      android:layout_height="wrap_content"
+                      android:background="@android:color/white"
+                      android:orientation="vertical">
 
-                <LinearLayout
-                    android:id="@+id/homepage_redir_horoperso"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/homepage_fb_native_layout"
-                    android:layout_marginTop="15.0dip"
-                    android:background="@android:color/white"
-                    android:orientation="vertical"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/homepage_fb_native_layout">
+                      <ImageView
+                          android:id="@+id/imageView5"
+                          android:layout_width="fill_parent"
+                          android:layout_height="wrap_content"
+                          android:adjustViewBounds="true"
+                          android:src="@drawable/hp_redir_compat"
+                          app:layout_constraintBottom_toBottomOf="parent"
+                          app:layout_constraintEnd_toEndOf="parent"
+                          app:layout_constraintStart_toStartOf="parent"
+                          app:layout_constraintTop_toTopOf="parent" />
 
-                    <ImageView
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:adjustViewBounds="true"
-                        android:src="@drawable/hp_redir_horoperso" />
+                      <TextView
+                          android:layout_width="fill_parent"
+                          android:layout_height="wrap_content"
+                          android:layout_marginStart="56dp"
+                          android:layout_marginEnd="56dp"
+                          android:gravity="center"
+                          android:padding="8.0dip"
+                          android:text="@string/menu_item_22_txt"
+                          android:background="@drawable/rounded_button_blue_white"
+                          android:textColor="@android:color/black"
+                          android:textSize="20.0sp"
+                          app:layout_constraintBottom_toBottomOf="parent"
+                          app:layout_constraintEnd_toEndOf="parent"
+                          app:layout_constraintStart_toStartOf="parent"
+                          app:layout_constraintTop_toTopOf="parent" />
+                  </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:padding="8.0dip"
-                        android:text="@string/menu_item_24_txt"
-                        android:textAllCaps="true"
-                        android:textColor="@android:color/black"
-                        android:textSize="20.0sp" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/homepage_redir_compat"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/homepage_redir_horoperso"
-                    android:layout_marginTop="15.0dip"
-                    android:layout_marginBottom="56dp"
-                    android:background="@android:color/white"
-                    android:orientation="vertical"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/homepage_redir_horoperso">
-
-                    <ImageView
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:adjustViewBounds="true"
-                        android:src="@drawable/hp_redir_compat" />
-
-                    <TextView
-                        android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:padding="8.0dip"
-                        android:text="@string/menu_item_22_txt"
-                        android:textAllCaps="true"
-                        android:textColor="@android:color/black"
-                        android:textSize="20.0sp" />
-                </LinearLayout>
-
+              </androidx.cardview.widget.CardView>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.core.widget.NestedScrollView>
     </FrameLayout>

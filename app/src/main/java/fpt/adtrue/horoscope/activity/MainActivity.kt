@@ -2,25 +2,20 @@ package fpt.adtrue.horoscope.activity
 
 import android.annotation.SuppressLint
 import android.app.Dialog
+import android.content.ActivityNotFoundException
+import android.content.Context
 import android.content.Intent
+import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
-import android.util.Log
 import android.view.Gravity
 import android.view.Menu
 import android.view.MenuItem
-import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
-import bot.box.horology.annotation.DURATION
-import bot.box.horology.annotation.SUNSIGN
-import bot.box.horology.api.Horoscope
-import bot.box.horology.delegate.Response
-import bot.box.horology.hanshake.HorologyController
-import bot.box.horology.pojo.Zodiac
 import com.google.android.material.tabs.TabLayout
 import fpt.adtrue.horoscope.R
 import fpt.adtrue.horoscope.adapter.HomePagerAdapter
@@ -45,24 +40,136 @@ class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
         binding.toolbar.setNavigationOnClickListener {
             binding.drawerLayout.openDrawer(Gravity.LEFT)
         }
-//        setNavigationDrawer()
+
+        binding.toolbar.setOnMenuItemClickListener {
+            when(it.itemId){
+                R.id.menu2->{
+                        rateApp()
+                        true
+                }
+                else -> false
+            }
+        }
+        binding.navView.setNavigationItemSelectedListener {
+            when (it.itemId) {
+                R.id.person_horo -> {
+                    val intent = Intent(this, ProfileAstroActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+                R.id.my_as_profile -> {
+                    val intent = Intent(this, ChoiceCompatActivity::class.java)
+                    startActivity(intent)
+                    true
+                }
+
+                R.id.action_aries -> {
+                    App.SIGN = 0
+                    val intent = Intent(this, ProfileAstroActivity::class.java)
+                    intent.putExtra("horoscope", "Zodiac")
+                    startActivity(intent)
+
+                    true
+                }
+                R.id.action_taurus -> {
+                    App.SIGN = 1
+                    val intent = Intent(this, ProfileAstroActivity::class.java)
+                    intent.putExtra("horoscope", "Zodiac")
+                    startActivity(intent)
+                    true
+                }
+                R.id.action_gemini -> {
+                    App.SIGN = 2
+                    val intent = Intent(this, ProfileAstroActivity::class.java)
+                    intent.putExtra("horoscope", "Zodiac")
+                    startActivity(intent)
+                    true
+                }
+                R.id.action_cancer -> {
+                    App.SIGN = 3
+                    val intent = Intent(this, ProfileAstroActivity::class.java)
+                    intent.putExtra("horoscope", "Zodiac")
+                    startActivity(intent)
+                    true
+                }
+                R.id.action_leo -> {
+                    App.SIGN = 4
+                    val intent = Intent(this, ProfileAstroActivity::class.java)
+                    intent.putExtra("horoscope", "Zodiac")
+                    startActivity(intent)
+                    true
+                }
+                R.id.action_virgo -> {
+                    App.SIGN = 5
+                    val intent = Intent(this, ProfileAstroActivity::class.java)
+                    intent.putExtra("horoscope", "Zodiac")
+                    startActivity(intent)
+                    true
+                }
+                R.id.action_libra -> {
+                    App.SIGN = 6
+                    val intent = Intent(this, ProfileAstroActivity::class.java)
+                    intent.putExtra("horoscope", "Zodiac")
+                    startActivity(intent)
+                    true
+                }
+                R.id.action_scorpio -> {
+                    App.SIGN = 7
+                    val intent = Intent(this, ProfileAstroActivity::class.java)
+                    intent.putExtra("horoscope", "Zodiac")
+                    startActivity(intent)
+                    true
+                }
+                R.id.action_sagittarius -> {
+                    App.SIGN = 8
+                    val intent = Intent(this, ProfileAstroActivity::class.java)
+                    intent.putExtra("horoscope", "Zodiac")
+                    startActivity(intent)
+                    true
+                }
+                R.id.action_capricorn -> {
+                    App.SIGN = 9
+                    val intent = Intent(this, ProfileAstroActivity::class.java)
+                    intent.putExtra("horoscope", "Zodiac")
+                    startActivity(intent)
+                    true
+                }
+                R.id.action_aquarius -> {
+                    App.SIGN = 10
+                    val intent = Intent(this, ProfileAstroActivity::class.java)
+                    intent.putExtra("horoscope", "Zodiac")
+                    startActivity(intent)
+                    true
+                }
+                R.id.action_pisces -> {
+                    App.SIGN = 11
+                    val intent = Intent(this, ProfileAstroActivity::class.java)
+                    intent.putExtra("horoscope", "Zodiac")
+                    startActivity(intent)
+                    true
+                }
 
 
-        val runTab = Runnable {
-            if (binding.slidingTabs.width < this.resources.displayMetrics.widthPixels) {
-                binding.slidingTabs.tabMode = TabLayout.MODE_FIXED
-                val mParams: ViewGroup.LayoutParams = binding.slidingTabs.layoutParams
-                mParams.width = ViewGroup.LayoutParams.MATCH_PARENT
-                binding.slidingTabs.layoutParams = mParams
-            } else {
-                binding.slidingTabs.tabMode = TabLayout.MODE_SCROLLABLE
+                else -> false
             }
         }
 
-        binding.slidingTabs.post(runTab)
+
+//        val runTab = Runnable {
+//            if (binding.slidingTabs.width < this.resources.displayMetrics.widthPixels) {
+//                binding.slidingTabs.tabMode = TabLayout.MODE_FIXED
+//                val mParams: ViewGroup.LayoutParams = binding.slidingTabs.layoutParams
+//                mParams.width = ViewGroup.LayoutParams.MATCH_PARENT
+//                binding.slidingTabs.layoutParams = mParams
+//            } else {
+//                binding.slidingTabs.tabMode = TabLayout.MODE_SCROLLABLE
+//            }
+//        }
+//
+//        binding.slidingTabs.post(runTab)
         binding.slidingTabs.setupWithViewPager(binding.viewpager)
-        binding.viewpager.adapter = HomePagerAdapter(supportFragmentManager,binding.viewpager.currentItem)
-        binding.slidingTabs.getTabAt(2)?.select()
+        binding.viewpager.adapter = HomePagerAdapter(supportFragmentManager)
+        binding.slidingTabs.getTabAt(1)?.select()
 
         binding.logoSign.setOnClickListener {
             val intent = Intent(applicationContext, ChooseSignActivity::class.java)
@@ -74,6 +181,32 @@ class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
 
 
     }
+
+    private fun rateApp() {
+        try {
+            val rateIntent = rateIntentForUrl("market://details")
+            startActivity(rateIntent)
+        } catch (e: ActivityNotFoundException) {
+            val rateIntent = rateIntentForUrl("https://play.google.com/store/apps/details")
+            startActivity(rateIntent)
+        }
+    }
+
+    private fun rateIntentForUrl(url: String): Intent {
+        val intent = Intent(
+            Intent.ACTION_VIEW,
+            Uri.parse(String.format("%s?id=%s", url, applicationContext.packageName))
+        )
+        var flags = Intent.FLAG_ACTIVITY_NO_HISTORY or Intent.FLAG_ACTIVITY_MULTIPLE_TASK
+        flags = if (Build.VERSION.SDK_INT >= 21) {
+            flags or Intent.FLAG_ACTIVITY_NEW_DOCUMENT
+        } else {
+            flags or Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET
+        }
+        intent.addFlags(flags)
+        return intent
+    }
+
 
     override fun onTabSelected(tab: TabLayout.Tab?) {}
 
@@ -97,11 +230,12 @@ class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
 
         return super.onOptionsItemSelected(item)
     }
+
     override fun onBackPressed() {
         val alertDialog = AlertDialog.Builder(this).create()
         alertDialog.setTitle(R.string.do_you_really_want_to_exit)
         alertDialog.setButton(
-            Dialog.BUTTON_POSITIVE,"Yes"
+            Dialog.BUTTON_POSITIVE, "Yes"
         ) { _, _ ->
             finishAffinity()
             exitProcess(0)

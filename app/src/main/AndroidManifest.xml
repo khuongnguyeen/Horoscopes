@@ -13,25 +13,38 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Horoscope"
         tools:ignore="AllowBackup">
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.MainActivity"
+            android:screenOrientation="portrait">
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
 
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->
 <!--            </intent-filter>-->
         </activity>
-        <activity android:name=".activity.StartActivity">
+        <activity android:name=".activity.StartActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.ChooseSignActivity"/>
-        <activity android:name=".activity.ChoiceCompatActivity"/>
-        <activity android:name=".activity.ResultCompatActivity"/>
-        <activity android:name=".activity.ProfileAstroActivity"/>
-        <activity android:name=".activity.WhatIsMySignActivity"/>
+        <activity android:name=".activity.ChooseSignActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.ChoiceCompatActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.ResultCompatActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.ProfileAstroActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.WhatIsMySignActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.ChoiceSignProfileAstroActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.ChoiceDate"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.ChoiceSignHerActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>

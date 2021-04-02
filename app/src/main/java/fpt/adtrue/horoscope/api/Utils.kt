@@ -9,6 +9,7 @@ import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.*
 import java.util.concurrent.TimeUnit
 
 object Utils {
@@ -46,6 +47,21 @@ object Utils {
         editor.putInt("sign", sign)
         editor.apply()
     }
+
+    fun capitalizeString(string: String): String {
+        val chars = string.toLowerCase(Locale.ROOT).toCharArray()
+        var found = false
+        for (i in chars.indices) {
+            if (!found && Character.isLetter(chars[i])) {
+                chars[i] = Character.toUpperCase(chars[i])
+                found = true
+            } else if (Character.isWhitespace(chars[i]) || chars[i] == '.' || chars[i] == '\'') {
+                found = false
+            }
+        }
+        return String(chars)
+    }
+
 
     fun checkDate(mon: Int, day: Int): Int {
         when (mon) {

@@ -6,22 +6,22 @@ import androidx.fragment.app.FragmentStatePagerAdapter
 import fpt.adtrue.horoscope.fragment.AdFragment
 import fpt.adtrue.horoscope.fragment.FragmentHomePager
 
-class HomePagerAdapter(fm: FragmentManager,val position: Int) : FragmentStatePagerAdapter(fm) {
+class HomePagerAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
 
 
-    override fun getCount() = 5
+    override fun getCount() = 3
 
     override fun getItem(position: Int): Fragment {
         when (position) {
 
             0 -> {
-                return FragmentHomePager(position)
+                return FragmentHomePager(0)
+            }
+            1 -> {
+                return FragmentHomePager(1)
             }
             2 -> {
-                return FragmentHomePager(position)
-            }
-            4 -> {
-                return FragmentHomePager(position)
+                return FragmentHomePager(2)
             }
             else -> return AdFragment()
         }
@@ -31,9 +31,8 @@ class HomePagerAdapter(fm: FragmentManager,val position: Int) : FragmentStatePag
     override fun getPageTitle(position: Int): CharSequence {
         when (position) {
             0 -> return "Yesterday"
-            2 -> return "Today"
-            4 -> return "Tomorrow"
-            else -> return "Ad"
+            1 -> return "Today"
+            else -> return "Tomorrow"
         }
     }
 }

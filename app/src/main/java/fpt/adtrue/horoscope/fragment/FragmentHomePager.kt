@@ -19,10 +19,10 @@ import fpt.adtrue.horoscope.application.App
 import fpt.adtrue.horoscope.databinding.PagerItemRecyclerviewBinding
 import fpt.adtrue.horoscope.model.DataHoroscope
 
-class FragmentHomePager(val position:Int):Fragment() {
+class FragmentHomePager(private val position:Int):Fragment() {
 
     private lateinit var binding: PagerItemRecyclerviewBinding
-    var runnable: Runnable? = null
+    private var runnable: Runnable? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -31,7 +31,6 @@ class FragmentHomePager(val position:Int):Fragment() {
     ): View {
         binding =  PagerItemRecyclerviewBinding.inflate(inflater,container,false)
         runnable = Runnable {
-//            hp_barometre
             binding.hpBarometre.animate()
                 .setDuration(30000)
                 .rotationBy(360F)
@@ -44,19 +43,19 @@ class FragmentHomePager(val position:Int):Fragment() {
         binding.hpSign.setImageResource(App.getZodiac()[App.SIGN].image2)
         if (position == 0){
             App.getViewModel().getHoroscope(App.getZodiac()[App.SIGN].name,"yesterday")
-            App.getViewModel().data.observe(this, Observer {
+            App.getViewModel().data2.observe(this,  {
+                updateData(it)
+            })
+        }
+        if (position == 1){
+            App.getViewModel().getHoroscope(App.getZodiac()[App.SIGN].name,"today")
+            App.getViewModel().data.observe(this,  {
                 updateData(it)
             })
         }
         if (position == 2){
-            App.getViewModel().getHoroscope(App.getZodiac()[App.SIGN].name,"today")
-            App.getViewModel().data.observe(this, Observer {
-                updateData(it)
-            })
-        }
-        if (position == 4){
             App.getViewModel().getHoroscope(App.getZodiac()[App.SIGN].name,"tomorrow")
-            App.getViewModel().data.observe(this, Observer {
+            App.getViewModel().data1.observe(this,  {
                 updateData(it)
 
             })

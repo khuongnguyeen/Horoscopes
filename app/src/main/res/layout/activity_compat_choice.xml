@@ -24,7 +24,7 @@
             tools:ignore="ContentDescription" />
 
         <RelativeLayout
-            android:id="@id/compat_choice_top_bar"
+            android:id="@+id/compat_choice_top_bar"
             android:layout_width="fill_parent"
             android:layout_height="56dp"
             android:background="@android:color/transparent"
@@ -34,7 +34,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@id/compat_choice_back"
+                android:id="@+id/compat_choice_back"
                 android:layout_width="48.0dip"
                 android:layout_height="48.0dip"
                 android:layout_centerVertical="true"
@@ -49,18 +49,16 @@
                 android:layout_height="fill_parent"
                 android:gravity="center"
                 android:text="@string/menu_item_22_txt"
-                android:textAllCaps="true"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/_12sdp" />
         </RelativeLayout>
 
         <TextView
-            android:id="@id/compat_choice_title1"
+            android:id="@+id/compat_choice_title1"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:text="Are You"
-            android:textAllCaps="true"
             android:textColor="@android:color/white"
             android:textSize="@dimen/_16sdp"
             app:layout_constraintBottom_toTopOf="@+id/compat_choice_signs"
@@ -69,13 +67,12 @@
             app:layout_constraintTop_toBottomOf="@+id/compat_choice_top_bar" />
 
         <TextView
-            android:id="@id/compat_choice_title2"
+            android:id="@+id/compat_choice_title2"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/compat_choice_title1"
+            android:layout_below="@+id/compat_choice_title1"
             android:gravity="center_horizontal"
             android:text="Made for each other"
-            android:textAllCaps="true"
             android:textColor="@android:color/white"
             android:textSize="@dimen/_16sdp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -83,7 +80,7 @@
             app:layout_constraintTop_toBottomOf="@+id/compat_choice_title1" />
 
         <LinearLayout
-            android:id="@id/compat_choice_signs"
+            android:id="@+id/compat_choice_signs"
             android:layout_width="0dp"
             android:weightSum="2"
             android:layout_height="wrap_content"
@@ -104,20 +101,20 @@
                     android:gravity="center">
 
                     <RelativeLayout
-                        android:id="@id/compat_choice_left_layout"
+                        android:id="@+id/compat_choice_left_layout"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/compat_choice_left_title"
+                        android:layout_below="@+id/compat_choice_left_title"
                         android:layout_margin="10.0dip">
 
                         <androidx.viewpager.widget.ViewPager
-                            android:id="@id/compat_choice_left_viewpager"
+                            android:id="@+id/compat_choice_left_viewpager"
                             android:layout_width="@dimen/_80sdp"
                             android:layout_height="@dimen/_100sdp"
                             android:layout_centerInParent="true" />
 
                         <ImageView
-                            android:id="@id/compat_choice_left_prev"
+                            android:id="@+id/compat_choice_left_prev"
                             android:layout_width="@dimen/_30sdp"
                             android:layout_height="wrap_content"
                             android:layout_alignParentStart="true"
@@ -126,7 +123,7 @@
                             android:src="@drawable/choice_prev"/>
 
                         <ImageView
-                            android:id="@id/compat_choice_left_next"
+                            android:id="@+id/compat_choice_left_next"
                             android:layout_width="@dimen/_30sdp"
                             android:layout_height="wrap_content"
                             android:layout_alignParentEnd="true"
@@ -138,7 +135,7 @@
 
 
                     <TextView
-                        android:id="@id/compat_choice_left_title"
+                        android:id="@+id/compat_choice_left_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
@@ -161,20 +158,20 @@
                     android:gravity="center">
 
                     <RelativeLayout
-                        android:id="@id/compat_choice_right_layout"
+                        android:id="@+id/compat_choice_right_layout"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_below="@id/compat_choice_right_title"
+                        android:layout_below="@+id/compat_choice_right_title"
                         android:layout_margin="10.0dip">
 
                         <androidx.viewpager.widget.ViewPager
-                            android:id="@id/compat_choice_right_viewpager"
+                            android:id="@+id/compat_choice_right_viewpager"
                             android:layout_width="@dimen/_80sdp"
                             android:layout_height="@dimen/_100sdp"
                             android:layout_centerInParent="true" />
 
                         <ImageView
-                            android:id="@id/compat_choice_right_prev"
+                            android:id="@+id/compat_choice_right_prev"
                             android:layout_width="@dimen/_30sdp"
                             android:layout_height="wrap_content"
                             android:layout_alignParentLeft="true"
@@ -183,7 +180,7 @@
                             android:src="@drawable/choice_prev"/>
 
                         <ImageView
-                            android:id="@id/compat_choice_right_next"
+                            android:id="@+id/compat_choice_right_next"
                             android:layout_width="@dimen/_30sdp"
                             android:layout_height="wrap_content"
                             android:layout_alignParentRight="true"
@@ -195,7 +192,7 @@
 
 
                     <TextView
-                        android:id="@id/compat_choice_right_title"
+                        android:id="@+id/compat_choice_right_title"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentTop="true"
@@ -209,10 +206,10 @@
         </LinearLayout>
 
         <RelativeLayout
-            android:id="@id/compat_choice_btn"
+            android:id="@+id/compat_choice_btn"
             android:layout_width="@dimen/_250sdp"
             android:layout_height="@dimen/_40sdp"
-            android:layout_below="@id/compat_choice_signs"
+            android:layout_below="@+id/compat_choice_signs"
             android:layout_centerHorizontal="true"
             android:background="@drawable/rounded_button_blue"
             app:layout_constraintBottom_toTopOf="@+id/compat_choice_go_wims_layout"
@@ -220,7 +217,7 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <TextView
-                android:id="@id/compat_choice_btn_text"
+                android:id="@+id/compat_choice_btn_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
@@ -232,10 +229,10 @@
         </RelativeLayout>
 
         <RelativeLayout
-            android:id="@id/compat_choice_go_wims_layout"
+            android:id="@+id/compat_choice_go_wims_layout"
             android:layout_width="fill_parent"
             android:layout_height="@dimen/_56sdp"
-            android:layout_below="@id/compat_choice_btn"
+            android:layout_below="@+id/compat_choice_btn"
             android:layout_gravity="center_horizontal"
             android:gravity="center"
             android:padding="8.0dip"
@@ -244,7 +241,7 @@
             app:layout_constraintStart_toStartOf="parent">
 
             <TextView
-                android:id="@id/compat_choice_go_wims"
+                android:id="@+id/compat_choice_go_wims"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/compatam_p1_btn"
@@ -254,10 +251,10 @@
             <FrameLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@id/compat_choice_go_wims"
-                android:layout_alignBottom="@id/compat_choice_go_wims"
+                android:layout_alignTop="@+id/compat_choice_go_wims"
+                android:layout_alignBottom="@+id/compat_choice_go_wims"
                 android:layout_marginLeft="2.0dip"
-                android:layout_toRightOf="@id/compat_choice_go_wims">
+                android:layout_toRightOf="@+id/compat_choice_go_wims">
 
                 <ImageView
                     android:layout_width="9.0dip"

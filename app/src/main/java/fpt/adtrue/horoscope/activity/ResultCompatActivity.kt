@@ -20,8 +20,6 @@ import kotlin.system.exitProcess
 
 class ResultCompatActivity : AppCompatActivity() {
 
-    var k = 2
-
     private lateinit var binding: ActivityCompatResultsBinding
     private var mCountDownTimer: CountDownTimer? = null
 
@@ -33,12 +31,10 @@ class ResultCompatActivity : AppCompatActivity() {
             override fun onTick(millisUntilFinished: Long) {}
             override fun onFinish() {
                 binding.rlBackground.visibility = View.GONE
-                k = 1
                 window.statusBarColor =
                     ContextCompat.getColor(applicationContext, R.color.titlebar_compat)
             }
         }.start()
-//        compat_results_sign_left_img
         binding.compatResultsSignLeftImg.setImageResource(App.getZodiac()[App.SIGN].image)
         binding.compatResultsSignLeftText.text = App.getZodiac()[App.SIGN].name
         binding.compatResultsSignRightImg.setImageResource(App.getZodiac()[App.HER].image)
@@ -73,7 +69,6 @@ class ResultCompatActivity : AppCompatActivity() {
 
 //        compat_results_again
         binding.compatResultsAgain.setOnClickListener {
-            k = 2
             onBackPressed()
         }
 
@@ -81,8 +76,9 @@ class ResultCompatActivity : AppCompatActivity() {
 
 //        compat_results_close
         binding.compatResultsClose.setOnClickListener {
-            val intent = Intent(applicationContext, MainActivity::class.java)
-            startActivities(arrayOf(intent))
+            val intent = Intent(this, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+            startActivity(intent)
         }
 
         binding.compatResultsRedirChatButton.setOnClickListener {
@@ -103,22 +99,6 @@ class ResultCompatActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-        if (k == 1){
-            val alertDialog = AlertDialog.Builder(this).create()
-            alertDialog.setTitle(R.string.do_you_really_want_to_exit)
-            alertDialog.setButton(
-                Dialog.BUTTON_POSITIVE,"Yes"
-            ) { _, _ ->
-                finishAffinity()
-                exitProcess(0)
-            }
-            alertDialog.setButton(
-                Dialog.BUTTON_NEGATIVE, "No"
-            ) { dialog, _ -> dialog!!.dismiss() }
-            alertDialog.show()
-
-            return
-        }
         super.onBackPressed()
     }
 
