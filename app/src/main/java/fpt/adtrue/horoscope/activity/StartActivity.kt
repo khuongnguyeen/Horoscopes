@@ -20,6 +20,7 @@ import fpt.adtrue.horoscope.fragment.ChooseSign
 import fpt.adtrue.horoscope.model.DataCompatibilityItem
 import fpt.adtrue.horoscope.model.DataSignItem
 import fpt.adtrue.horoscope.model.dataZodiac
+import fpt.adtrue.horoscope.tarot2.TarotAnimSwitchActivity
 import java.io.*
 import java.lang.reflect.Type
 import java.util.*
@@ -32,27 +33,31 @@ class StartActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_start)
-        getSign()
-        getCompatibility()
-        getDataLocal()
-        getDaSi()
-        val enableButton = Runnable {
-            if (App.SIGN == 100) {
+//        getSign()
+//        getCompatibility()
+//        getDataLocal()
+//        getDaSi()
+//        val enableButton = Runnable {
+//            if (App.SIGN == 100) {
+//
+//                binding.logo.visibility = View.GONE
+//                val fr1 = ChooseSign()
+//                val active: Fragment = fr1
+//                val manager = supportFragmentManager
+//                manager.beginTransaction().hide(active).show(fr1).commit()
+////            active = fr1
+//                manager.beginTransaction().add(R.id.content, fr1, "1").commit()
+//            } else {
+//                val intent = Intent(applicationContext, MainActivity::class.java)
+//                startActivities(arrayOf(intent))
+//
+//            }
+//        }
+//        Handler().postDelayed(enableButton, 2000)
 
-                binding.logo.visibility = View.GONE
-                val fr1 = ChooseSign()
-                val active: Fragment = fr1
-                val manager = supportFragmentManager
-                manager.beginTransaction().hide(active).show(fr1).commit()
-//            active = fr1
-                manager.beginTransaction().add(R.id.content, fr1, "1").commit()
-            } else {
-                val intent = Intent(applicationContext, MainActivity::class.java)
-                startActivities(arrayOf(intent))
+        TarotAnimSwitchActivity.start(this)
 
-            }
-        }
-        Handler().postDelayed(enableButton, 2000)
+
 //        val notifyMe = NotifyMe.Builder(applicationContext)
 //        notifyMe.title("Horoscope")
 //        notifyMe.content(String content)

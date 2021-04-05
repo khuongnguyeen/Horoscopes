@@ -1,0 +1,314 @@
+[
+  {
+    "name": "the_fool",
+    "type": "major_arcana"
+  },
+  {
+    "name": "the_magician",
+    "type": "major_arcana"
+  },
+  {
+    "name": "the_high_priestess",
+    "type": "major_arcana"
+  },
+  {
+    "name": "the_empress",
+    "type": "major_arcana"
+  },
+  {
+    "name": "the_emperor",
+    "type": "major_arcana"
+  },
+  {
+    "name": "the_hierophat",
+    "type": "major_arcana"
+  },
+  {
+    "name": "the_lovers",
+    "type": "major_arcana"
+  },
+  {
+    "name": "the_chariot",
+    "type": "major_arcana"
+  },
+  {
+    "name": "strength",
+    "type": "major_arcana"
+  },
+  {
+    "name": "the_hermit",
+    "type": "major_arcana"
+  },
+  {
+    "name": "wheel_of_fortune",
+    "type": "major_arcana"
+  },
+  {
+    "name": "justice",
+    "type": "major_arcana"
+  },
+  {
+    "name": "the_hanged_man",
+    "type": "major_arcana"
+  },
+  {
+    "name": "death",
+    "type": "major_arcana"
+  },
+  {
+    "name": "temperance",
+    "type": "major_arcana"
+  },
+  {
+    "name": "the_devil",
+    "type": "major_arcana"
+  },
+  {
+    "name": "the_tower",
+    "type": "major_arcana"
+  },
+  {
+    "name": "the_star",
+    "type": "major_arcana"
+  },
+  {
+    "name": "the_moon",
+    "type": "major_arcana"
+  },
+  {
+    "name": "the_sun",
+    "type": "major_arcana"
+  },
+  {
+    "name": "judgment",
+    "type": "major_arcana"
+  },
+  {
+    "name": "the_world",
+    "type": "major_arcana"
+  },
+  {
+    "name": "ace_of_wands",
+    "type": "suit_of_wands"
+  },
+  {
+    "name": "two_of_wands",
+    "type": "suit_of_wands"
+  },
+  {
+    "name": "three_of_wands",
+    "type": "suit_of_wands"
+  },
+  {
+    "name": "four_of_wands",
+    "type": "suit_of_wands"
+  },
+  {
+    "name": "five_of_wands",
+    "type": "suit_of_wands"
+  },
+  {
+    "name": "six_of_wands",
+    "type": "suit_of_wands"
+  },
+  {
+    "name": "seven_of_wands",
+    "type": "suit_of_wands"
+  },
+  {
+    "name": "eight_of_wands",
+    "type": "suit_of_wands"
+  },
+  {
+    "name": "nine_of_wands",
+    "type": "suit_of_wands"
+  },
+  {
+    "name": "ten_of_wands",
+    "type": "suit_of_wands"
+  },
+  {
+    "name": "page_of_wands",
+    "type": "suit_of_wands"
+  },
+  {
+    "name": "knight_of_wands",
+    "type": "suit_of_wands"
+  },
+  {
+    "name": "queen_of_wands",
+    "type": "suit_of_wands"
+  },
+  {
+    "name": "king_of_wands",
+    "type": "suit_of_wands"
+  },
+  {
+    "name": "ace_of_pentacles",
+    "type": "suit_of_pentacles"
+  },
+  {
+    "name": "two_of_pentacles",
+    "type": "suit_of_pentacles"
+  },
+  {
+    "name": "three_of_pentacles",
+    "type": "suit_of_pentacles"
+  },
+  {
+    "name": "four_of_pentacles",
+    "type": "suit_of_pentacles"
+  },
+  {
+    "name": "five_of_pentacles",
+    "type": "suit_of_pentacles"
+  },
+  {
+    "name": "six_of_pentacles",
+    "type": "suit_of_pentacles"
+  },
+  {
+    "name": "seven_of_pentacles",
+    "type": "suit_of_pentacles"
+  },
+  {
+    "name": "eight_of_pentacles",
+    "type": "suit_of_pentacles"
+  },
+  {
+    "name": "nine_of_pentacles",
+    "type": "suit_of_pentacles"
+  },
+  {
+    "name": "ten_of_pentacles",
+    "type": "suit_of_pentacles"
+  },
+  {
+    "name": "page_of_pentacles",
+    "type": "suit_of_pentacles"
+  },
+  {
+    "name": "knight_of_pentacles",
+    "type": "suit_of_pentacles"
+  },
+  {
+    "name": "queen_of_pentacles",
+    "type": "suit_of_pentacles"
+  },
+  {
+    "name": "king_of_pentacles",
+    "type": "suit_of_pentacles"
+  },
+  {
+    "name": "ace_of_cups",
+    "type": "suit_of_cups"
+  },
+  {
+    "name": "two_of_cups",
+    "type": "suit_of_cups"
+  },
+  {
+    "name": "three_of_cups",
+    "type": "suit_of_cups"
+  },
+  {
+    "name": "four_of_cups",
+    "type": "suit_of_cups"
+  },
+  {
+    "name": "five_of_cups",
+    "type": "suit_of_cups"
+  },
+  {
+    "name": "six_of_cups",
+    "type": "suit_of_cups"
+  },
+  {
+    "name": "seven_of_cups",
+    "type": "suit_of_cups"
+  },
+  {
+    "name": "eight_of_cups",
+    "type": "suit_of_cups"
+  },
+  {
+    "name": "nine_of_cups",
+    "type": "suit_of_cups"
+  },
+  {
+    "name": "ten_of_cups",
+    "type": "suit_of_cups"
+  },
+  {
+    "name": "page_of_cups",
+    "type": "suit_of_cups"
+  },
+  {
+    "name": "knight_of_cups",
+    "type": "suit_of_cups"
+  },
+  {
+    "name": "queen_of_cups",
+    "type": "suit_of_cups"
+  },
+  {
+    "name": "king_of_cups",
+    "type": "suit_of_cups"
+  },
+  {
+    "name": "ace_of_swords",
+    "type": "suit_of_swords"
+  },
+  {
+    "name": "two_of_swords",
+    "type": "suit_of_swords"
+  },
+  {
+    "name": "three_of_swords",
+    "type": "suit_of_swords"
+  },
+  {
+    "name": "four_of_swords",
+    "type": "suit_of_swords"
+  },
+  {
+    "name": "five_of_swords",
+    "type": "suit_of_swords"
+  },
+  {
+    "name": "six_of_swords",
+    "type": "suit_of_swords"
+  },
+  {
+    "name": "seven_of_swords",
+    "type": "suit_of_swords"
+  },
+  {
+    "name": "eight_of_swords",
+    "type": "suit_of_swords"
+  },
+  {
+    "name": "nine_of_swords",
+    "type": "suit_of_swords"
+  },
+  {
+    "name": "ten_of_swords",
+    "type": "suit_of_swords"
+  },
+  {
+    "name": "page_of_swords",
+    "type": "suit_of_swords"
+  },
+  {
+    "name": "knight_of_swords",
+    "type": "suit_of_swords"
+  },
+  {
+    "name": "queen_of_swords",
+    "type": "suit_of_swords"
+  },
+  {
+    "name": "king_of_swords",
+    "type": "suit_of_swords"
+  }
+]

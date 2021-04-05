@@ -1,0 +1,173 @@
+{
+  "calculation_screen": {
+    "select_date_of_birth": "Select Date of Birth",
+    "date_of_birth": "My date of birth is",
+    "format": "Format",
+    "formatValue": "DD.MM.YYYY",
+    "date_of_birth_description": "Your date of birth reveals your destiny you will face, your hidden talents, the path you’re made to go and the life purpose your soul desires.",
+    "name": "My full birth name is",
+    "name_description": "The name given on your birth has influence on your inner soul and your personality traits.",
+    "calculcating": "Calculating your numbers..."
+  },
+  "errors": {
+    "missing_name": "Please enter your name",
+    "invalid_name": "Your name must consist of at least one letter",
+    "invalid_date": "Please enter a correct date (Format: {{format}})",
+    "cannot_be_calculated": "This number could not be calculated with your name."
+  },
+  "splash_screen": {
+    "title": "Tarot Reading & Numerology",
+    "titleIOS": "Career Tarot Reading",
+    "sub_title": "Some text that describes the app further in detail"
+  },
+  "remove_ads": "Remove ADs",
+  "tarot": "Tarot",
+  "todays": "Today's",
+  "numerology": "Numerology",
+  "rediscover_yourself": "Rediscover Yourself",
+  "affirmation": "Affirmation",
+  "positivity_in_life": "Positivity in Daily Life",
+  "gemstones": "Gemstones",
+  "find_your_stone": "Find your Stone",
+  "reading": "Reading",
+  "three_cards": "3 Cards",
+  "career": "Career",
+  "pull_your_cards": "Pull your Cards",
+  "yes_no": "Yes or No",
+  "yes": "Yes",
+  "no": "No",
+  "thanks_for_support": "Thanks for your support",
+  "reversed": "Reversed",
+  "get_your_answer": "Get your Answer",
+  "all_cards": "All Cards",
+  "explore_cards": "Explore Cards",
+  "tarot_reading": "Tarot Reading",
+  "tarot_reading_text": "The Tarot is a symbolic map of consciousness that encompasses our journey through life, both spiritually and practically. Tarot reading is the practice of divining wisdom and guidance through a specific spread of Tarot cards. The cards are meant to provide insight into the innermost truths of your higher self. In other words, the cards provide an evolved awareness of what you already know deep within.",
+  "modes": {
+    "three_cards": {
+      "select_pick": "Scroll and Pick 3 cards"
+    },
+    "yes_no": {
+      "select_pick": "Scroll and Pick 1 card"
+    },
+    "career": {
+      "select_pick": "Scroll and Pick 1 card"
+    }
+  },
+  "info": {
+    "career": "Pull 1 Card to find out about your Career.",
+    "three_card": "Pull 3 Cards to find out about your Career, Love & Future.",
+    "yes_no": "You need an instant answer? Yes/No Tarot helps you with your decision with a simple \"Yes\" or \"No\"",
+    "all_cards": "The Tarot Deck consists of 78 cards in total. Here you can find all the lovingly designed cards including their meaning for Career, Love and Future and what the cards tell you when they are drawn in reverse order.",
+    "numerology": "Find out everything about your life with numbers based on your Name and Birthdate.",
+    "affirmation": "Affirmations are positive sentences. They help you to manifest your positive thoughts.",
+    "gemstone": "Gemstones are way more powerful than you ever might have thought. Check them out :)"
+  },
+  "numbers": {
+    "personality": "Personality",
+    "life_path_old": "Life Path",
+    "life_purpose": "Life Purpose",
+    "full_personality": "Personality Number",
+    "full_life_path_old": "Life Path Number",
+    "full_life_purpose": "Life Purpose Number",
+    "inner_guidance": "Inner Guidance",
+    "soul_motivation": "Soul",
+    "life_motivation": "Life Motivation",
+    "full_soul_motivation": "Soul Motivation Number",
+    "full_life_motivation": "Life Motivation Number",
+    "full_inner_guidance": "Inner Guidance Number",
+    "expression": "Expression",
+    "soul_urge": "Soul Urge",
+    "life_path": "Life Path",
+    "day_of_birth": "Day of Birth",
+    "full_expression": "Expression Number",
+    "full_soul_urge": "Soul Urge Number",
+    "full_life_path": "Life Path Number",
+    "full_day_of_birth": "Day of Birth Number"
+  },
+  "number_sections": {
+    "name_number": "Name Numbers",
+    "date_of_birth": "Date of Birth Numbers"
+  },
+  "new_calculation": {
+    "title": "Are you sure you want to create a new profile?",
+    "content": "This will remove your current profile immediately. You can't undo this action.",
+    "cancel": "Cancel",
+    "ok": "Yes"
+  },
+  "affirmation_screen": {
+    "title": "Today's affirmation",
+    "what": "What's an affirmation?",
+    "what_content": "Affirmations are positively formulated sentences that help us to transform our beliefs and focus our attention on our goals.",
+    "how": "How to enhance the power of affirmations",
+    "how_content": "Affirmations can be intensified by painting a large isosceles Ypsilon on a sheet. The Y is an uplifting sign and can reinforce any positive affirmation."
+  },
+  "settings": {
+    "about": "About",
+    "share": "Share the App",
+    "rate": "Rate the App",
+    "store": "Store",
+    "gem_shop": "Gemstone Shop",
+    "privacy": "Privacy Policy",
+    "change_log": "Change Log"
+  },
+  "settings_title": "Settings",
+  "promo": {
+    "loading": "Loading...",
+    "get_ad_free": "Get Ad Free",
+    "no_thanks": "No thanks",
+    "continue": "Continue",
+    "get_rid_of_ads": "Get rid of ads forever!",
+    "support_community": "Support us and the community"
+  },
+  "get_rid_of_ads": "Or get rid of ads forever with Ad Free",
+  "watch_ad": "Watch a short ad to scratch off your daily affirmation. This keeps the content free. Thanks.",
+  "view_ad": "View ad",
+  "notification": {
+    "yes_no_title": "Yes/No",
+    "yes_no": "You are not sure? Ask Tarot 🔮",
+    "three_card_title": "Career, Love, Future",
+    "three_card": "Find out about your Career 💼 Love ❤️ Future 🔮"
+  },
+  "store": {
+    "fully_understand": "Benefit in life with extended content",
+    "issue_title": "Store Connection Issue",
+    "issue_message": "We're currently experiencing some issue with our store connection. Please come back later!",
+    "improve_experience": "Improve your experience",
+    "support_community": "Be part of the community by supporting us"
+  },
+  "rate_popup": {
+    "title": "Do you like Tarot?",
+    "text": "If you like the app, please consider rating it. If you need to explore further, just press “Later”. \nThank you for your support :-)",
+    "no_thank_you": "No, thank you",
+    "later": "Later"
+  },
+  "restore_purchases": "Restore purchases",
+  "something_went_wrong": "Something went wrong!",
+  "not_purchased_yet": "Not purchased yet",
+  "purchased": "Purchased",
+  "purchase_successfully": "Successfully purchased: {{product}}",
+  "next": "Next",
+  "done": "Done",
+  "discover": "Discover",
+  "restored_purchases": "Restored purchases!",
+  "failed_restore_purchases": "Restore purchases failed!",
+  "restore": "Restore",
+  "share_message": "Find out more about yourself with this awesome Tarot App - Tarot Reading & Numerology - http://onelink.to/2e8dub",
+  "products": "Products",
+  "discover_all_cards": "Discover All Cards",
+  "purchase": {
+    "ad_free": {
+      "title": "Remove Ads",
+      "subtitle": "Enjoy the app without ads forever"
+    },
+    "unlock_all_cards": {
+      "title": "Unlock all Cards",
+      "subtitle": "Unlock all cards and enjoy Tarot"
+    },
+    "unlock_all_cards_and_adfree": {
+      "title": "Unlock all Cards and Ad Free",
+      "subtitle": "Unlock cards and get rid of Ads"
+    }
+  }
+}
