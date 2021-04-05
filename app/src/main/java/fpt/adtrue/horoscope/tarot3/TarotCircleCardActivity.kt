@@ -24,7 +24,6 @@ class TarotCircleCardActivity : AppCompatActivity() {
             binding.firstImageBorder.visibility = View.VISIBLE
             binding.secondImageBorder.visibility = View.VISIBLE
             binding.thirdImageBorder.visibility = View.VISIBLE
-
         }
     }
 

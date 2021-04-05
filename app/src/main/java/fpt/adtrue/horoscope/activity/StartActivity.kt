@@ -1,22 +1,16 @@
 package fpt.adtrue.horoscope.activity
 
 import android.content.Context
-import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.os.Handler
 import android.util.Log
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.Fragment
-import com.allyants.notifyme.NotifyMe
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import fpt.adtrue.horoscope.R
 import fpt.adtrue.horoscope.application.App
 import fpt.adtrue.horoscope.databinding.ActivityStartBinding
-import fpt.adtrue.horoscope.fragment.ChooseSign
 import fpt.adtrue.horoscope.model.DataCompatibilityItem
 import fpt.adtrue.horoscope.model.DataSignItem
 import fpt.adtrue.horoscope.model.dataZodiac
@@ -24,7 +18,6 @@ import fpt.adtrue.horoscope.tarot2.TarotAnimSwitchActivity
 import fpt.adtrue.horoscope.tarot3.TarotCircleCardActivity
 import java.io.*
 import java.lang.reflect.Type
-import java.util.*
 
 
 class StartActivity : AppCompatActivity() {
@@ -55,8 +48,14 @@ class StartActivity : AppCompatActivity() {
 //            }
 //        }
 //        Handler().postDelayed(enableButton, 2000)
+        binding.btnTarotAnim1.setOnClickListener {
+            TarotAnimSwitchActivity.start(this)
+        }
 
-        TarotCircleCardActivity.start(this)
+
+        binding.btnTarotAnim2.setOnClickListener {
+            TarotCircleCardActivity.start(this)
+        }
 
 
 //        val notifyMe = NotifyMe.Builder(applicationContext)
