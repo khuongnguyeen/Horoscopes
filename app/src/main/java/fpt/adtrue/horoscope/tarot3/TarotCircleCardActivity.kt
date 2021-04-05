@@ -21,9 +21,9 @@ class TarotCircleCardActivity : AppCompatActivity() {
         binding.btnChoose.setOnClickListener {
             binding.cardLayout.startExpendCard()
             binding.btnChoose.visibility = View.GONE
-            binding.firstImageBorder.visibility = View.VISIBLE
-            binding.secondImageBorder.visibility = View.VISIBLE
-            binding.thirdImageBorder.visibility = View.VISIBLE
+//            binding.firstImageBorder.visibility = View.VISIBLE
+//            binding.secondImageBorder.visibility = View.VISIBLE
+//            binding.thirdImageBorder.visibility = View.VISIBLE
         }
     }
 
