@@ -38,6 +38,7 @@ class TarotCardLayout : FrameLayout {
     private var mCardPointY = 0f
     private var mFlingRunnable: AutoFlingRunnable? = null
     private var mItemClickListener: OnItemClickListener? = null
+    var k = 0
 
     constructor(context: Context) : super(context) {
         initView(context)
@@ -77,6 +78,8 @@ class TarotCardLayout : FrameLayout {
                 view.visibility = View.VISIBLE
             }
             cardView.setOnClickListener {
+                if (k >= 3) return@setOnClickListener
+                k++
                 if (mItemClickListener != null) {
                     mCanTouchScroll = false
                     expendCardAnim(chooseView, outView, cardView, tarotDecodeLayout, topRightPoint)
@@ -165,6 +168,8 @@ class TarotCardLayout : FrameLayout {
             }
             view.visibility = View.VISIBLE
             cardView.setOnClickListener {
+                if (k >= 3) return@setOnClickListener
+                k++
                 if (mItemClickListener != null) {
                     mCanTouchScroll = false
                     expendCardAnim(chooseView, outView, cardView, tarotDecodeLayout, topRightPoint)
@@ -400,7 +405,7 @@ class TarotCardLayout : FrameLayout {
         private const val MAX_CAN_CLICK_ANGLE = 3
         private const val CARD_INIT_ANGLE = -60
         private const val CARD_SPACE_ANGLE = 10
-        private const val RIGHT_MAX_ANGLE = 130
+        private const val RIGHT_MAX_ANGLE = 150
         private const val LEFT_MAX_ANGLE = -40
 
 
