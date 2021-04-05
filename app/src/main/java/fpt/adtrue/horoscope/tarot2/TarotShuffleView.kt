@@ -177,6 +177,7 @@ class TarotShuffleView : FrameLayout {
             } else {
                 AnimHelper.translateYToTopAnim(cardView, toY, listenerNull)
             }
+            print("ok")
         }
     }
 

@@ -21,6 +21,7 @@ import fpt.adtrue.horoscope.model.DataCompatibilityItem
 import fpt.adtrue.horoscope.model.DataSignItem
 import fpt.adtrue.horoscope.model.dataZodiac
 import fpt.adtrue.horoscope.tarot2.TarotAnimSwitchActivity
+import fpt.adtrue.horoscope.tarot3.TarotCircleCardActivity
 import java.io.*
 import java.lang.reflect.Type
 import java.util.*
@@ -55,7 +56,7 @@ class StartActivity : AppCompatActivity() {
 //        }
 //        Handler().postDelayed(enableButton, 2000)
 
-        TarotAnimSwitchActivity.start(this)
+        TarotCircleCardActivity.start(this)
 
 
 //        val notifyMe = NotifyMe.Builder(applicationContext)

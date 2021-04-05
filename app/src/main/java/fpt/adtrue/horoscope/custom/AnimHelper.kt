@@ -124,7 +124,7 @@ object AnimHelper {
     }
 
     fun translateYToTopAnim(view: View?, toY: Int, listener: Animator.AnimatorListener?) {
-        val translationY = ObjectAnimator.ofFloat(view, "translationY", -toY.toFloat())
+        val translationY = ObjectAnimator.ofFloat(view, "translationY", -3*toY.toFloat())
         translationY.interpolator = LinearInterpolator()
         translationY.duration = 400
         translationY.addListener(listener)

@@ -11,6 +11,7 @@ import android.os.Handler
 import android.util.AttributeSet
 import android.util.Log
 import android.view.View
+import android.view.View.OnClickListener
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.ImageView
@@ -56,7 +57,7 @@ class TarotSelectionView : FrameLayout {
 
     private fun initView(context: Context) {
         mContext = context
-        mScreenHalfWidth = ScreenUtil.getScreenWidth(mContext!!) / 2
+        mScreenHalfWidth = -ScreenUtil.getScreenWidth(mContext!!)
         val view = View.inflate(context, R.layout.layout_selection_view, this)
         mScrollView = view.findViewById(R.id.scrollView)
         mTvSelection = view.findViewById(R.id.tv_selection)
@@ -79,16 +80,17 @@ class TarotSelectionView : FrameLayout {
                 }
             }
         })
-
-        val cardDisplayWidth = ScreenUtil.dip2px(mContext!!, 30f)
+        val cardDisplayWidth = ScreenUtil.dip2px(mContext!!, 35f)
         val rightPadding = mScreenHalfWidth - ScreenUtil.dip2px(mContext!!, 35f)
-        val leftPadding = ScreenUtil.getScreenWidth(mContext!!) / 2 - cardDisplayWidth / 2
+        val leftPadding = 5
         mCardContainer!!.setPadding(leftPadding, 0, rightPadding, 0)
         mCardLocations.clear()
+        var k = 0
         for (i in 0 until MAX_CARD_COUNT) {
             val itemView = View.inflate(context, R.layout.item_card, null)
             itemView.tag = false
-            itemView.setOnClickListener(View.OnClickListener {
+            itemView.setOnClickListener(OnClickListener {
+                if (k == 3) return@OnClickListener
                 if (itemView.tag as Boolean) {
                     mScrollView!!.setSlide(false)
                     val loc = IntArray(2)
@@ -99,19 +101,22 @@ class TarotSelectionView : FrameLayout {
                     mIvTranslate!!.alpha = 1.0f
                     mIvTranslate!!.visibility = View.VISIBLE
                     if (!isFirstViewFilled) {
+                        k++
                         startCardTranslateAnim(mIvTranslate, mFirstOpenImage)
                         isFirstViewFilled = true
                     } else if (!isSecondViewFilled) {
+                        k++
                         startCardTranslateAnim(mIvTranslate, mSecondOpenImage)
                         isSecondViewFilled = true
                     } else {
+                        k++
                         startCardTranslateAnim(mIvTranslate, mThirdOpenImage)
                         isThirdViewFilled = true
                     }
                     return@OnClickListener
                 }
                 itemView.tag = true
-                itemView.translationY = ScreenUtil.dip2px(mContext!!, 20f).toFloat()
+                itemView.translationY = ScreenUtil.dip2px(mContext!!, -50f).toFloat()
                 resetCardViews(i)
             })
             val p = LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,
@@ -140,8 +145,7 @@ class TarotSelectionView : FrameLayout {
                 view.tag = false
             }
         }
-
-        Log.e("currentPosition: ","$currentPosition")
+        Log.e("currentPosition: ", "$currentPosition")
     }
 
     private fun startCardTranslateAnim(startView: View?, endView: View?) {

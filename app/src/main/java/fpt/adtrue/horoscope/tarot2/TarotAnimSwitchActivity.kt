@@ -8,7 +8,7 @@ import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import fpt.adtrue.horoscope.R
 
-class TarotAnimSwitchActivity :AppCompatActivity(){
+class TarotAnimSwitchActivity : AppCompatActivity() {
     var mBtnStart: Button? = null
     var mTarotShuffleView: TarotShuffleView? = null
     var mTarotSelectionView: TarotSelectionView? = null
@@ -16,12 +16,14 @@ class TarotAnimSwitchActivity :AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tarot_switch)
         initView()
-        mBtnStart!!.setOnClickListener { mTarotShuffleView!!.anim() }
+        mBtnStart!!.setOnClickListener {
+            mTarotShuffleView!!.anim()
+            mBtnStart!!.visibility = View.GONE
+        }
         mTarotShuffleView!!.setOnShuffleListener(object : OnShuffleViewListener {
             override fun onShuffleAnimDone() {
                 mTarotShuffleView!!.visibility = View.GONE
                 mTarotSelectionView!!.showTarotSelectionView()
-                mBtnStart!!.visibility = View.GONE
             }
         })
     }

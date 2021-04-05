@@ -8,7 +8,7 @@ import android.view.MotionEvent
 import android.widget.HorizontalScrollView
 
 class SlideScrollView : HorizontalScrollView {
-    private var isSlide = true //控制是否滚动
+    private var isSlide = true 
     var mListener: OnScrollListener? = null
 
     constructor(context: Context?) : super(context) {}

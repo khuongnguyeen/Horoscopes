@@ -45,7 +45,10 @@
             android:screenOrientation="portrait"/>
         <activity android:name=".activity.ChoiceSignHerActivity"
             android:screenOrientation="portrait"/>
-        <activity android:name=".tarot2.TarotAnimSwitchActivity"/>
+        <activity android:name=".tarot2.TarotAnimSwitchActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".tarot3.TarotCircleCardActivity"
+            android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
