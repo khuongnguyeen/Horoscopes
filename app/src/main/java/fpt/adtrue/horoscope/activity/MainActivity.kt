@@ -21,6 +21,7 @@ import fpt.adtrue.horoscope.R
 import fpt.adtrue.horoscope.adapter.HomePagerAdapter
 import fpt.adtrue.horoscope.application.App
 import fpt.adtrue.horoscope.databinding.ActivityMainBinding
+import fpt.adtrue.horoscope.tarot3.TarotCircleCardActivity
 import kotlin.system.exitProcess
 
 
@@ -60,6 +61,10 @@ class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
                 R.id.my_as_profile -> {
                     val intent = Intent(this, ChoiceCompatActivity::class.java)
                     startActivity(intent)
+                    true
+                }
+                R.id.tarot -> {
+                    TarotCircleCardActivity.start(this)
                     true
                 }
 

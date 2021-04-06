@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_menu"
+        >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -18,84 +20,28 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
-                android:id="@+id/btn_choose"
-                android:layout_width="wrap_content"
-                android:layout_height="45dp"
-                android:layout_gravity="center_horizontal"
-                android:text="Lựa chọn thẻ"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
-
-<!--            <ImageView-->
-<!--                android:id="@+id/first_image_border"-->
-<!--                android:layout_width="@dimen/card_width"-->
-<!--                android:layout_height="@dimen/card_height"-->
-<!--                android:layout_marginRight="30dp"-->
-<!--                android:background="@drawable/bg_conner"-->
-<!--                android:visibility="invisible"-->
-<!--                app:layout_constraintBottom_toBottomOf="@+id/second_open_image"-->
-<!--                app:layout_constraintRight_toLeftOf="@+id/second_open_image"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="@+id/second_image_border" />-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/second_image_border"-->
-<!--                android:visibility="invisible"-->
-<!--                android:layout_width="@dimen/card_width"-->
-<!--                android:layout_height="@dimen/card_height"-->
-<!--                android:layout_marginTop="50dp"-->
-<!--                android:background="@drawable/bg_conner"-->
-<!--                app:layout_constraintLeft_toLeftOf="parent"-->
-<!--                app:layout_constraintRight_toRightOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent" />-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/third_image_border"-->
-<!--                android:layout_width="@dimen/card_width"-->
-<!--                android:layout_height="@dimen/card_height"-->
-<!--                android:layout_marginLeft="30dp"-->
-<!--                android:background="@drawable/bg_conner"-->
-<!--                android:visibility="invisible"-->
-<!--                app:layout_constraintBottom_toBottomOf="@+id/second_open_image"-->
+<!--            <Button-->
+<!--                android:id="@+id/btn_choose"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="45dp"-->
+<!--                android:layout_gravity="center_horizontal"-->
+<!--                android:text="Lựa chọn thẻ"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
 <!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintLeft_toRightOf="@+id/second_open_image" />-->
+<!--                app:layout_constraintStart_toStartOf="parent" />-->
 
-<!--            <ImageView-->
-<!--                android:id="@+id/first_open_image"-->
-<!--                android:layout_width="@dimen/card_width"-->
-<!--                android:layout_height="@dimen/card_height"-->
-<!--                android:background="#3cf"-->
-<!--                android:visibility="invisible"-->
-<!--                app:layout_constraintBottom_toBottomOf="@+id/first_image_border"-->
-<!--                app:layout_constraintLeft_toLeftOf="@+id/first_image_border"-->
-<!--                app:layout_constraintRight_toRightOf="@+id/first_image_border"-->
-<!--                app:layout_constraintTop_toTopOf="@+id/first_image_border" />-->
+            <TextView
+                android:id="@+id/tv_pick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Scroll and Pick 3 cards"
+                android:textColor="@color/zs_color_white"
+                android:textSize="@dimen/_12sdp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-<!--            <ImageView-->
-<!--                android:id="@+id/second_open_image"-->
-<!--                android:layout_width="@dimen/card_width"-->
-<!--                android:layout_height="@dimen/card_height"-->
-<!--                android:background="#3cf"-->
-<!--                android:visibility="invisible"-->
-<!--                app:layout_constraintBottom_toBottomOf="@+id/second_image_border"-->
-<!--                app:layout_constraintHorizontal_bias="0.114"-->
-<!--                app:layout_constraintLeft_toLeftOf="@+id/second_image_border"-->
-<!--                app:layout_constraintRight_toRightOf="@+id/second_image_border"-->
-<!--                app:layout_constraintTop_toTopOf="@+id/second_image_border"-->
-<!--                app:layout_constraintVertical_bias="1.0" />-->
-
-<!--            <ImageView-->
-<!--                android:id="@+id/third_open_image"-->
-<!--                android:layout_width="@dimen/card_width"-->
-<!--                android:layout_height="@dimen/card_height"-->
-<!--                android:background="#3cf"-->
-<!--                android:visibility="invisible"-->
-<!--                app:layout_constraintBottom_toBottomOf="@+id/third_image_border"-->
-<!--                app:layout_constraintLeft_toLeftOf="@+id/third_image_border"-->
-<!--                app:layout_constraintRight_toRightOf="@+id/third_image_border"-->
-<!--                app:layout_constraintTop_toTopOf="@+id/third_image_border" />-->
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -103,7 +49,7 @@
             android:id="@+id/iv_translate"
             android:layout_width="@dimen/card_width"
             android:layout_height="@dimen/card_height"
-            android:src="@drawable/back_tarot_done"
+            android:src="@color/red_btn_bg_color"
             android:visibility="gone" />
 
     </FrameLayout>
