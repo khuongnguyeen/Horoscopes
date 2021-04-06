@@ -18,6 +18,7 @@ import fpt.adtrue.horoscope.activity.ResultCompatActivity
 import fpt.adtrue.horoscope.application.App
 import fpt.adtrue.horoscope.databinding.PagerItemRecyclerviewBinding
 import fpt.adtrue.horoscope.model.DataHoroscope
+import fpt.adtrue.horoscope.tarot3.TarotCircleCardActivity
 
 class FragmentHomePager(private val position:Int):Fragment() {
 
@@ -69,6 +70,9 @@ class FragmentHomePager(private val position:Int):Fragment() {
             Handler().postDelayed(enableButton, 1000)
         }
 
+        binding.homepageTarot.setOnClickListener {
+            TarotCircleCardActivity.start(context!!)
+        }
 
         binding.homepageRedirChatButton.setOnClickListener {
             val intent = Intent(

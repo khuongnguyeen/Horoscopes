@@ -16,7 +16,6 @@ import android.view.animation.TranslateAnimation
 import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.ImageView
-import android.widget.Toast
 import fpt.adtrue.horoscope.R
 import fpt.adtrue.horoscope.activity.ResultsTarotActivity
 import fpt.adtrue.horoscope.application.App
@@ -76,7 +75,7 @@ class TarotCardLayout : FrameLayout {
         }
         val rand = Random()
         for (i in 0..25) {
-            val randomIndex: Int = rand.nextInt(ints.size-1)
+            val randomIndex: Int = rand.nextInt(ints.size - 1)
             val a = ints[randomIndex]
             data.add(App.getTarot()[a])
             ints.removeAt(randomIndex)
@@ -119,22 +118,31 @@ class TarotCardLayout : FrameLayout {
             cardView.setOnClickListener {
                 if (k == 0) {
                     App.POSITION_LOVE = data[i].name
-                    expendCardAnim(chooseView, outView, cardView, tarotDecodeLayout,topLeftPoint )
+                    expendCardAnim(chooseView, outView, cardView, tarotDecodeLayout, topLeftPoint)
+                    cardView.isEnabled = false
+                    val enableButton = Runnable { cardView.isEnabled = true }
+                    Handler().postDelayed(enableButton, 1000)
                 }
                 if (k == 1) {
 
                     App.POSITION_CAREER = data[i].name
                     expendCardAnim(chooseView, outView, cardView, tarotDecodeLayout, topCenterPoint)
+                    cardView.isEnabled = false
+                    val enableButton = Runnable { cardView.isEnabled = true }
+                    Handler().postDelayed(enableButton, 1000)
                 }
                 if (k == 2) {
 
                     App.POSITION_FUTURE = data[i].name
-                    expendCardAnim(chooseView, outView, cardView, tarotDecodeLayout,  topRightPoint)
+                    expendCardAnim(chooseView, outView, cardView, tarotDecodeLayout, topRightPoint)
+                    cardView.isEnabled = false
+                    val enableButton2 = Runnable { cardView.isEnabled = true }
+                    Handler().postDelayed(enableButton2, 1000)
                     mCanTouchScroll = false
                     val enableButton = Runnable {
                         btnView.visibility = View.VISIBLE
                         btnView.setOnClickListener {
-                            Log.e("__________________","$i")
+                            Log.e("__________________", "$i")
                             ResultsTarotActivity.start(context)
                         }
                     }
@@ -171,22 +179,31 @@ class TarotCardLayout : FrameLayout {
                 }
                 if (k == 0) {
                     App.POSITION_LOVE = data[i].name
-                    expendCardAnim(chooseView, outView, cardView, tarotDecodeLayout,topLeftPoint )
+                    expendCardAnim(chooseView, outView, cardView, tarotDecodeLayout, topLeftPoint)
+                    cardView.isEnabled = false
+                    val enableButton = Runnable { cardView.isEnabled = true }
+                    Handler().postDelayed(enableButton, 1000)
                 }
                 if (k == 1) {
 
                     App.POSITION_CAREER = data[i].name
                     expendCardAnim(chooseView, outView, cardView, tarotDecodeLayout, topCenterPoint)
+                    cardView.isEnabled = false
+                    val enableButton = Runnable { cardView.isEnabled = true }
+                    Handler().postDelayed(enableButton, 1000)
                 }
                 if (k == 2) {
 
                     App.POSITION_FUTURE = data[i].name
-                    expendCardAnim(chooseView, outView, cardView, tarotDecodeLayout,  topRightPoint)
+                    expendCardAnim(chooseView, outView, cardView, tarotDecodeLayout, topRightPoint)
+                    cardView.isEnabled = false
+                    val enableButton2 = Runnable { cardView.isEnabled = true }
+                    Handler().postDelayed(enableButton2, 1000)
                     mCanTouchScroll = false
                     val enableButton = Runnable {
                         btnView.visibility = View.VISIBLE
                         btnView.setOnClickListener {
-                            Log.e("__________________","$i")
+                            Log.e("__________________", "$i")
                             ResultsTarotActivity.start(context)
                         }
                     }
@@ -226,22 +243,32 @@ class TarotCardLayout : FrameLayout {
             cardView?.setOnClickListener {
                 if (k == 0) {
                     App.POSITION_LOVE = data[i].name
-                    expendCardAnim(chooseView, outView, cardView, tarotDecodeLayout,topLeftPoint )
+                    expendCardAnim(chooseView, outView, cardView, tarotDecodeLayout, topLeftPoint)
+                    cardView.isEnabled = false
+                    val enableButton = Runnable { cardView.isEnabled = true }
+                    Handler().postDelayed(enableButton, 1000)
+
                 }
                 if (k == 1) {
 
                     App.POSITION_CAREER = data[i].name
                     expendCardAnim(chooseView, outView, cardView, tarotDecodeLayout, topCenterPoint)
+                    cardView.isEnabled = false
+                    val enableButton = Runnable { cardView.isEnabled = true }
+                    Handler().postDelayed(enableButton, 1000)
                 }
                 if (k == 2) {
 
                     App.POSITION_FUTURE = data[i].name
-                    expendCardAnim(chooseView, outView, cardView, tarotDecodeLayout,  topRightPoint)
+                    expendCardAnim(chooseView, outView, cardView, tarotDecodeLayout, topRightPoint)
+                    cardView.isEnabled = false
+                    val enableButton2 = Runnable { cardView.isEnabled = true }
+                    Handler().postDelayed(enableButton2, 1000)
                     mCanTouchScroll = false
                     val enableButton = Runnable {
                         btnView.visibility = View.VISIBLE
                         btnView.setOnClickListener {
-                            Log.e("__________________","$i")
+                            Log.e("__________________", "$i")
                             ResultsTarotActivity.start(context)
                         }
                     }

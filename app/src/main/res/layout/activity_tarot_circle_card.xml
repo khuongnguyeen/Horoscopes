@@ -20,17 +20,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-<!--            <Button-->
-<!--                android:id="@+id/btn_choose"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="45dp"-->
-<!--                android:layout_gravity="center_horizontal"-->
-<!--                android:text="Lựa chọn thẻ"-->
-<!--                app:layout_constraintBottom_toBottomOf="parent"-->
-<!--                app:layout_constraintEnd_toEndOf="parent"-->
-<!--                app:layout_constraintStart_toStartOf="parent" />-->
-
-            <TextView
+            <com.lb.auto_fit_textview.AutoResizeTextView
                 android:id="@+id/tv_pick"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -47,8 +37,8 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
         <ImageView
             android:id="@+id/iv_translate"
-            android:layout_width="@dimen/card_width"
-            android:layout_height="@dimen/card_height"
+            android:layout_width="@dimen/_80sdp"
+            android:layout_height="@dimen/_135sdp"
             android:src="@color/red_btn_bg_color"
             android:visibility="gone" />
 

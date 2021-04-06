@@ -56,7 +56,7 @@
                         android:layout_marginTop="72.0dip"
                         android:src="@drawable/s3_hp" />
 
-                    <TextView
+                    <com.lb.auto_fit_textview.AutoResizeTextView
                         android:id="@+id/hp_year"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -82,7 +82,7 @@
                             android:layout_height="44.0dip"
                             android:src="@drawable/m6" />
 
-                        <TextView
+                        <com.lb.auto_fit_textview.AutoResizeTextView
                             android:id="@+id/meteo_month_text"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -125,14 +125,6 @@
                                 android:layout_height="30.0dip"
                                 android:src="@drawable/m6" />
 
-                            <TextView
-                                android:id="@+id/meteo_text1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/hp_quot_rub1_titre"
-                                android:textAllCaps="true"
-                                android:textColor="@android:color/white"
-                                android:textSize="16.0sp" />
                         </LinearLayout>
                     </RelativeLayout>
 
@@ -158,14 +150,7 @@
                                 android:layout_height="30.0dip"
                                 android:src="@drawable/m5" />
 
-                            <TextView
-                                android:id="@+id/meteo_text2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/hp_quot_rub2_titre"
-                                android:textAllCaps="true"
-                                android:textColor="@android:color/white"
-                                android:textSize="16.0sp" />
+
                         </LinearLayout>
                     </RelativeLayout>
 
@@ -191,14 +176,7 @@
                                 android:layout_height="30.0dip"
                                 android:src="@drawable/m2" />
 
-                            <TextView
-                                android:id="@+id/meteo_text3"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/hp_quot_rub3_titre"
-                                android:textAllCaps="true"
-                                android:textColor="@android:color/white"
-                                android:textSize="16.0sp" />
+
                         </LinearLayout>
                     </RelativeLayout>
 
@@ -226,14 +204,6 @@
                                 android:layout_height="30.0dip"
                                 android:src="@drawable/m3" />
 
-                            <TextView
-                                android:id="@+id/meteo_text4"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="@string/hp_quot_rub4_titre"
-                                android:textAllCaps="true"
-                                android:textColor="@android:color/white"
-                                android:textSize="16.0sp" />
                         </LinearLayout>
                     </RelativeLayout>
                 </RelativeLayout>
@@ -251,7 +221,7 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/headerMain">
 
-                    <TextView
+                    <com.lb.auto_fit_textview.AutoResizeTextView
                         android:id="@+id/homepage_recap"
                         android:layout_width="fill_parent"
                         android:layout_height="@dimen/_40sdp"
@@ -274,7 +244,7 @@
                     app:cardElevation="@dimen/_5sdp"
                     app:layout_constraintTop_toBottomOf="@+id/cardView2">
 
-                    <TextView
+                    <com.lb.auto_fit_textview.AutoResizeTextView
                         android:id="@+id/tv_description"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -640,53 +610,102 @@
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
 
-              <androidx.cardview.widget.CardView
-                  android:layout_width="match_parent"
-                  android:layout_height="wrap_content"
-                  android:layout_margin="@dimen/_5sdp"
-                  app:cardElevation="@dimen/_5sdp"
-                  app:cardCornerRadius="@dimen/_10sdp"
-                  app:layout_constraintBottom_toBottomOf="parent"
-                  app:layout_constraintEnd_toEndOf="parent"
-                  app:layout_constraintStart_toStartOf="parent"
-                  app:layout_constraintTop_toBottomOf="@+id/cv_bot_2"
-                  >
-                  <androidx.constraintlayout.widget.ConstraintLayout
-                      android:id="@+id/homepage_redir_compat"
-                      android:layout_width="fill_parent"
-                      android:layout_height="wrap_content"
-                      android:background="@android:color/white"
-                      android:orientation="vertical">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/dsagafh"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:cardElevation="@dimen/_5sdp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cv_bot_2">
 
-                      <ImageView
-                          android:id="@+id/imageView5"
-                          android:layout_width="fill_parent"
-                          android:layout_height="wrap_content"
-                          android:adjustViewBounds="true"
-                          android:src="@drawable/hp_redir_compat"
-                          app:layout_constraintBottom_toBottomOf="parent"
-                          app:layout_constraintEnd_toEndOf="parent"
-                          app:layout_constraintStart_toStartOf="parent"
-                          app:layout_constraintTop_toTopOf="parent" />
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/homepage_redir_compat"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:orientation="vertical">
 
-                      <TextView
-                          android:layout_width="fill_parent"
-                          android:layout_height="wrap_content"
-                          android:layout_marginStart="56dp"
-                          android:layout_marginEnd="56dp"
-                          android:gravity="center"
-                          android:padding="8.0dip"
-                          android:text="@string/menu_item_22_txt"
-                          android:background="@drawable/rounded_button_blue_white"
-                          android:textColor="@android:color/black"
-                          android:textSize="20.0sp"
-                          app:layout_constraintBottom_toBottomOf="parent"
-                          app:layout_constraintEnd_toEndOf="parent"
-                          app:layout_constraintStart_toStartOf="parent"
-                          app:layout_constraintTop_toTopOf="parent" />
-                  </androidx.constraintlayout.widget.ConstraintLayout>
+                        <ImageView
+                            android:id="@+id/imageView5"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/hp_redir_compat"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
 
-              </androidx.cardview.widget.CardView>
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="56dp"
+                            android:layout_marginEnd="56dp"
+                            android:background="@drawable/rounded_button_blue_white"
+                            android:gravity="center"
+                            android:padding="8.0dip"
+                            android:text="@string/menu_item_22_txt"
+                            android:textColor="@android:color/black"
+                            android:textSize="20.0sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    app:cardElevation="@dimen/_5sdp"
+                    app:cardCornerRadius="@dimen/_10sdp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/dsagafh"
+                    >
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/homepage_tarot"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/white"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imageView15"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:adjustViewBounds="true"
+                            android:src="@drawable/bg_tarot"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="56dp"
+                            android:layout_marginEnd="56dp"
+                            android:gravity="center"
+                            android:padding="8.0dip"
+                            android:text="Tarot"
+                            android:background="@drawable/rounded_button_blue_white"
+                            android:textColor="@android:color/black"
+                            android:textSize="20.0sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.cardview.widget.CardView>
+
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.core.widget.NestedScrollView>
     </FrameLayout>
