@@ -36,6 +36,7 @@ class ProfileAstroActivity : AppCompatActivity() {
         }
         runnable!!.run()
 
+        Utils.sttBar(this)
         binding.hpSign.setOnClickListener {
             val intent = Intent(applicationContext, ChoiceSignProfileAstroActivity::class.java)
             startActivities(arrayOf(intent))

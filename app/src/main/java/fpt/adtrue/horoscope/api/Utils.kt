@@ -1,10 +1,16 @@
 package fpt.adtrue.horoscope.api
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Context
 import android.content.SharedPreferences
+import android.graphics.Color
 import android.graphics.drawable.Drawable
+import android.os.Build
 import android.util.Log
+import android.view.View
+import android.view.Window
+import android.view.WindowManager
 import com.ihsanbal.logging.Level
 import com.ihsanbal.logging.LoggingInterceptor
 import fpt.adtrue.horoscope.application.App
@@ -155,5 +161,28 @@ object Utils {
             }
         }
     }
+
+
+    fun sttBar(activity: Activity) {
+        if (Build.VERSION.SDK_INT in 19..20) WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS.setWindowFlag(
+            activity,
+            true
+        )
+        if (Build.VERSION.SDK_INT >= 19) activity.window.decorView.systemUiVisibility =
+            View.SYSTEM_UI_FLAG_LAYOUT_STABLE or View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+        if (Build.VERSION.SDK_INT >= 21) {
+            WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS.setWindowFlag(activity, false)
+            activity.window.statusBarColor = Color.TRANSPARENT
+        }
+    }
+
+    private fun Int.setWindowFlag(activity: Activity, on: Boolean) {
+        val win: Window = activity.window
+        val winParams: WindowManager.LayoutParams = win.attributes
+        if (on) winParams.flags = winParams.flags or this else winParams.flags =
+            winParams.flags and inv()
+        win.attributes = winParams
+    }
+
 
 }

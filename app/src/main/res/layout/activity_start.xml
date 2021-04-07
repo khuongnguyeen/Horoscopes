@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:background="@drawable/bg_menu"
+        android:background="@drawable/bg_onboarding"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -19,7 +19,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
-            app:lottie_rawRes="@raw/natal_chart_animation" />
+            app:lottie_rawRes="@raw/natal_chart_house_animation" />
 
         <FrameLayout
             android:id="@+id/content"

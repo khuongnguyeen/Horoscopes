@@ -27,7 +27,9 @@
         <item
             android:id="@+id/item_3"
             android:icon="@drawable/amour_3"
-            android:title="Zodiac">
+            android:title="Zodiac"
+            
+            >
             <menu>
                 <item
                     android:id="@+id/action_aries"

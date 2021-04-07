@@ -6,6 +6,7 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
+    <color name="black_trong">#00000000</color>
     <color name="abc_input_method_navigation_guard">@android:color/black</color>
     <color name="abc_search_url_text_normal">#ff7fa87f</color>
     <color name="abc_search_url_text_pressed">@android:color/black</color>
@@ -22,7 +23,8 @@
     <color name="background_material_light">@color/material_grey_50</color>
     <color name="belvedere_floating_action_menu_icon_color">#ffffffff</color>
     <color name="belvedere_floating_action_menu_item_background">#ffffffff</color>
-    <color name="belvedere_floating_action_menu_item_icon_color">#89000000</color>
+    <color name="black_blur">#89000000</color>
+    <color name="black_blur_2">#69000000</color>
     <color name="belvedere_image_stream_status_bar_color">#fff5f5f5</color>
     <color name="bg_toast">#ff9e0b14</color>
     <color name="black_overlay">#66000000</color>

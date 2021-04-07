@@ -1,5 +1,6 @@
 package fpt.adtrue.horoscope.activity
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -7,12 +8,14 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import fpt.adtrue.horoscope.R
+import fpt.adtrue.horoscope.api.Utils
 import fpt.adtrue.horoscope.application.App
 import fpt.adtrue.horoscope.databinding.ActivityTarotResultsBinding
 
 class ResultsTarotActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityTarotResultsBinding
+    @SuppressLint("ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_tarot_results)
@@ -40,15 +43,20 @@ class ResultsTarotActivity : AppCompatActivity() {
             }
         }
         binding.txtLove.visibility = View.VISIBLE
+        binding.viewLeft.setImageResource(R.drawable.bg_view_tarot)
         binding.tvLoveDetail.text = loveUpright
         binding.tvReversed.text = loveReversed
 
+        Utils.sttBar(this)
         binding.ivLove.setOnClickListener {
             binding.txtLove.visibility = View.VISIBLE
             binding.txtCareer.visibility = View.INVISIBLE
             binding.txtFuture.visibility = View.INVISIBLE
             binding.tvLoveDetail.text = loveUpright
             binding.tvReversed.text = loveReversed
+            binding.viewLeft.setImageResource(R.drawable.bg_view_tarot)
+            binding.viewCenter.setImageResource(R.drawable.bg_troan)
+            binding.viewRight.setImageResource(R.drawable.bg_troan)
 
         }
         binding.ivCareer.setOnClickListener {
@@ -57,6 +65,9 @@ class ResultsTarotActivity : AppCompatActivity() {
             binding.txtFuture.visibility = View.INVISIBLE
             binding.tvLoveDetail.text = careerUpright
             binding.tvReversed.text = careerReversed
+            binding.viewCenter.setImageResource(R.drawable.bg_view_tarot)
+            binding.viewRight.setImageResource(R.drawable.bg_troan)
+            binding.viewLeft.setImageResource(R.drawable.bg_troan)
 
 
         }
@@ -66,6 +77,9 @@ class ResultsTarotActivity : AppCompatActivity() {
             binding.txtFuture.visibility = View.VISIBLE
             binding.tvLoveDetail.text = futureUpright
             binding.tvReversed.text = futureReversed
+            binding.viewRight.setImageResource(R.drawable.bg_view_tarot)
+            binding.viewCenter.setImageResource(R.drawable.bg_troan)
+            binding.viewLeft.setImageResource(R.drawable.bg_troan)
 
         }
 

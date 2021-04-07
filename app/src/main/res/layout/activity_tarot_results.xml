@@ -1,13 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
     <androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bg_menu"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+        android:background="@drawable/paywall_bg">
+        <RelativeLayout
+            android:layout_marginTop="@dimen/_24sdp"
+            android:id="@+id/compat_choice_top_bar"
+            android:layout_width="fill_parent"
+            android:layout_height="56dp"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
+            <ImageView
+                android:id="@+id/compat_choice_back"
+                android:layout_width="48.0dip"
+                android:layout_height="48.0dip"
+                android:layout_centerVertical="true"
+                android:adjustViewBounds="true"
+                android:paddingTop="13.0dip"
+                android:paddingRight="13.0dip"
+                android:paddingBottom="15.0dip"
+                android:src="@drawable/back_white" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:text="Tarot"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:textSize="@dimen/_12sdp" />
+        </RelativeLayout>
+
+
+
+        <ImageView
+            android:id="@+id/view_left"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_160sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_love"
+            app:layout_constraintEnd_toEndOf="@+id/iv_love"
+            app:layout_constraintStart_toStartOf="@+id/iv_love"
+            app:layout_constraintTop_toTopOf="@+id/iv_love" />
 
         <ImageView
             android:id="@+id/iv_love"
@@ -29,16 +69,26 @@
             app:layout_constraintStart_toStartOf="@+id/iv_love"
             app:layout_constraintTop_toBottomOf="@+id/iv_love" />
 
+
+        <ImageView
+            android:id="@+id/view_center"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_160sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_career"
+            app:layout_constraintEnd_toEndOf="@+id/iv_career"
+            app:layout_constraintStart_toStartOf="@+id/iv_career"
+            app:layout_constraintTop_toTopOf="@+id/iv_career" />
+
         <ImageView
             android:id="@+id/iv_career"
             android:layout_width="@dimen/_80sdp"
             android:layout_height="@dimen/_135sdp"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="30dp"
             android:src="@drawable/ten_of_pentacles"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/compat_choice_top_bar" />
 
         <TextView
             android:id="@+id/txt_career"
@@ -50,6 +100,16 @@
             android:visibility="invisible"
             app:layout_constraintStart_toStartOf="@+id/iv_career"
             app:layout_constraintTop_toBottomOf="@+id/iv_career" />
+
+
+        <ImageView
+            android:id="@+id/view_right"
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_160sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_future"
+            app:layout_constraintEnd_toEndOf="@+id/iv_future"
+            app:layout_constraintStart_toStartOf="@+id/iv_future"
+            app:layout_constraintTop_toTopOf="@+id/iv_future" />
 
         <ImageView
             android:id="@+id/iv_future"
@@ -75,7 +135,7 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginTop="28dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_career">
@@ -89,8 +149,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/_5sdp"
+                    app:cardBackgroundColor="@color/black_blur"
                     app:cardCornerRadius="@dimen/_5sdp"
-                    app:cardElevation="@dimen/_5sdp"
+                    app:cardElevation="0dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -104,27 +165,29 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/_5sdp"
-                            android:layout_marginTop="5dp"
+                            android:layout_marginTop="@dimen/_5sdp"
                             android:text="Upright"
                             android:textColor="@color/orange"
-                            android:textStyle="bold"
                             android:textSize="@dimen/_12sdp"
+                            android:textStyle="bold"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
-                        <TextView
+                        <fpt.adtrue.horoscope.customview.JustifyTextView
                             android:id="@+id/tv_love_detail"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/_5sdp"
                             android:layout_marginTop="10dp"
-                            android:textSize="@dimen/_10sdp"
                             android:text="If you are into any relationship, then this card is a good indicator for you as it can be a very good omen. The card acts as a symbol of the good husband, or partner, or father. It is a loving card some you can expect to find huge emotional fulfillment when the card appears and petty arguments ought to be very low. It enhances romance, love, and affection in the relationship and a good indicator."
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/tv_love_de" />
+                            app:layout_constraintTop_toBottomOf="@+id/tv_love_de"
+                            tools:targetApi="o" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </androidx.cardview.widget.CardView>
 
@@ -132,8 +195,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="@dimen/_5sdp"
+                    app:cardBackgroundColor="@color/black_blur"
                     app:cardCornerRadius="@dimen/_5sdp"
-                    app:cardElevation="@dimen/_5sdp"
+                    app:cardElevation="0dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/cardView5">
@@ -142,7 +206,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
-                        <TextView
+                        <fpt.adtrue.horoscope.customview.JustifyTextView
                             android:id="@+id/textView8"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
@@ -156,14 +220,15 @@
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
-                        <TextView
+                        <fpt.adtrue.horoscope.customview.JustifyTextView
                             android:id="@+id/tv_reversed"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_margin="@dimen/_5sdp"
                             android:layout_marginTop="10dp"
-                            android:textSize="@dimen/_10sdp"
                             android:text="If you are into any relationship, then this card is a good indicator for you as it can be a very good omen. The card acts as a symbol of the good husband, or partner, or father. It is a loving card some you can expect to find huge emotional fulfillment when the card appears and petty arguments ought to be very low. It enhances romance, love, and affection in the relationship and a good indicator."
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_10sdp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"

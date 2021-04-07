@@ -5,6 +5,7 @@
     <FrameLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:background="@drawable/paywall_bg"
         android:fitsSystemWindows="true">
 
         <androidx.drawerlayout.widget.DrawerLayout
@@ -19,15 +20,16 @@
 
                 <com.google.android.material.appbar.AppBarLayout
                     android:id="@id/appBarLayout"
+                    android:background="@color/black_blur_2"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     app:elevation="0.0dip">
 
                     <androidx.appcompat.widget.Toolbar
                         android:id="@id/toolbar"
-                        android:theme="@style/MyOverflowButtonStyle"
                         android:layout_width="fill_parent"
                         android:layout_height="?actionBarSize"
+                        android:theme="@style/MyOverflowButtonStyle"
                         app:contentInsetStartWithNavigation="0.0dip"
                         app:popupTheme="@style/AppTheme.PopupOverlay"
                         app:navigationIcon="@drawable/menu"
@@ -98,7 +100,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:layout_gravity="start"
-                android:background="@drawable/bg_menu"
+                android:background="@drawable/background_v2"
                 android:fitsSystemWindows="false"
                 app:itemTextColor="@color/white"
                 app:itemIconTint="@color/white"

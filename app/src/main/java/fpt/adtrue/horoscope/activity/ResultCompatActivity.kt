@@ -8,11 +8,13 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.os.Handler
 import android.view.View
+import android.view.animation.LinearInterpolator
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import fpt.adtrue.horoscope.R
+import fpt.adtrue.horoscope.api.Utils
 import fpt.adtrue.horoscope.application.App
 import fpt.adtrue.horoscope.databinding.ActivityCompatResultsBinding
 import java.util.*
@@ -22,17 +24,28 @@ class ResultCompatActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCompatResultsBinding
     private var mCountDownTimer: CountDownTimer? = null
+    private var runnable: Runnable? = null
 
     @SuppressLint("SetTextI18n", "NewApi")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_compat_results)
+
+        Utils.sttBar(this)
+         runnable = Runnable {
+            binding.compatBaro.animate()
+                .setDuration(30000)
+                .rotationBy(360F)
+                .setInterpolator(LinearInterpolator())
+                .withEndAction(runnable)
+                .start()
+        }
+        runnable!!.run()
+
         mCountDownTimer = object : CountDownTimer(7000, 1000) {
             override fun onTick(millisUntilFinished: Long) {}
             override fun onFinish() {
                 binding.rlBackground.visibility = View.GONE
-                window.statusBarColor =
-                    ContextCompat.getColor(applicationContext, R.color.titlebar_compat)
             }
         }.start()
         binding.compatResultsSignLeftImg.setImageResource(App.getZodiac()[App.SIGN].image)

@@ -27,6 +27,8 @@ class ChooseSignActivity :AppCompatActivity(){
             val intent = Intent(applicationContext, MainActivity::class.java)
             startActivities(arrayOf(intent))
         }
+
+        Utils.sttBar(this)
 //        choice_sign_go_wims
         binding.choiceSignGoWims.setOnClickListener {
             setDataLocal( App.SIGN,applicationContext)

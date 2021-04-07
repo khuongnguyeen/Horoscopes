@@ -8,6 +8,7 @@ import fpt.adtrue.horoscope.R
 import fpt.adtrue.horoscope.adapter.SignPagerAdapter
 import fpt.adtrue.horoscope.api.Utils
 import fpt.adtrue.horoscope.api.Utils.setDataLocal
+import fpt.adtrue.horoscope.api.Utils.sttBar
 import fpt.adtrue.horoscope.application.App
 import fpt.adtrue.horoscope.databinding.ActivityCompatChoiceBinding
 
@@ -22,6 +23,7 @@ class ChoiceCompatActivity: AppCompatActivity(){
 
         binding.compatChoiceLeftViewpager.currentItem = App.SIGN
 
+        sttBar(this)
 
             binding.compatChoiceLeftNext.setOnClickListener {
             if (binding.compatChoiceLeftViewpager.currentItem == 11)  binding.compatChoiceLeftViewpager.currentItem = 0

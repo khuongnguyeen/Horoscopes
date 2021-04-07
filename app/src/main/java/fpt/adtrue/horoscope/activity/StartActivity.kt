@@ -1,20 +1,26 @@
 package fpt.adtrue.horoscope.activity
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.content.res.Resources
+import android.graphics.Color
 import android.graphics.drawable.Drawable
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.util.Log
 import android.view.View
+import android.view.Window
+import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import fpt.adtrue.horoscope.R
+import fpt.adtrue.horoscope.api.Utils.sttBar
 import fpt.adtrue.horoscope.application.App
 import fpt.adtrue.horoscope.databinding.ActivityStartBinding
 import fpt.adtrue.horoscope.fragment.ChooseSign
@@ -34,6 +40,7 @@ class StartActivity : AppCompatActivity() {
         getSign()
         getCompatibility()
         getDataLocal()
+        sttBar(this)
         getDaSi()
         getTarot()
         addImgTarot()

@@ -2,11 +2,12 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@id/mainLayout"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:background="@drawable/bg_signe"
+        android:background="@drawable/background_v2"
         android:descendantFocusability="beforeDescendants"
         android:focusableInTouchMode="true">
 
@@ -55,13 +56,19 @@
             app:layout_constraintTop_toBottomOf="@+id/wims_title_layout"
             app:layout_constraintVertical_bias="0.493">
 
-            <DatePicker
+            <com.ycuwq.datepicker.date.DatePicker
                 android:id="@+id/dp"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_gravity="center"
-                android:headerBackground="#00000000" />
+                app:itemTextColor="@color/white"
+                app:itemTextSize="@dimen/_16ssp"
+
+                app:wheelCurtainBorderColor="@color/red"
+                android:background="@drawable/home_adfree"
+                app:selectedTextColor="@color/red"
+                app:selectedTextSize="@dimen/_30sdp"
+                app:wheelCurtain="false"
+                app:zoomInSelectedItem="true" />
         </LinearLayout>
 
         <RelativeLayout
@@ -82,7 +89,8 @@
                 android:gravity="center"
                 android:text="@string/chsign_p1_cta"
                 android:textColor="@android:color/white"
-                android:textSize="21.0sp" />
+                android:textSize="21.0sp"
+                android:textStyle="bold" />
         </RelativeLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -11,13 +11,14 @@
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:scaleType="centerCrop"
-            android:src="@drawable/bg_signe"
+            android:src="@drawable/background_v2"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
+            android:layout_marginTop="@dimen/_24sdp"
             android:id="@+id/choice_sign_back"
             android:layout_width="48.0dip"
             android:layout_height="48.0dip"

@@ -5,6 +5,7 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.PointF
 import android.os.Handler
+import android.os.Looper
 import android.util.AttributeSet
 import android.util.Log
 import android.view.LayoutInflater
@@ -26,9 +27,6 @@ import kotlin.math.abs
 import kotlin.math.asin
 import kotlin.math.hypot
 
-/**
- * Created by chenshaolong on 2019/2/28.
- */
 class TarotCardLayout : FrameLayout {
     var mContext: Context? = null
     private var mLastX = 0f
@@ -121,7 +119,7 @@ class TarotCardLayout : FrameLayout {
                     expendCardAnim(chooseView, outView, cardView, tarotDecodeLayout, topLeftPoint)
                     cardView.isEnabled = false
                     val enableButton = Runnable { cardView.isEnabled = true }
-                    Handler().postDelayed(enableButton, 1000)
+                    Handler(Looper.getMainLooper()).postDelayed(enableButton, 1000)
                 }
                 if (k == 1) {
 
@@ -129,7 +127,7 @@ class TarotCardLayout : FrameLayout {
                     expendCardAnim(chooseView, outView, cardView, tarotDecodeLayout, topCenterPoint)
                     cardView.isEnabled = false
                     val enableButton = Runnable { cardView.isEnabled = true }
-                    Handler().postDelayed(enableButton, 1000)
+                    Handler(Looper.getMainLooper()).postDelayed(enableButton, 1000)
                 }
                 if (k == 2) {
 
@@ -137,7 +135,7 @@ class TarotCardLayout : FrameLayout {
                     expendCardAnim(chooseView, outView, cardView, tarotDecodeLayout, topRightPoint)
                     cardView.isEnabled = false
                     val enableButton2 = Runnable { cardView.isEnabled = true }
-                    Handler().postDelayed(enableButton2, 1000)
+                    Handler(Looper.getMainLooper()).postDelayed(enableButton2, 1000)
                     mCanTouchScroll = false
                     val enableButton = Runnable {
                         btnView.visibility = View.VISIBLE
@@ -146,7 +144,7 @@ class TarotCardLayout : FrameLayout {
                             ResultsTarotActivity.start(context)
                         }
                     }
-                    Handler().postDelayed(enableButton, 1000)
+                    Handler(Looper.getMainLooper()).postDelayed(enableButton, 1000)
                 }
                 mCanTouchScroll = true
                 k++
@@ -182,7 +180,7 @@ class TarotCardLayout : FrameLayout {
                     expendCardAnim(chooseView, outView, cardView, tarotDecodeLayout, topLeftPoint)
                     cardView.isEnabled = false
                     val enableButton = Runnable { cardView.isEnabled = true }
-                    Handler().postDelayed(enableButton, 1000)
+                    Handler(Looper.getMainLooper()).postDelayed(enableButton, 1000)
                 }
                 if (k == 1) {
 
@@ -190,15 +188,14 @@ class TarotCardLayout : FrameLayout {
                     expendCardAnim(chooseView, outView, cardView, tarotDecodeLayout, topCenterPoint)
                     cardView.isEnabled = false
                     val enableButton = Runnable { cardView.isEnabled = true }
-                    Handler().postDelayed(enableButton, 1000)
+                    Handler(Looper.getMainLooper()).postDelayed(enableButton, 1000)
                 }
                 if (k == 2) {
-
                     App.POSITION_FUTURE = data[i].name
                     expendCardAnim(chooseView, outView, cardView, tarotDecodeLayout, topRightPoint)
                     cardView.isEnabled = false
                     val enableButton2 = Runnable { cardView.isEnabled = true }
-                    Handler().postDelayed(enableButton2, 1000)
+                    Handler(Looper.getMainLooper()).postDelayed(enableButton2, 1000)
                     mCanTouchScroll = false
                     val enableButton = Runnable {
                         btnView.visibility = View.VISIBLE
@@ -207,20 +204,16 @@ class TarotCardLayout : FrameLayout {
                             ResultsTarotActivity.start(context)
                         }
                     }
-                    Handler().postDelayed(enableButton, 1000)
+                    Handler(Looper.getMainLooper()).postDelayed(enableButton, 1000)
                 }
                 mCanTouchScroll = true
                 k++
                 view.isEnabled = false
                 val enableButton = Runnable { view.isEnabled = true }
-                Handler().postDelayed(enableButton, 1000)
+                Handler(Looper.getMainLooper()).postDelayed(enableButton, 1000)
             }
-            startRotationAnim(
-                outView,
-                0f,
-                CARD_INIT_ANGLE.toFloat(),
-                (childCount - i) * CARD_SPACE_ANGLE + CARD_INIT_ANGLE.toFloat()
-            )
+            startRotationAnim(outView, 0f, CARD_INIT_ANGLE.toFloat(),
+                (childCount - i) * CARD_SPACE_ANGLE + CARD_INIT_ANGLE.toFloat())
         }
     }
 
@@ -246,7 +239,7 @@ class TarotCardLayout : FrameLayout {
                     expendCardAnim(chooseView, outView, cardView, tarotDecodeLayout, topLeftPoint)
                     cardView.isEnabled = false
                     val enableButton = Runnable { cardView.isEnabled = true }
-                    Handler().postDelayed(enableButton, 1000)
+                    Handler(Looper.getMainLooper()).postDelayed(enableButton, 1000)
 
                 }
                 if (k == 1) {
@@ -255,7 +248,7 @@ class TarotCardLayout : FrameLayout {
                     expendCardAnim(chooseView, outView, cardView, tarotDecodeLayout, topCenterPoint)
                     cardView.isEnabled = false
                     val enableButton = Runnable { cardView.isEnabled = true }
-                    Handler().postDelayed(enableButton, 1000)
+                    Handler(Looper.getMainLooper()).postDelayed(enableButton, 1000)
                 }
                 if (k == 2) {
 
@@ -263,7 +256,7 @@ class TarotCardLayout : FrameLayout {
                     expendCardAnim(chooseView, outView, cardView, tarotDecodeLayout, topRightPoint)
                     cardView.isEnabled = false
                     val enableButton2 = Runnable { cardView.isEnabled = true }
-                    Handler().postDelayed(enableButton2, 1000)
+                    Handler(Looper.getMainLooper()).postDelayed(enableButton2, 1000)
                     mCanTouchScroll = false
                     val enableButton = Runnable {
                         btnView.visibility = View.VISIBLE
@@ -272,7 +265,7 @@ class TarotCardLayout : FrameLayout {
                             ResultsTarotActivity.start(context)
                         }
                     }
-                    Handler().postDelayed(enableButton, 1000)
+                    Handler(Looper.getMainLooper()).postDelayed(enableButton, 1000)
                 }
                 mCanTouchScroll = true
                 k++
