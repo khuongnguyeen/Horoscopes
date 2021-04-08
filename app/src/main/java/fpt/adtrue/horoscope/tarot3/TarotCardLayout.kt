@@ -7,16 +7,13 @@ import android.graphics.PointF
 import android.os.Handler
 import android.os.Looper
 import android.util.AttributeSet
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
-import android.view.animation.Animation
 import android.view.animation.LinearInterpolator
-import android.view.animation.TranslateAnimation
-import android.widget.Button
 import android.widget.FrameLayout
 import android.widget.ImageView
+import android.widget.TextView
 import fpt.adtrue.horoscope.R
 import fpt.adtrue.horoscope.activity.ResultsTarotActivity
 import fpt.adtrue.horoscope.application.App
@@ -27,6 +24,7 @@ import kotlin.math.abs
 import kotlin.math.asin
 import kotlin.math.hypot
 
+@Suppress("NAME_SHADOWING")
 class TarotCardLayout : FrameLayout {
     var mContext: Context? = null
     private var mLastX = 0f
@@ -80,10 +78,8 @@ class TarotCardLayout : FrameLayout {
         }
     }
 
-
     private fun initView(context: Context) {
         get26Card()
-
         mContext = context
         mCardWidth = mContext!!.resources.getDimensionPixelSize(R.dimen.card_width)
         mCardHeight = mContext!!.resources.getDimensionPixelSize(R.dimen.card_height)
@@ -99,35 +95,39 @@ class TarotCardLayout : FrameLayout {
             val topCenterPoint = view.findViewById<View>(R.id.center_top_point)
             val topLeftPoint = view.findViewById<View>(R.id.left_top_point)
             val img = view.findViewById<ImageView>(R.id.img)
-            val btnView = view.findViewById<Button>(R.id.btn_view)
-
+            val txtLove = view.findViewById<TextView>(R.id.txt_love)
+            val txtCareer = view.findViewById<TextView>(R.id.txt_career)
+            val txtFuture = view.findViewById<TextView>(R.id.txt_future)
             img.setImageResource(data[i].img!!)
             if (i == 0) {
                 mCardPointX = view.x
                 mCardPointY = view.y
             }
             view.visibility = View.GONE
-            val translate = 20
-            if (i in 0..4) {
-                view.translationX = translate * (5 - i).toFloat()
-                view.translationY = translate * (5 - i).toFloat()
-                view.visibility = View.VISIBLE
-            }
+//            val translate = 20
+//            if (i in 0..4) {
+//                view.translationX = translate * (5 - i).toFloat()
+//                view.translationY = translate * (5 - i).toFloat()
+//                view.visibility = View.VISIBLE
+//            }
+            val enableButton = Runnable { txtLove.visibility = View.VISIBLE }
+            Handler(Looper.getMainLooper()).postDelayed(enableButton, 3000)
             cardView.setOnClickListener {
                 if (k == 0) {
                     App.POSITION_LOVE = data[i].name
                     expendCardAnim(chooseView, outView, cardView, tarotDecodeLayout, topLeftPoint)
                     cardView.isEnabled = false
-                    val enableButton = Runnable { cardView.isEnabled = true }
-                    Handler(Looper.getMainLooper()).postDelayed(enableButton, 1000)
+                    val enableButton = Runnable { cardView.isEnabled = true
+                        txtCareer.visibility = View.VISIBLE}
+                    Handler(Looper.getMainLooper()).postDelayed(enableButton, 3000)
                 }
                 if (k == 1) {
-
                     App.POSITION_CAREER = data[i].name
                     expendCardAnim(chooseView, outView, cardView, tarotDecodeLayout, topCenterPoint)
                     cardView.isEnabled = false
-                    val enableButton = Runnable { cardView.isEnabled = true }
-                    Handler(Looper.getMainLooper()).postDelayed(enableButton, 1000)
+                    val enableButton = Runnable { cardView.isEnabled = true
+                        txtFuture.visibility = View.VISIBLE}
+                    Handler(Looper.getMainLooper()).postDelayed(enableButton, 3000)
                 }
                 if (k == 2) {
 
@@ -138,17 +138,12 @@ class TarotCardLayout : FrameLayout {
                     Handler(Looper.getMainLooper()).postDelayed(enableButton2, 1000)
                     mCanTouchScroll = false
                     val enableButton = Runnable {
-                        btnView.visibility = View.VISIBLE
-                        btnView.setOnClickListener {
-                            Log.e("__________________", "$i")
-                            ResultsTarotActivity.start(context)
-                        }
+                        ResultsTarotActivity.start(context)
                     }
-                    Handler(Looper.getMainLooper()).postDelayed(enableButton, 1000)
+                    Handler(Looper.getMainLooper()).postDelayed(enableButton, 3000)
                 }
                 mCanTouchScroll = true
                 k++
-
             }
             this.addView(view)
         }
@@ -164,31 +159,34 @@ class TarotCardLayout : FrameLayout {
             val topRightPoint = view.findViewById<View>(R.id.right_top_point)
             val topCenterPoint = view.findViewById<View>(R.id.center_top_point)
             val topLeftPoint = view.findViewById<View>(R.id.left_top_point)
-            val btnView = view.findViewById<Button>(R.id.btn_view)
+            val txtLove = view.findViewById<TextView>(R.id.txt_love)
+            val txtCareer = view.findViewById<TextView>(R.id.txt_career)
+            val txtFuture = view.findViewById<TextView>(R.id.txt_future)
+            val tvPick = view.findViewById<TextView>(R.id.tv_pick)
+            tarotDecodeLayout.visibility = View.VISIBLE
+            val enableButton2 = Runnable { tvPick.visibility = View.VISIBLE }
+            Handler(Looper.getMainLooper()).postDelayed(enableButton2, 2000)
             if (i in 0..4) {
                 view.x = mCardPointX
                 view.y = mCardPointY
             }
             view.visibility = View.VISIBLE
             cardView.setOnClickListener {
-                if (k == 3) {
-//                    dismissTarotOtherCards(i)
-                    mCanTouchScroll = false
-                }
                 if (k == 0) {
                     App.POSITION_LOVE = data[i].name
                     expendCardAnim(chooseView, outView, cardView, tarotDecodeLayout, topLeftPoint)
                     cardView.isEnabled = false
-                    val enableButton = Runnable { cardView.isEnabled = true }
-                    Handler(Looper.getMainLooper()).postDelayed(enableButton, 1000)
+                    val enableButton = Runnable { cardView.isEnabled = true
+                        txtCareer.visibility = View.VISIBLE }
+                    Handler(Looper.getMainLooper()).postDelayed(enableButton, 3000)
                 }
                 if (k == 1) {
-
                     App.POSITION_CAREER = data[i].name
                     expendCardAnim(chooseView, outView, cardView, tarotDecodeLayout, topCenterPoint)
                     cardView.isEnabled = false
-                    val enableButton = Runnable { cardView.isEnabled = true }
-                    Handler(Looper.getMainLooper()).postDelayed(enableButton, 1000)
+                    val enableButton = Runnable { cardView.isEnabled = true
+                        txtFuture.visibility = View.VISIBLE}
+                    Handler(Looper.getMainLooper()).postDelayed(enableButton, 3000)
                 }
                 if (k == 2) {
                     App.POSITION_FUTURE = data[i].name
@@ -198,13 +196,9 @@ class TarotCardLayout : FrameLayout {
                     Handler(Looper.getMainLooper()).postDelayed(enableButton2, 1000)
                     mCanTouchScroll = false
                     val enableButton = Runnable {
-                        btnView.visibility = View.VISIBLE
-                        btnView.setOnClickListener {
-                            Log.e("__________________", "$i")
-                            ResultsTarotActivity.start(context)
-                        }
+                        ResultsTarotActivity.start(context)
                     }
-                    Handler(Looper.getMainLooper()).postDelayed(enableButton, 1000)
+                    Handler(Looper.getMainLooper()).postDelayed(enableButton, 3000)
                 }
                 mCanTouchScroll = true
                 k++
@@ -212,8 +206,10 @@ class TarotCardLayout : FrameLayout {
                 val enableButton = Runnable { view.isEnabled = true }
                 Handler(Looper.getMainLooper()).postDelayed(enableButton, 1000)
             }
-            startRotationAnim(outView, 0f, CARD_INIT_ANGLE.toFloat(),
-                (childCount - i) * CARD_SPACE_ANGLE + CARD_INIT_ANGLE.toFloat())
+            startRotationAnim(
+                outView, 500f, -180f,
+                (childCount - i) * CARD_SPACE_ANGLE + CARD_INIT_ANGLE.toFloat()
+            )
         }
     }
 
@@ -232,26 +228,27 @@ class TarotCardLayout : FrameLayout {
             val topRightPoint = view.findViewById<View>(R.id.right_top_point)
             val topCenterPoint = view.findViewById<View>(R.id.center_top_point)
             val topLeftPoint = view.findViewById<View>(R.id.left_top_point)
-            val btnView = view.findViewById<Button>(R.id.btn_view)
+            val txtLove = view.findViewById<TextView>(R.id.txt_love)
+            val txtCareer = view.findViewById<TextView>(R.id.txt_career)
+            val txtFuture = view.findViewById<TextView>(R.id.txt_future)
             cardView?.setOnClickListener {
                 if (k == 0) {
                     App.POSITION_LOVE = data[i].name
                     expendCardAnim(chooseView, outView, cardView, tarotDecodeLayout, topLeftPoint)
                     cardView.isEnabled = false
-                    val enableButton = Runnable { cardView.isEnabled = true }
-                    Handler(Looper.getMainLooper()).postDelayed(enableButton, 1000)
-
+                    val enableButton = Runnable { cardView.isEnabled = true
+                        txtCareer.visibility = View.VISIBLE }
+                    Handler(Looper.getMainLooper()).postDelayed(enableButton, 3000)
                 }
                 if (k == 1) {
-
                     App.POSITION_CAREER = data[i].name
                     expendCardAnim(chooseView, outView, cardView, tarotDecodeLayout, topCenterPoint)
                     cardView.isEnabled = false
-                    val enableButton = Runnable { cardView.isEnabled = true }
-                    Handler(Looper.getMainLooper()).postDelayed(enableButton, 1000)
+                    val enableButton = Runnable { cardView.isEnabled = true
+                        txtFuture.visibility = View.VISIBLE }
+                    Handler(Looper.getMainLooper()).postDelayed(enableButton, 3000)
                 }
                 if (k == 2) {
-
                     App.POSITION_FUTURE = data[i].name
                     expendCardAnim(chooseView, outView, cardView, tarotDecodeLayout, topRightPoint)
                     cardView.isEnabled = false
@@ -259,17 +256,12 @@ class TarotCardLayout : FrameLayout {
                     Handler(Looper.getMainLooper()).postDelayed(enableButton2, 1000)
                     mCanTouchScroll = false
                     val enableButton = Runnable {
-                        btnView.visibility = View.VISIBLE
-                        btnView.setOnClickListener {
-                            Log.e("__________________", "$i")
-                            ResultsTarotActivity.start(context)
-                        }
+                        ResultsTarotActivity.start(context)
                     }
-                    Handler(Looper.getMainLooper()).postDelayed(enableButton, 1000)
+                    Handler(Looper.getMainLooper()).postDelayed(enableButton, 3000)
                 }
                 mCanTouchScroll = true
                 k++
-
             }
             if (view.visibility == View.GONE) {
                 continue
@@ -337,24 +329,6 @@ class TarotCardLayout : FrameLayout {
     @SuppressLint("ClickableViewAccessibility")
     override fun onTouchEvent(event: MotionEvent): Boolean {
         return true
-    }
-
-    private fun dismissTarotOtherCards(exceptViewPosition: Int) {
-        val childCount = childCount
-        for (i in 0 until childCount) {
-            if (exceptViewPosition == i) {
-                continue
-            }
-            val view = getChildAt(i)
-            val mHiddenAction = TranslateAnimation(
-                Animation.RELATIVE_TO_SELF, 0.0f,
-                Animation.RELATIVE_TO_SELF, 0.0f, Animation.RELATIVE_TO_SELF,
-                0.0f, Animation.RELATIVE_TO_SELF, 1.0f
-            )
-            mHiddenAction.duration = 1000
-            view.visibility = View.GONE
-            view.animation = mHiddenAction
-        }
     }
 
     private fun startRotationAnim(
@@ -431,6 +405,27 @@ class TarotCardLayout : FrameLayout {
         animatorSet.start()
     }
 
+    fun startOuttrotationAmin(
+        outCardView: View?,
+        duration: Int,
+        fromPosition: Int,
+        toPosition: Int
+    ) {
+        val view3Anim = ObjectAnimator.ofFloat(
+            outCardView,
+            "rotation",
+            fromPosition.toFloat(),
+            toPosition.toFloat()
+        )
+        view3Anim.duration = duration.toLong()
+        view3Anim.startDelay = 300
+        view3Anim.interpolator = LinearInterpolator()
+        val mAnimSet = AnimatorSet()
+        mAnimSet.playSequentially(view3Anim)
+        mAnimSet.start()
+    }
+
+
     private fun cardDanceAnim(
         innerCardView: View,
         chooseView: View,
@@ -449,9 +444,9 @@ class TarotCardLayout : FrameLayout {
             override fun onAnimationEnd(animator: Animator) {
                 tarotDecodeLayout.visibility = View.VISIBLE
                 val toX =
-                    (topRightPoint.x - chooseView.width * 0.6 / 2).toFloat()
+                    (topRightPoint.x - chooseView.width * 1.0 / 2).toFloat()
                 val toY =
-                    (topRightPoint.y - chooseView.height * 0.6 / 2).toFloat()
+                    (topRightPoint.y - chooseView.height * 1.0 / 2).toFloat()
                 translateTopRightAnim(chooseView, toX, toY)
             }
 
@@ -473,8 +468,8 @@ class TarotCardLayout : FrameLayout {
             innerCardView.x = pointF.x
             innerCardView.y = pointF.y
         }
-        val scaleXAnim = ObjectAnimator.ofFloat(innerCardView, "scaleX", 1f, 0.76f)
-        val scaleYAnim = ObjectAnimator.ofFloat(innerCardView, "scaleY", 1f, 0.76f)
+        val scaleXAnim = ObjectAnimator.ofFloat(innerCardView, "scaleX", 1f, 1f)
+        val scaleYAnim = ObjectAnimator.ofFloat(innerCardView, "scaleY", 1f, 1f)
         scaleXAnim.interpolator = LinearInterpolator()
         scaleYAnim.interpolator = LinearInterpolator()
         val animatorSet = AnimatorSet()

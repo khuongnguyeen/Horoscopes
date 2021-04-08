@@ -1,6 +1,7 @@
 package fpt.adtrue.horoscope.activity
 
 import android.annotation.SuppressLint
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -12,7 +13,7 @@ import fpt.adtrue.horoscope.api.Utils
 import fpt.adtrue.horoscope.application.App
 import fpt.adtrue.horoscope.databinding.ActivityTarotResultsBinding
 
-class ResultsTarotActivity : AppCompatActivity() {
+class ResultsTarotActivity : Activity() {
 
     private lateinit var binding: ActivityTarotResultsBinding
     @SuppressLint("ResourceAsColor")
@@ -68,9 +69,8 @@ class ResultsTarotActivity : AppCompatActivity() {
             binding.viewCenter.setImageResource(R.drawable.bg_view_tarot)
             binding.viewRight.setImageResource(R.drawable.bg_troan)
             binding.viewLeft.setImageResource(R.drawable.bg_troan)
-
-
         }
+
         binding.ivFuture.setOnClickListener {
             binding.txtLove.visibility = View.INVISIBLE
             binding.txtCareer.visibility = View.INVISIBLE
@@ -80,10 +80,17 @@ class ResultsTarotActivity : AppCompatActivity() {
             binding.viewRight.setImageResource(R.drawable.bg_view_tarot)
             binding.viewCenter.setImageResource(R.drawable.bg_troan)
             binding.viewLeft.setImageResource(R.drawable.bg_troan)
-
         }
 
+        binding.compatChoiceBack.setOnClickListener {
+            onBackPressed()
+        }
+    }
 
+    override fun onBackPressed() {
+        val intent = Intent(this, MainActivity::class.java)
+        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
+        startActivity(intent)
     }
 
     companion object {

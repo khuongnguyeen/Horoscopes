@@ -24,6 +24,7 @@
     <color name="belvedere_floating_action_menu_icon_color">#ffffffff</color>
     <color name="belvedere_floating_action_menu_item_background">#ffffffff</color>
     <color name="black_blur">#89000000</color>
+    <color name="black_blur_3">#A9000000</color>
     <color name="black_blur_2">#69000000</color>
     <color name="belvedere_image_stream_status_bar_color">#fff5f5f5</color>
     <color name="bg_toast">#ff9e0b14</color>

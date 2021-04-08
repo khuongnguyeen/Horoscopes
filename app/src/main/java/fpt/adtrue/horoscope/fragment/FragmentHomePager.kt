@@ -11,10 +11,7 @@ import android.view.ViewGroup
 import android.view.animation.LinearInterpolator
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import fpt.adtrue.horoscope.activity.ChoiceCompatActivity
-import fpt.adtrue.horoscope.activity.ChooseSignActivity
-import fpt.adtrue.horoscope.activity.ProfileAstroActivity
-import fpt.adtrue.horoscope.activity.ResultCompatActivity
+import fpt.adtrue.horoscope.activity.*
 import fpt.adtrue.horoscope.application.App
 import fpt.adtrue.horoscope.databinding.PagerItemRecyclerviewBinding
 import fpt.adtrue.horoscope.model.DataHoroscope
@@ -71,7 +68,7 @@ class FragmentHomePager(private val position:Int):Fragment() {
         }
 
         binding.homepageTarot.setOnClickListener {
-            TarotCircleCardActivity.start(context!!)
+            StartReadingTarotActivity.start(context!!)
         }
 
         binding.homepageRedirChatButton.setOnClickListener {

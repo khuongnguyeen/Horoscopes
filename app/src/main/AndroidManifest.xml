@@ -22,6 +22,7 @@
 <!--            </intent-filter>-->
         </activity>
         <activity android:name=".activity.StartActivity"
+
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -48,6 +49,9 @@
         <activity android:name=".tarot3.TarotCircleCardActivity"
             android:screenOrientation="portrait"/>
         <activity android:name=".activity.ResultsTarotActivity"
+            android:theme="@style/Theme.Translucent"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".activity.StartReadingTarotActivity"
             android:screenOrientation="portrait"/>
     </application>
 

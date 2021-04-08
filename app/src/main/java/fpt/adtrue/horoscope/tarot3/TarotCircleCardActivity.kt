@@ -22,15 +22,14 @@ class TarotCircleCardActivity : AppCompatActivity() {
         mContext = this
         val enableButton = Runnable { binding.cardLayout.startExpendCard() }
         Handler(Looper.getMainLooper()).postDelayed(enableButton, 500)
-        val enableButton2 = Runnable { binding.tvPick.visibility = View.VISIBLE }
-        Handler(Looper.getMainLooper()).postDelayed(enableButton2, 2000)
 
         Utils.sttBar(this)
+
+        binding.compatChoiceBack.setOnClickListener {
+            onBackPressed()
+        }
+
     }
 
-    companion object {
-        fun start(context: Context) {
-            context.startActivity(Intent(context, TarotCircleCardActivity::class.java))
-        }
-    }
+    companion object { fun start(context: Context) { context.startActivity(Intent(context, TarotCircleCardActivity::class.java)) } }
 }

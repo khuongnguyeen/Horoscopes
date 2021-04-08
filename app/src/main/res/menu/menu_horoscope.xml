@@ -14,7 +14,7 @@
         <item
             android:id="@+id/my_as_profile"
             android:icon="@drawable/amour_3"
-            android:title="@string/menu_item_24_txt" />
+            android:title="@string/menu_item_22_txt" />
         <item
             android:id="@+id/tarot"
             android:icon="@drawable/amour_4"

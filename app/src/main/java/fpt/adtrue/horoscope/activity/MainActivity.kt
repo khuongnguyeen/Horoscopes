@@ -1,18 +1,14 @@
 package fpt.adtrue.horoscope.activity
 
 import android.annotation.SuppressLint
-import android.app.Activity
 import android.app.Dialog
 import android.content.ActivityNotFoundException
-import android.content.Context
 import android.content.Intent
-import android.graphics.Color
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 import android.view.*
-import android.view.WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -23,7 +19,6 @@ import fpt.adtrue.horoscope.adapter.HomePagerAdapter
 import fpt.adtrue.horoscope.api.Utils.sttBar
 import fpt.adtrue.horoscope.application.App
 import fpt.adtrue.horoscope.databinding.ActivityMainBinding
-import fpt.adtrue.horoscope.tarot3.TarotCircleCardActivity
 import kotlin.system.exitProcess
 
 
@@ -67,7 +62,7 @@ class MainActivity : AppCompatActivity(), TabLayout.OnTabSelectedListener {
                     true
                 }
                 R.id.tarot -> {
-                    TarotCircleCardActivity.start(this)
+                    StartReadingTarotActivity.start(this)
                     true
                 }
 

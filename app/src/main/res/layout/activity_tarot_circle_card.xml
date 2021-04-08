@@ -6,9 +6,32 @@
         android:layout_height="match_parent"
         android:background="@drawable/paywall_bg"
         >
+        <RelativeLayout
+            android:layout_marginTop="@dimen/_20sdp"
+            android:id="@+id/compat_choice_top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_30sdp"
+            android:background="@android:color/transparent"
+            android:gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/compat_choice_back"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:adjustViewBounds="true"
+                android:paddingTop="13.0dip"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:paddingRight="13.0dip"
+                android:paddingBottom="15.0dip"
+                android:src="@drawable/back_white" />
+        </RelativeLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_marginTop="@dimen/_24sdp"
+            android:layout_marginTop="@dimen/_50sdp"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -21,19 +44,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <fpt.adtrue.horoscope.customview.JustifyTextView
-                android:id="@+id/tv_pick"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/_180sdp"
-                android:text="Scroll and Pick 3 cards"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:textSize="@dimen/_12sdp"
-                android:visibility="gone"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent" />
+
 
 
 

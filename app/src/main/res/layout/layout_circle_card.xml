@@ -4,58 +4,134 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/black_trong"
+        >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/layout_tarot_decode"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="20dp"
+            android:background="@color/black_trong"
             android:visibility="invisible">
+
+            <ImageView
+                android:id="@+id/view_1"
+                android:layout_width="@dimen/card_width"
+                android:layout_height="@dimen/card_height"
+                android:background="@drawable/bg_conner"
+                app:layout_constraintBottom_toBottomOf="@+id/left_top_point"
+                app:layout_constraintEnd_toEndOf="@+id/left_top_point"
+                app:layout_constraintStart_toStartOf="@+id/left_top_point"
+                app:layout_constraintTop_toTopOf="@+id/left_top_point" />
+
+
+            <TextView
+                android:id="@+id/txt_love"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="LOVE"
+                android:visibility="invisible"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="@+id/view_1"
+                app:layout_constraintTop_toBottomOf="@+id/view_1" />
 
 
 
             <View
                 android:id="@+id/left_top_point"
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:layout_marginTop="100dp"
+                android:layout_width="0.1dp"
+                android:layout_height="0.1dp"
+                android:background="@color/red"
+                android:layout_marginTop="@dimen/_100sdp"
                 android:layout_marginEnd="50dp"
                 app:layout_constraintEnd_toStartOf="@+id/center_top_point"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+
+            <ImageView
+                android:id="@+id/view_2"
+                android:layout_width="@dimen/card_width"
+                android:layout_height="@dimen/card_height"
+                android:background="@drawable/bg_conner"
+                app:layout_constraintBottom_toBottomOf="@+id/center_top_point"
+                app:layout_constraintEnd_toEndOf="@+id/center_top_point"
+                app:layout_constraintStart_toStartOf="@+id/center_top_point"
+                app:layout_constraintTop_toTopOf="@+id/center_top_point" />
+
+            <TextView
+                android:id="@+id/txt_career"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="CAREER"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:visibility="invisible"
+                app:layout_constraintStart_toStartOf="@+id/view_2"
+                app:layout_constraintTop_toBottomOf="@+id/view_2" />
+
+
             <View
                 android:id="@+id/center_top_point"
-                android:layout_width="10dp"
-                android:layout_height="10dp"
-                android:layout_marginTop="100dp"
+                android:layout_width="0.1dp"
+                android:layout_height="0.1dp"
+                android:layout_marginTop="@dimen/_100sdp"
+                android:background="@color/red"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <ImageView
+                android:id="@+id/view_3"
+                android:layout_width="@dimen/card_width"
+                android:layout_height="@dimen/card_height"
+                android:background="@drawable/bg_conner"
+                app:layout_constraintBottom_toBottomOf="@+id/right_top_point"
+                app:layout_constraintEnd_toEndOf="@+id/right_top_point"
+                app:layout_constraintStart_toStartOf="@+id/right_top_point"
+                app:layout_constraintTop_toTopOf="@+id/right_top_point" />
+
+
+            <TextView
+                android:id="@+id/txt_future"
+                android:layout_width="@dimen/_80sdp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="FUTURE"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="@+id/view_3"
+                app:layout_constraintTop_toBottomOf="@+id/view_3" />
+
             <View
                 android:id="@+id/right_top_point"
-                android:layout_width="10dp"
-                android:layout_height="10dp"
+                android:layout_width="0.1dp"
+                android:layout_height="0.1dp"
+                android:background="@color/red"
                 android:layout_marginStart="50dp"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="@dimen/_100sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/center_top_point"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
-                android:id="@+id/btn_view"
-                android:layout_width="200dp"
+
+            <fpt.adtrue.horoscope.customview.JustifyTextView
+                android:id="@+id/tv_pick"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="View Results"
-                android:textAllCaps="false"
+                android:layout_marginTop="5dp"
+                android:text="Scroll and Pick 3 cards"
+                android:textColor="@color/orange"
+                android:textSize="@dimen/_10sdp"
                 android:visibility="invisible"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
+                app:layout_constraintTop_toBottomOf="@+id/txt_career" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -77,16 +153,16 @@
 
         <FrameLayout
             android:id="@+id/outer_card_view"
-            android:layout_width="@dimen/_160sdp"
-            android:layout_height="@dimen/_270sdp"
+            android:layout_width="@dimen/card_double_width"
+            android:layout_height="@dimen/card_double_height"
             android:layout_gravity="center"
             android:layout_marginLeft="@dimen/card_half_width"
             android:layout_marginTop="@dimen/card_top_margin">
 
             <View
                 android:id="@+id/card_view"
-                android:layout_width="@dimen/_80sdp"
-                android:layout_height="@dimen/_135sdp"
+                android:layout_width="@dimen/card_width"
+                android:layout_height="@dimen/card_height"
                 android:background="@drawable/back_tarot_done" />
         </FrameLayout>
 
