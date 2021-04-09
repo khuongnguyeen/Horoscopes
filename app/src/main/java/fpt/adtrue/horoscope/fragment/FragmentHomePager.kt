@@ -16,6 +16,7 @@ import fpt.adtrue.horoscope.application.App
 import fpt.adtrue.horoscope.databinding.PagerItemRecyclerviewBinding
 import fpt.adtrue.horoscope.model.DataHoroscope
 import fpt.adtrue.horoscope.tarot3.TarotCircleCardActivity
+import java.util.*
 
 class FragmentHomePager(private val position:Int):Fragment() {
 
@@ -40,7 +41,22 @@ class FragmentHomePager(private val position:Int):Fragment() {
         binding.data = App.getViewModel()
         binding.hpSign.setImageResource(App.getZodiac()[App.SIGN].image2)
         if (position == 0){
+
+            val calendar = Calendar.getInstance(TimeZone.getDefault()) as Calendar
+            var mon = "${calendar.get(Calendar.MONTH) + 1}"
+            var day ="${calendar.get(Calendar.DAY_OF_MONTH)}"
+
+            if (calendar.get(Calendar.MONTH) + 1 < 10){
+                mon= "0${calendar.get(Calendar.MONTH) + 1}"
+            }
+            if (calendar.get(Calendar.DAY_OF_MONTH) <10){
+                day = "0${calendar.get(Calendar.DAY_OF_MONTH)}"
+            }
+
+
             App.getViewModel().getHoroscope(App.getZodiac()[App.SIGN].name,"yesterday")
+            App.getViewModel().getAmazon(day,mon,calendar.get(Calendar.YEAR))
+            print("ok")
             App.getViewModel().data2.observe(this,  {
                 updateData(it)
             })

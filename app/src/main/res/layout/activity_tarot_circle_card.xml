@@ -19,14 +19,11 @@
 
             <ImageView
                 android:id="@+id/compat_choice_back"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
+                android:layout_width="@dimen/size_back"
+                android:layout_height="@dimen/size_back"
                 android:layout_centerVertical="true"
                 android:adjustViewBounds="true"
-                android:paddingTop="13.0dip"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:paddingRight="13.0dip"
-                android:paddingBottom="15.0dip"
+                android:layout_marginStart="@dimen/_10sdp"
                 android:src="@drawable/back_white" />
         </RelativeLayout>
 
@@ -44,16 +41,12 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-
-
-
-
         </androidx.constraintlayout.widget.ConstraintLayout>
         <ImageView
             android:id="@+id/iv_translate"
             android:layout_width="@dimen/_80sdp"
             android:layout_height="@dimen/_135sdp"
-            android:src="@color/red_btn_bg_color"
+            android:src="@color/pink_love"
             android:visibility="gone" />
 
     </FrameLayout>

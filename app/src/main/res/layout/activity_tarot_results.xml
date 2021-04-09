@@ -15,7 +15,7 @@
             <RelativeLayout
                 android:id="@+id/compat_choice_top_bar"
                 android:layout_width="fill_parent"
-                android:layout_height="56dp"
+                android:layout_height="@dimen/height_size_bar"
                 android:gravity="center_vertical"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -23,14 +23,11 @@
 
                 <ImageView
                     android:id="@+id/compat_choice_back"
-                    android:layout_width="48.0dip"
-                    android:layout_height="match_parent"
+                    android:layout_width="@dimen/size_back"
+                    android:layout_height="@dimen/size_back"
                     android:layout_centerVertical="true"
                     android:adjustViewBounds="true"
-                    android:paddingTop="13.0dip"
-                    android:layout_marginStart="@dimen/_5sdp"
-                    android:paddingRight="13.0dip"
-                    android:paddingBottom="15.0dip"
+                    android:layout_marginStart="@dimen/_10sdp"
                     android:src="@drawable/back_white" />
 
                 <TextView
@@ -40,7 +37,7 @@
                     android:text="Tarot"
                     android:textStyle="bold"
                     android:textColor="@android:color/white"
-                    android:textSize="@dimen/_12sdp" />
+                    android:textSize="@dimen/size_text_top" />
             </RelativeLayout>
 
 
@@ -88,7 +85,7 @@
                 android:id="@+id/iv_career"
                 android:layout_width="@dimen/_80sdp"
                 android:layout_height="@dimen/_135sdp"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="10dp"
                 android:src="@drawable/ten_of_pentacles"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.498"
@@ -173,7 +170,7 @@
                                 android:layout_marginTop="@dimen/_5sdp"
                                 android:text="Upright"
                                 android:textColor="@color/orange"
-                                android:textSize="@dimen/_12sdp"
+                                android:textSize="@dimen/size_text_title"
                                 android:textStyle="bold"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -187,7 +184,7 @@
                                 android:layout_marginTop="10dp"
                                 android:text="If you are into any relationship, then this card is a good indicator for you as it can be a very good omen. The card acts as a symbol of the good husband, or partner, or father. It is a loving card some you can expect to find huge emotional fulfillment when the card appears and petty arguments ought to be very low. It enhances romance, love, and affection in the relationship and a good indicator."
                                 android:textColor="@color/white"
-                                android:textSize="@dimen/_10sdp"
+                                android:textSize="@dimen/size_text_no"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -219,7 +216,7 @@
                                 android:layout_marginTop="5dp"
                                 android:text="Reversed"
                                 android:textColor="@color/orange"
-                                android:textSize="@dimen/_12sdp"
+                                android:textSize="@dimen/size_text_title"
                                 android:textStyle="bold"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -233,7 +230,7 @@
                                 android:layout_marginTop="10dp"
                                 android:text="If you are into any relationship, then this card is a good indicator for you as it can be a very good omen. The card acts as a symbol of the good husband, or partner, or father. It is a loving card some you can expect to find huge emotional fulfillment when the card appears and petty arguments ought to be very low. It enhances romance, love, and affection in the relationship and a good indicator."
                                 android:textColor="@color/white"
-                                android:textSize="@dimen/_10sdp"
+                                android:textSize="@dimen/size_text_no"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"

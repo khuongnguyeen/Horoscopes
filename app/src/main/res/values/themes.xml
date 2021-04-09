@@ -23,15 +23,17 @@
         <item name="android:windowBackground">@color/transparent</item>
         <item name="android:colorBackgroundCacheHint">@null</item>
         <item name="android:windowIsTranslucent">true</item>
-        <!-- Note that we use the base animation style here (that is no
-             animations) because we really have no idea how this kind of
-             activity will be used. -->
+        <item name="android:windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+
     </style>
 
     <style name="Theme.Translucent">
         <item name="windowNoTitle">true</item>
         <item name="android:windowContentOverlay">@null</item>
         <item name="android:windowActionBar">false</item>
+        <item name="android:windowFullscreen">true</item>
+
     </style>
 
     <style name="MyDatePickerTheme" parent="Theme.Horoscope">

@@ -13,11 +13,10 @@
 
         <ImageView
             android:id="@id/wims_back"
-            android:layout_width="48.0dip"
-            android:layout_height="48.0dip"
-            android:layout_marginTop="28.0dip"
-            android:paddingTop="13.0dip"
-            android:paddingBottom="15.0dip"
+            android:layout_width="@dimen/size_back"
+            android:layout_height="@dimen/size_back"
+            android:layout_marginTop="@dimen/_24sdp"
+            android:layout_marginStart="@dimen/_10sdp"
             android:src="@drawable/back_white"
             android:visibility="visible"
             app:layout_constraintStart_toStartOf="parent"
@@ -48,7 +47,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="@dimen/_200sdp"
             android:orientation="vertical"
             app:layout_constraintBottom_toTopOf="@+id/wims_validate"
             app:layout_constraintEnd_toEndOf="parent"
@@ -63,8 +62,8 @@
                 app:itemTextColor="@color/white"
                 app:itemTextSize="@dimen/_16ssp"
 
-                app:wheelCurtainBorderColor="@color/red"
-                android:background="@drawable/home_adfree"
+                app:wheelCurtainBorderColor="@color/transparent"
+                android:background="@drawable/background_v2"
                 app:selectedTextColor="@color/red"
                 app:selectedTextSize="@dimen/_30sdp"
                 app:wheelCurtain="false"

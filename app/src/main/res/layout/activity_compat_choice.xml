@@ -26,7 +26,7 @@
             android:layout_marginTop="@dimen/_24sdp"
             android:id="@+id/compat_choice_top_bar"
             android:layout_width="fill_parent"
-            android:layout_height="56dp"
+            android:layout_height="@dimen/height_size_bar"
             android:background="@android:color/transparent"
             android:gravity="center_vertical"
             app:layout_constraintEnd_toEndOf="parent"
@@ -35,13 +35,11 @@
 
             <ImageView
                 android:id="@+id/compat_choice_back"
-                android:layout_width="48.0dip"
-                android:layout_height="48.0dip"
+                android:layout_width="@dimen/size_back"
+                android:layout_height="@dimen/size_back"
                 android:layout_centerVertical="true"
+                android:layout_margin="@dimen/_10sdp"
                 android:adjustViewBounds="true"
-                android:paddingTop="13.0dip"
-                android:paddingRight="13.0dip"
-                android:paddingBottom="15.0dip"
                 android:src="@drawable/back_white" />
 
             <TextView
@@ -50,7 +48,7 @@
                 android:gravity="center"
                 android:text="@string/menu_item_22_txt"
                 android:textColor="@android:color/white"
-                android:textSize="@dimen/_12sdp" />
+                android:textSize="@dimen/size_text_top" />
         </RelativeLayout>
 
         <TextView

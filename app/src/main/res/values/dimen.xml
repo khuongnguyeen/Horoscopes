@@ -10,4 +10,19 @@
     <dimen name="card_double_width">@dimen/_160sdp</dimen>
     <dimen name="card_double_height">@dimen/_400sdp</dimen>
     <dimen name="card_top_margin">170dp</dimen>
+    <dimen name="size_back">@dimen/_15sdp</dimen>
+    <dimen name="height_size_bar">@dimen/_30sdp</dimen>
+    <dimen name="size_margin_top">@dimen/_54sdp</dimen>
+    <dimen name="size_text_top">@dimen/_12sdp</dimen>
+    <dimen name="size_text_no">@dimen/_12sdp</dimen>
+    <dimen name="size_text_title">@dimen/_16sdp</dimen>
+
+
+
+
+
+    <dimen name="size_height_button">@dimen/_30sdp</dimen>
+    <dimen name="size_width_button">@dimen/_150sdp</dimen>
+
+
 </resources>

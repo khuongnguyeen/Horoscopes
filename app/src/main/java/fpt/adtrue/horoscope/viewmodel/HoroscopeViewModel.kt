@@ -7,12 +7,15 @@ import androidx.lifecycle.MutableLiveData
 import com.google.gson.Gson
 import fpt.adtrue.horoscope.api.HoroscopeApi
 import fpt.adtrue.horoscope.api.Utils
+import fpt.adtrue.horoscope.api.Utils.createRetrofit
+import fpt.adtrue.horoscope.api.Utils.createRetrofit2
 import fpt.adtrue.horoscope.model.DataHoroscope
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
 
 class HoroscopeViewModel {
-    private val horoscopeApi: HoroscopeApi = Utils.createRetrofit()
+    private val horoscopeApi: HoroscopeApi = createRetrofit()
+    private val horoscopeApi2: HoroscopeApi = createRetrofit2()
     val data = MutableLiveData<DataHoroscope>()
     val data1 = MutableLiveData<DataHoroscope>()
     val data2 = MutableLiveData<DataHoroscope>()
@@ -40,6 +43,23 @@ class HoroscopeViewModel {
                 {
                     Log.e("HoroscopeViewModel","Errrrrrrrrrrrrrrrrrrrrrrrrrr")
                     isLoading.set(false)
+                })
+    }
+
+
+    @SuppressLint("CheckResult")
+    fun getAmazon(day:String, mon:String,year:Int) {
+        isLoading.set(true)
+        horoscopeApi2.getDataAmazon(day, mon, year)
+            .subscribeOn(Schedulers.newThread())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(
+                {
+                    Log.e("getAmazon__________", Gson().toJson(it))
+                },
+                {
+                    Log.e("getAmazon","________________Ooi loi roi")
+                    Log.e("getAmazon",Gson().toJson(it))
                 })
     }
 }
