@@ -9,6 +9,7 @@ import fpt.adtrue.horoscope.api.HoroscopeApi
 import fpt.adtrue.horoscope.api.Utils
 import fpt.adtrue.horoscope.api.Utils.createRetrofit
 import fpt.adtrue.horoscope.api.Utils.createRetrofit2
+import fpt.adtrue.horoscope.model.DataAmazonaws
 import fpt.adtrue.horoscope.model.DataHoroscope
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
@@ -17,6 +18,9 @@ class HoroscopeViewModel {
     private val horoscopeApi: HoroscopeApi = createRetrofit()
     private val horoscopeApi2: HoroscopeApi = createRetrofit2()
     val data = MutableLiveData<DataHoroscope>()
+    val dataAmazon = MutableLiveData<DataAmazonaws>()
+    val dataAmazon2 = MutableLiveData<DataAmazonaws>()
+    val dataAmazon3 = MutableLiveData<DataAmazonaws>()
     val data1 = MutableLiveData<DataHoroscope>()
     val data2 = MutableLiveData<DataHoroscope>()
     val isLoading= ObservableBoolean(false)
@@ -55,10 +59,10 @@ class HoroscopeViewModel {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                 {
+                    dataAmazon.value = it
                     Log.e("getAmazon__________", Gson().toJson(it))
                 },
                 {
-                    Log.e("getAmazon","________________Ooi loi roi")
                     Log.e("getAmazon",Gson().toJson(it))
                 })
     }

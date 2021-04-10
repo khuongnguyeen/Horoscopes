@@ -11,9 +11,15 @@ import android.util.Log
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
+import androidx.lifecycle.MutableLiveData
+import com.google.gson.Gson
 import com.ihsanbal.logging.Level
 import com.ihsanbal.logging.LoggingInterceptor
 import fpt.adtrue.horoscope.application.App
+import fpt.adtrue.horoscope.constant.Constant
+import fpt.adtrue.horoscope.model.DataAmazonaws
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
@@ -39,12 +45,28 @@ object Utils {
             )
             .build()
         return Retrofit.Builder()
-            .baseUrl("https://aztro.sameerkumar.website")
+            .baseUrl(Constant.URL_API_1)
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .client(http)
             .build()
             .create(HoroscopeApi::class.java)
+    }
+
+
+    @SuppressLint("CheckResult")
+    fun getAmazon(day:String, mon:String,year:Int,horoscopeApi: HoroscopeApi,dataAmazon: MutableLiveData<DataAmazonaws>) {
+        horoscopeApi.getDataAmazon(day, mon, year)
+            .subscribeOn(Schedulers.newThread())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(
+                {
+                    dataAmazon.value = it
+                    Log.e("getAmazon__________", Gson().toJson(it))
+                },
+                {
+                    Log.e("getAmazon", Gson().toJson(it))
+                })
     }
 
 
@@ -64,7 +86,7 @@ object Utils {
             )
             .build()
         return Retrofit.Builder()
-            .baseUrl("https://s3-us-west-2.amazonaws.com")
+            .baseUrl(Constant.URL_API_2)
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .client(http)
